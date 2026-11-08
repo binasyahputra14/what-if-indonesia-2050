@@ -573,6 +573,96 @@ mark.tegas{background:linear-gradient(transparent 50%,rgba(255,150,40,.6) 50%);c
 .use b{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .use p{margin:0;font-size:14px;line-height:1.5}
 @media (max-width:640px){.use div{grid-template-columns:1fr;gap:2px}}
+.vz{margin:16px 0;border-radius:20px;border:1.5px solid var(--line);background:rgba(255,253,249,.85);overflow:hidden;position:relative}
+.vz-road{height:96px}
+.vz-lane{position:absolute;left:0;right:150px;top:62%;height:2px;background:repeating-linear-gradient(90deg,#D9C6AE 0 18px,transparent 18px 34px);animation:vzlane 1.4s linear infinite}
+@keyframes vzlane{to{background-position:-34px 0}}
+.vz-car{position:absolute;top:22px;left:3%;width:86px;animation:vzdrive 8s ease-in-out infinite alternate}
+@keyframes vzdrive{to{left:calc(100% - 270px)}}
+.vz-car .wh,.bn-car.slow .wh{transform-box:fill-box;transform-origin:center;animation:vzspin .6s linear infinite}
+.bn-car.slow .wh{animation-duration:1.6s}
+@keyframes vzspin{to{transform:rotate(360deg)}}
+.puff{position:absolute;left:-8px;bottom:6px;width:12px;height:12px;border-radius:50%;background:rgba(122,106,94,.35);animation:vzpuff 1.2s ease-out infinite}
+.puff.p2{animation-delay:.4s}.puff.p3{animation-delay:.8s}
+@keyframes vzpuff{0%{transform:scale(.4);opacity:.8}100%{transform:translate(-30px,-12px) scale(2.3);opacity:0}}
+.vz-gauge{position:absolute;right:14px;top:8px;width:130px;text-align:center;font-size:11px;color:var(--muted);line-height:1.2}
+.vz-gauge svg{width:104px;height:60px;display:block;margin:0 auto}
+.vz-gauge b{font:700 14px var(--mono);color:var(--accent)}
+.g-ndl{transform-origin:60px 62px;transform:rotate(-90deg);transition:transform 1.6s cubic-bezier(.34,1.56,.64,1)}
+.vz.in .g-ndl{transform:rotate(-38deg)}
+.vz-tank svg{width:100%;height:auto;max-height:210px;display:block}
+.vz-tank text{font:600 13px var(--body);fill:var(--ink)}
+.vz-tank .tk-t{font:700 13px var(--mono);letter-spacing:.12em;fill:#B9772F}
+.vz-tank .drip{animation:vzdrip 1.5s ease-in infinite;opacity:0}
+.vz-tank .h2 .drip{animation-delay:.5s}.vz-tank .h3 .drip{animation-delay:1s}
+@keyframes vzdrip{0%{transform:translateY(-6px);opacity:0}20%{opacity:1}100%{transform:translateY(22px);opacity:0}}
+.vz-tank .tk-fuel{animation:vzfuel 6s ease-in-out infinite;transform-origin:center bottom;transform-box:fill-box}
+@keyframes vzfuel{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.78)}}
+.vz-flow{padding:14px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.fl-sw{display:flex;background:#F1E6D8;border-radius:999px;padding:4px}
+.fl-sw button{border:0;background:none;font:700 14px var(--body);padding:9px 16px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.fl-sw button.on-k{background:var(--good);color:#fff}
+.fl-sw button.on-d{background:var(--bad);color:#fff}
+.fl-box{position:relative;width:100%;height:190px}
+.fl-tap{position:absolute;left:50%;top:0;transform:translateX(-50%);text-align:center;font:700 12px var(--body);color:var(--muted)}
+.fl-tap svg{width:62px;height:46px;display:block;margin:0 auto}
+.fl-who{position:absolute;bottom:0;width:140px;text-align:center;font:600 13px var(--body);transition:transform .5s,opacity .5s}
+.fl-who span svg{height:84px;width:auto;display:block;margin:0 auto}
+.fl-who.wk{left:8%}.fl-who.wd{right:8%}
+.fl-box.k .wk,.fl-box.d .wd{transform:scale(1.12)}
+.fl-box.k .wd,.fl-box.d .wk{opacity:.4}
+.coin{position:absolute;top:52px;left:50%;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE89A,#E3A21A);opacity:0}
+.fl-box.k .coin{animation:vzcoinK 1.6s ease-in infinite}
+.fl-box.d .coin{animation:vzcoinD 1.6s ease-in infinite}
+.fl-box .coin.c2{animation-delay:.4s}.fl-box .coin.c3{animation-delay:.8s}.fl-box .coin.c4{animation-delay:1.2s}
+@keyframes vzcoinK{0%{opacity:0;transform:translate(-7px,0)}10%{opacity:1}100%{opacity:.9;transform:translate(calc(-1 * min(30vw,300px)),78px)}}
+@keyframes vzcoinD{0%{opacity:0;transform:translate(-7px,0)}10%{opacity:1}100%{opacity:.9;transform:translate(min(30vw,300px),78px)}}
+.vz-crash svg{width:100%;height:auto;max-height:190px;display:block}
+.vz-crash .cr{fill:none;stroke:var(--bad);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.6s ease-in}
+.vz-crash.in .cr{stroke-dashoffset:0}
+.vz-crash text{font:700 12px var(--mono);fill:var(--bad)}
+.hc-art{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:-2px 0 2px}
+.flagw svg{width:58px;height:38px;display:block;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.25);transform-origin:left center;animation:vzwave 2.8s ease-in-out infinite}
+@keyframes vzwave{0%,100%{transform:skewY(0) scaleX(1)}50%{transform:skewY(-5deg) scaleX(.96)}}
+.ppl{display:flex;gap:2px;align-items:flex-end}
+.ppl svg{height:76px;width:auto;animation:vzbob 2.4s ease-in-out infinite}
+.ppl svg:nth-child(2){animation-delay:.45s}.ppl svg:nth-child(3){animation-delay:.9s}
+@keyframes vzbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.vz-sand{display:flex;flex-direction:column;gap:6px;padding:14px;max-width:620px}
+.vz-sand .sd{border-radius:14px;padding:11px 16px;display:flex;justify-content:space-between;gap:10px;font-size:14.5px}
+.vz-sand .sd span{color:var(--muted)}
+.vz-sand .top{background:#E8EEF8;animation:vzpress 2.4s ease-in-out infinite}
+.vz-sand .bot{background:#E2F3EA;animation:vzpressb 2.4s ease-in-out infinite}
+.vz-sand .mid{background:linear-gradient(90deg,#FFD9C9,#FFE8D2);border:2px solid #F0A98E;animation:vzsq 2.4s ease-in-out infinite}
+@keyframes vzpress{50%{transform:translateY(5px)}}
+@keyframes vzpressb{50%{transform:translateY(-5px)}}
+@keyframes vzsq{50%{transform:scaleY(.84)}}
+.vz-burn{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px}
+.vz-burn>div{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font:600 13.5px var(--body)}
+.bn-car svg{width:110px;height:auto}
+.bn-car.slow{animation:vzcrawl 6s ease-in-out infinite alternate}
+@keyframes vzcrawl{from{transform:translateX(-30px)}to{transform:translateX(30px)}}
+.vz-burn .flame{transform-origin:50% 100%;transform-box:fill-box;animation:vzflame .35s ease-in-out infinite alternate}
+@keyframes vzflame{from{transform:scaleY(1)}to{transform:scaleY(1.2) scaleX(.9)}}
+.rb .rn{white-space:nowrap;display:flex;align-items:center}.rbars .rb{grid-template-columns:112px 1fr 88px}@media (max-width:640px){.rbars .rb{grid-template-columns:96px 1fr 60px}.rb .rn{font-size:12.5px}}.rb .rn svg{flex-shrink:0;width:22px;height:15px;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.3);vertical-align:-3px;margin-right:6px}
+@media (max-width:640px){.vz-gauge{display:none}.vz-lane{right:0}.vz-car{animation-name:vzdriveM}.fl-who{width:100px;font-size:11.5px}.fl-who.wk{left:2%}.fl-who.wd{right:2%}.ppl svg{height:60px}.vz-burn{grid-template-columns:1fr}}
+@keyframes vzdriveM{to{left:calc(100% - 100px)}}
+@media (prefers-reduced-motion:reduce){.vz *,.hc-art *{animation:none!important}}
+
+.b8 tr.now8 td{background:#FFF6E0;border-top:2px solid #E9A23B}
+.min8{border:2px solid #A9DCC8;background:linear-gradient(160deg,#F2FBF7,#FFFDF8);border-radius:20px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.m8-h{font:700 clamp(18px,2.4vw,22px)/1.25 var(--display)}
+.m8-bars{display:flex;flex-direction:column;gap:8px}
+.m8-r{display:grid;grid-template-columns:240px 1fr 76px;gap:10px;align-items:center;font-size:14px}
+.m8-r b{font:700 14px var(--mono);text-align:right}
+.m8-t{position:relative;height:16px;border-radius:999px;background:#F1E6D8}
+.m8-t i{position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;transition:width 1.4s cubic-bezier(.2,.9,.3,1)}
+.min8.in .m8-t i{width:var(--w)}
+.m8-t em{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--good)}
+.min8 p{margin:0;font-size:15px;line-height:1.55}.min8 ol{margin:0;padding-left:22px;font-size:15px}.min8 li{margin:4px 0}
+.min8 mark{background:linear-gradient(transparent 55%,rgba(255,170,60,.55) 55%);color:inherit;padding:0 2px}
+.m8-v{font-weight:700;color:var(--bad)}
+@media (max-width:640px){.m8-r{grid-template-columns:1fr 64px}.m8-r span{grid-column:1/-1}}
 /* micro-motion angka & judul */
 .eng b,.kc b,.o b,.lx-hud b,.lb .v,.lx-st b{display:inline-block;transform-origin:50% 70%;transition:transform .5s cubic-bezier(.34,1.9,.5,1),text-shadow .3s;
   text-shadow:0 1px 0 rgba(255,255,255,.95),0 2px 2px rgba(120,70,20,.14),0 8px 18px rgba(194,86,15,.18);cursor:default}
@@ -678,6 +768,11 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <div class="eng"><b>5,11 km</b><span>Segini tambahan jarak mobilnya tahun itu. Ini yang biasa disebut pertumbuhan ekonomi (BPS, 2025).</span></div>
       <div class="eng"><b>5,6 liter/km</b><span>Konsumsi bensinnya: 28,77 ÷ 5,11. Ekonom nyebutnya ICOR. Makin tinggi, makin boros.</span></div>
     </div>
+    <div class="vz vz-road" aria-hidden="true">
+      <div class="vz-lane"></div>
+      <div class="vz-car"><svg viewBox="0 0 86 44" width="86" height="44" aria-hidden="true"><rect x="6" y="16" width="74" height="18" rx="8" fill="#C2560F"/><path d="M22 16 L32 5 H56 L66 16 Z" fill="#E07A3A"/><rect x="35" y="8" width="9" height="7" rx="2" fill="#FFF4E2"/><rect x="47" y="8" width="11" height="7" rx="2" fill="#FFF4E2"/><g class="wh"><circle cx="24" cy="35" r="7" fill="#2A1E17"/><circle cx="24" cy="35" r="3" fill="#EADCC8"/></g><g class="wh"><circle cx="62" cy="35" r="7" fill="#2A1E17"/><circle cx="62" cy="35" r="3" fill="#EADCC8"/></g></svg><i class="puff"></i><i class="puff p2"></i><i class="puff p3"></i></div>
+      <div class="vz-gauge"><svg viewBox="0 0 120 70"><path d="M10 62 A50 50 0 0 1 110 62" fill="none" stroke="#F1E6D8" stroke-width="12" stroke-linecap="round"/><line x1="60" y1="62" x2="60" y2="20" stroke="#2A1E17" stroke-width="3" stroke-linecap="round" class="g-ndl"/><circle cx="60" cy="62" r="5" fill="#2A1E17"/></svg><span>bensin<br><b>28,77%</b></span></div>
+    </div>
     <div class="prose"><p>Boros atau enggak? Bandingin sama mobil tetangga:</p></div>
     <div class="rbars"><div class="rax"><span>irit</span><span>boros →</span></div><div class="rb id"><span class="rn">Indonesia</span><div class="rt"><i style="left:70.0%;width:17.0%"></i></div><b>5,6–6,96</b></div><div class="rb "><span class="rn">Vietnam</span><div class="rt"><i style="left:57.5%;width:13.8%"></i></div><b>4,6–5,7</b></div><div class="rb "><span class="rn">Malaysia</span><div class="rt"><i style="left:33.8%;width:27.5%"></i></div><b>2,7–4,9</b></div><div class="rb "><span class="rn">Thailand</span><div class="rt"><i style="left:54.4%;width:1.3%"></i></div><b>4,4</b></div><div class="rb "><span class="rn">Filipina</span><div class="rt"><i style="left:42.5%;width:12.5%"></i></div><b>3,4–4,4</b></div></div>
     <p class="fine">Konsumsi bensin (ICOR) per negara. Angkanya beda-beda antarsumber karena tahun dan cara hitungnya beda, jadi yang ditampilkan rentangnya. Sumber: hitungan dari BPS; data pemerintah dikutip Koran Jakarta (Sep 2026); Luhut/DEN (Des 2024); Sarasehan 100 Ekonom dikutip Kontan (Des 2024). Arahnya konsisten: Indonesia paling boros.</p>
@@ -694,6 +789,16 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     <h2>Tangkinya bocor di mana?</h2>
     <div class="prose"><p>Mobil boros biasanya karena tiga hal: bensinnya gak pernah masuk tangki, bensinnya dicolong di jalan, atau rutenya salah. Di ekonomi Indonesia, tiga-tiganya ada datanya.</p></div>
 
+    <div class="vz vz-tank" aria-hidden="true">
+      <svg viewBox="0 0 520 190">
+        <rect x="70" y="20" width="380" height="110" rx="40" fill="#FFF3E6" stroke="#E0C3A5" stroke-width="3"/>
+        <rect x="74" y="70" width="372" height="56" rx="26" fill="#F2B04A" opacity=".55" class="tk-fuel"/>
+        <text x="260" y="58" text-anchor="middle" class="tk-t">TANGKI EKONOMI</text>
+        <g class="tk-h h1"><circle cx="150" cy="130" r="7" fill="#D63A2A"/><path class="drip" d="M150 140 q-6 10 0 16 q6 -6 0 -16z" fill="#E8955A"/><text x="150" y="182" text-anchor="middle">pajak</text></g>
+        <g class="tk-h h2"><circle cx="260" cy="130" r="7" fill="#C98A00"/><path class="drip" d="M260 140 q-6 10 0 16 q6 -6 0 -16z" fill="#E8955A"/><text x="260" y="182" text-anchor="middle">proyek</text></g>
+        <g class="tk-h h3"><circle cx="370" cy="130" r="7" fill="#C2560F"/><path class="drip" d="M370 140 q-6 10 0 16 q6 -6 0 -16z" fill="#E8955A"/><text x="370" y="182" text-anchor="middle">izin &amp; kuota</text></g>
+      </svg>
+    </div>
     <div class="leak">
       <div class="lk-h"><span class="lk-n">1</span><div><h3>Bensin yang gak pernah masuk tangki: pajak</h3><b class="lk-big">±Rp944 triliun per tahun</b></div></div>
       <p>Pajak yang seharusnya masuk tapi gak tertagih, dari PPN dan PPh badan (rata-rata 2016–2021, Bank Dunia). Gak semuanya kejahatan. Sekitar <b>Rp547 T</b> datang dari ketidakpatuhan: penjualan gak dilaporin, faktur fiktif, usaha yang gak tercatat, harga ekspor dimainin. Sisanya keringanan pajak yang memang sengaja dikasih negara.</p>
@@ -759,6 +864,15 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <div class="vs-x">vs</div>
       <div class="vs-d"><span>Kedekatan</span><p>Dikasih ke yang paling dekat. Yang gak dekat harus bayar pelicin atau mundur. Modal jatuh ke tangan yang paling jago lobi. Mobilnya makin boros, dan investor jujur nambahin "premi takut" di setiap rupiah yang mereka tanam.</p></div>
     </div>
+    <div class="vz vz-flow">
+      <div class="fl-sw" role="group" aria-label="Cara keran dibuka"><button type="button" data-m="k" class="on-k">Lewat kinerja</button><button type="button" data-m="d">Lewat kedekatan</button></div>
+      <div class="fl-box k" id="flBox" aria-hidden="true">
+        <div class="fl-tap"><svg viewBox="0 0 64 48"><rect x="4" y="8" width="40" height="12" rx="4" fill="#A3968A"/><rect x="40" y="12" width="12" height="22" rx="4" fill="#8E7F73"/><rect x="18" y="2" width="12" height="8" rx="2" fill="#C2560F"/></svg>keran negara</div>
+        <i class="coin"></i><i class="coin c2"></i><i class="coin c3"></i><i class="coin c4"></i>
+        <div class="fl-who wk"><span data-ppl="kerja"></span>yang jago kerja</div>
+        <div class="fl-who wd"><span data-ppl="lobi"></span>yang jago lobi</div>
+      </div>
+    </div>
     <div class="prose"><p>Ini bukan teori di awang-awang. Tiga penelitian soal Indonesia:</p></div>
     <ul class="ev">
       <li><b>Pasar sendiri ngehargain kedekatan.</b> Tiap ada rumor kesehatan Soeharto memburuk, saham perusahaan yang paling bergantung padanya jatuh paling dalam (Fisman, 2001, <i>American Economic Review</i>). Artinya sebagian nilai perusahaan itu datang dari koneksi, bukan dari produktivitas.</li>
@@ -823,6 +937,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     <div class="num">06 · AKIBAT</div>
     <h2>Tagihannya datang</h2>
     <div class="prose"><p>Investor global gak baca niat. Mereka baca harga. Dan Januari 2026, mereka ngasih penilaian.</p></div>
+    <div class="vz vz-crash" aria-hidden="true"><svg viewBox="0 0 600 170"><line x1="0" y1="50" x2="600" y2="50" stroke="#EADCC8" stroke-dasharray="4 4"/><polyline class="cr" points="0,52 40,48 80,54 120,46 160,50 200,44 240,48 280,45 300,50 330,108 350,98 380,150 410,140 440,155 480,148 520,152 560,146 600,150"/><text x="596" y="166" text-anchor="end">IHSG −7,35% dalam sehari (bentuk ilustrasi)</text></svg></div>
     <div class="tl2">
       <div><time>27 Jan 2026</time><p>MSCI, penyusun indeks yang diikuti dana investasi global, membekukan penambahan bobot saham Indonesia. Alasannya: porsi saham yang benar-benar beredar di publik gak transparan, dan ada indikasi perdagangan terkoordinasi.</p></div>
       <div><time>28–29 Jan 2026</time><p>IHSG turun <b>7,35% dalam sehari</b>; perdagangan dihentikan sementara dua kali. Asing menjual bersih Rp13,92 T dalam sepekan.</p></div>
@@ -967,15 +1082,30 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
         <p><b>Sekarang hitung.</b> Pakai rumus mobil tadi: bensin yang dibutuhkan = target pertumbuhan × konsumsi bensin (ICOR). Bensin kita sekarang 28,77% PDB: dari tiap Rp100 penghasilan ekonomi, Rp28,77 dipakai buat investasi. Tabel di bawah bukan prestasi, tapi <b>ongkos</b>: berapa bensin yang harus dituang supaya mobil maju 8 km. Mobil yang boros butuh bensin lebih banyak buat jarak yang sama.</p>
       </div>
       <div class="tw"><table class="mini">
-        <thead><tr><th>Kalau mobilnya (ICOR)…</th><th>Dari tiap Rp100, minimal harus disisihkan<br><span style="font-weight:500;color:var(--muted)">makin kecil makin bagus</span></th><th>Setahun jadi</th><th>Tambahan dari sekarang</th></tr></thead>
+        <thead><tr><th>Kalau mobilnya (ICOR)…</th><th>Syarat: dari tiap Rp100, minimal harus disisihkan<br><span style="font-weight:500;color:var(--muted)">makin kecil = syaratnya makin ringan</span></th><th>Setahun jadi</th><th>Tambahan dari sekarang</th></tr></thead>
         <tbody>
           <tr><td>5,6 · mesin seboros sekarang</td><td><b style="color:var(--bad)">Rp44,80</b></td><td>±Rp10.660 T</td><td>+Rp3.800 T</td></tr>
           <tr><td>4,5 · mesin sesuai target pemerintah</td><td><b>Rp36,00</b></td><td>±Rp8.570 T</td><td>+Rp1.700 T</td></tr>
           <tr><td>4,0 · mesin kira-kira seirit Filipina</td><td><b>Rp32,00</b></td><td>±Rp7.620 T</td><td>+Rp770 T</td></tr>
           <tr><td>3,6 · mesin paling irit</td><td><b style="color:var(--good)">Rp28,80</b></td><td>±Rp6.850 T</td><td>hampir nol</td></tr>
+          <tr class="now8"><td><b>Indonesia hari ini</b> · mesin 5,6</td><td><b>Rp28,77</b></td><td>±Rp6.850 T</td><td>hasilnya cuma ±5,1%</td></tr>
         </tbody>
       </table></div>
       <div class="punch" style="font-size:clamp(19px,2.6vw,25px)">Biar kebayang: buat tumbuh 8% dengan mesin seboros sekarang, dari tiap <mark>Rp100</mark> penghasilan ekonomi Indonesia, kita harus nyisihin <mark>Rp44,80</mark> buat bangun pabrik, jalan, dan mesin. Sekarang kita baru nyisihin Rp28,77. Kurangnya ±Rp3.800 T setahun, sekitar empat kali seluruh pajak yang bocor.</div>
+      <div class="min8">
+        <div class="m8-h">Syarat minimal yang paling masuk akal buat 8%</div>
+        <div class="m8-bars">
+          <div class="m8-r"><span>Indonesia hari ini</span><div class="m8-t"><i style="--w:64%;background:var(--warn)"></i></div><b>Rp28,77</b></div>
+          <div class="m8-r"><span>Syarat minimal (mesin seirit Filipina)</span><div class="m8-t"><i style="--w:71.4%;background:var(--good)"></i><em style="left:71.4%"></em></div><b>Rp32,00</b></div>
+          <div class="m8-r"><span>Syarat kalau mesin seboros sekarang</span><div class="m8-t"><i style="--w:100%;background:var(--bad)"></i></div><b>Rp44,80</b></div>
+        </div>
+        <p>Angka di tabel itu <b>syarat</b>, bukan kondisi Indonesia. Kondisi kita hari ini: <b>Rp28,77 dari tiap Rp100, dengan mesin 5,6</b>. Itu masih di bawah semua syarat, kecuali baris mesin paling irit. Jadi syarat minimal yang paling masuk akal buat 8% ada dua, dan harus <mark>barengan</mark>:</p>
+        <ol>
+          <li><b>Mesinnya harus seirit Filipina</b>: ICOR turun dari 5,6 ke sekitar 4,0.</li>
+          <li><b>Bensinnya harus nambah ±Rp770 T per tahun</b>: dari ±Rp6.850 T jadi ±Rp7.620 T setahun, atau Rp32 dari tiap Rp100.</li>
+        </ol>
+        <p class="m8-v">Hari ini dua syarat itu belum ada yang terpenuhi. Mesin kita masih 5,6, dan bensin kita baru Rp28,77, belum sampai Rp32.</p>
+      </div>
       <div class="prose">
         <p>Dan duit itu gak jatuh dari langit. Kalau yang disisihkan buat investasi naik, yang dipakai buat belanja harus turun: rumah tangga belanja lebih sedikit, negara belanja lebih sedikit, atau kita ngutang lebih banyak. Bertahun-tahun. Makanya jalan yang masuk akal bukan nambah bensin, tapi <b>benerin mesinnya</b>. Dengan mesin paling irit di tabel, 8% bisa dicapai hampir tanpa nyisihin tambahan dari sekarang.</p>
         <p>Artinya 8% cuma bisa kejadian kalau <b>dua lompatan terjadi barengan dalam tiga tahun</b>: mesinnya jauh lebih irit (ICOR dari 5,6 ke sekitar 4) <i>dan</i> investasi naik 3–7 poin PDB, sekitar Rp770 T sampai Rp1.700 T tambahan per tahun. Gak ada satu pun skenario di simulator ini yang sampai ke sana. Skenario terbaik, keran dibagi lewat kinerja, rata-rata cuma <b>5,7%</b>. Proyeksi IMF buat Indonesia 2029 juga sekitar <b>5,1%</b> (dikutip GoodStats).</p>
@@ -1052,6 +1182,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     <h2>Kenapa yang paling kejepit justru kelas menengah?</h2>
     <div class="prose"><p class="lead">Semua angka dari bagian 02 sampai 09 punya satu alamat yang sama. Bukan yang paling miskin, bukan yang paling kaya. Tapi yang di tengah.</p></div>
 
+    <div class="vz vz-sand" aria-hidden="true"><div class="sd top"><b>Atas</b><span>aset, dolar, koneksi</span></div><div class="sd mid"><b>Tengah · kelas menengah</b><span>gak ada bantalan</span></div><div class="sd bot"><b>Bawah</b><span>bansos, BPJS PBI</span></div></div>
     <h3 class="pl-h">Siapa mereka</h3>
     <div class="trio">
       <div class="kc"><span class="vt">Definisi BPS</span><b>Rp2–9,9 juta</b><span>pengeluaran per orang per bulan (2024), atau 3,5–17 kali garis kemiskinan.</span></div>
@@ -1088,6 +1219,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     <div class="prose"><p class="lead">Sebelum lu bilang "negara ini gak mungkin berubah", lihat dulu orang-orang biasa ini. Bukan pahlawan di buku sejarah. Perawat, penambang, buruh, petani, ibu rumah tangga. Hidup mereka waktu itu lebih susah dari kelas menengah Indonesia yang barusan kita bedah.</p></div>
     <div class="hgrid">
       <article class="hc">
+        <div class="hc-art" aria-hidden="true"><span class="flagw" data-flag="KR"></span><span class="ppl" data-ppl="nurseMiner"></span></div>
         <header><span class="hc-y">1959–1977</span><h3>Korea Selatan</h3></header>
         <dl>
           <dt>Kondisi mereka</dt><dd>Lebih miskin dari Indonesia hari ini. Belum punya industri, belum punya devisa.</dd>
@@ -1097,6 +1229,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
         </dl>
       </article>
       <article class="hc">
+        <div class="hc-art" aria-hidden="true"><span class="flagw" data-flag="KR"></span><span class="ppl" data-ppl="ring"></span></div>
         <header><span class="hc-y">1998</span><h3>Korea Selatan</h3></header>
         <dl>
           <dt>Kondisi mereka</dt><dd>Krisis moneter, utang ke IMF, PHK massal.</dd>
@@ -1106,6 +1239,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
         </dl>
       </article>
       <article class="hc">
+        <div class="hc-art" aria-hidden="true"><span class="flagw" data-flag="ES"></span><span class="ppl" data-ppl="worker"></span></div>
         <header><span class="hc-y">1977</span><h3>Spanyol</h3></header>
         <dl>
           <dt>Kondisi mereka</dt><dd>Baru keluar dari 36 tahun kediktatoran Franco. Inflasi ±40%.</dd>
@@ -1115,6 +1249,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
         </dl>
       </article>
       <article class="hc">
+        <div class="hc-art" aria-hidden="true"><span class="flagw" data-flag="TW"></span><span class="ppl" data-ppl="farmer"></span></div>
         <header><span class="hc-y">1949–1953</span><h3>Taiwan</h3></header>
         <dl>
           <dt>Kondisi mereka</dt><dd>Ekonomi agraris, tanah dikuasai segelintir tuan tanah.</dd>
@@ -1124,6 +1259,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
         </dl>
       </article>
       <article class="hc">
+        <div class="hc-art" aria-hidden="true"><span class="flagw" data-flag="PL"></span><span class="ppl" data-ppl="shopper"></span></div>
         <header><span class="hc-y">1990</span><h3>Polandia</h3></header>
         <dl>
           <dt>Kondisi mereka</dt><dd>Hiperinflasi, rak toko kosong, antrean panjang.</dd>
@@ -1133,6 +1269,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
         </dl>
       </article>
       <article class="hc">
+        <div class="hc-art" aria-hidden="true"><span class="flagw" data-flag="IE"></span><span class="ppl" data-ppl="emigrant"></span></div>
         <header><span class="hc-y">1950-an</span><h3>Irlandia</h3></header>
         <dl>
           <dt>Kondisi mereka</dt><dd>Ekonomi stagnan dan proteksionis.</dd>
@@ -1173,6 +1310,10 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     <h2>Haruskah chaos dulu, baru bangsa ini jadi lebih baik?</h2>
     <div class="prose"><p class="lead">Dari kisah-kisah tadi, gampang banget nyimpulin: "Korea rusuh dulu, Polandia mogok dulu, Indonesia 1998 juga. Berarti kita harus chaos dulu." Wajar kalau ada yang mikir gitu. Tapi coba hitung dulu, sebelum ada yang beneran nyalain korek.</p></div>
 
+    <div class="vz vz-burn" aria-hidden="true">
+      <div><div class="bn-car slow"><svg viewBox="0 0 86 44" width="86" height="44" aria-hidden="true"><rect x="6" y="16" width="74" height="18" rx="8" fill="#8E7F73"/><path d="M22 16 L32 5 H56 L66 16 Z" fill="#A3968A"/><rect x="35" y="8" width="9" height="7" rx="2" fill="#FFF4E2"/><rect x="47" y="8" width="11" height="7" rx="2" fill="#FFF4E2"/><g class="wh"><circle cx="24" cy="35" r="7" fill="#2A1E17"/><circle cx="24" cy="35" r="3" fill="#EADCC8"/></g><g class="wh"><circle cx="62" cy="35" r="7" fill="#2A1E17"/><circle cx="62" cy="35" r="3" fill="#EADCC8"/></g></svg></div><span>kedekatan: mobil boros, tetap jalan pelan</span></div>
+      <div><div class="bn-car fire"><svg viewBox="0 0 90 60"><rect x="6" y="30" width="78" height="18" rx="8" fill="#3a2a20"/><circle cx="25" cy="49" r="7" fill="#2A1E17"/><circle cx="65" cy="49" r="7" fill="#2A1E17"/><g class="flame"><path d="M30 32 C26 20 36 18 34 6 C44 14 46 22 44 32 Z" fill="#FF8A3D"/><path d="M48 32 C46 22 54 18 56 8 C64 18 64 26 60 32 Z" fill="#FFB347"/><path d="M38 32 C36 24 42 22 42 16 C48 22 50 28 48 32 Z" fill="#FFE07A"/></g></svg></div><span style="color:var(--bad)">chaos: mobilnya dibakar, jalan kaki lima tahun</span></div>
+    </div>
     <h3 class="pl-h">Sisi objektifnya</h3>
     <ul class="ev">
       <li><b>Protes besar gak sama dengan chaos.</b> Dari 323 gerakan perlawanan besar di dunia sepanjang 1900–2006, gerakan tanpa kekerasan berhasil <b>53%</b>, gerakan dengan kekerasan cuma <b>26%</b> (Chenoweth &amp; Stephan, 2008, <i>International Security</i>). Gerakan Juni 1987 di Korea dan Solidarność di Polandia mayoritas damai.</li>
@@ -2434,5 +2575,55 @@ try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);}
   }
   btn.addEventListener('click',()=>{try{on?stop():start();}catch(e){lab.textContent='Audio tidak didukung';}});
   document.addEventListener('visibilitychange',()=>{if(!ctx)return;if(document.hidden&&on)ctx.suspend();else if(!document.hidden&&on)ctx.resume();});
+})();
+</script>
+
+<script>
+(function(){
+const FL={
+ ID:'<rect width="30" height="10" fill="#CE1126"/><rect y="10" width="30" height="10" fill="#fff"/>',
+ VN:'<rect width="30" height="20" fill="#DA251D"/><polygon points="15,4.2 16.4,8.5 20.9,8.5 17.3,11.2 18.6,15.5 15,12.9 11.4,15.5 12.7,11.2 9.1,8.5 13.6,8.5" fill="#FFCD00"/>',
+ TH:'<rect width="30" height="20" fill="#A51931"/><rect y="3.33" width="30" height="13.34" fill="#F4F5F8"/><rect y="6.67" width="30" height="6.66" fill="#2D2A4A"/>',
+ PH:'<rect width="30" height="10" fill="#0038A8"/><rect y="10" width="30" height="10" fill="#CE1126"/><polygon points="0,0 17.3,10 0,20" fill="#fff"/><circle cx="6" cy="10" r="2.4" fill="#FCD116"/>',
+ MY:'<rect width="30" height="20" fill="#fff"/>'+Array.from({length:7},(_,i)=>'<rect y="'+(i*2*20/14).toFixed(2)+'" width="30" height="'+(20/14).toFixed(2)+'" fill="#CC0001"/>').join('')+'<rect width="15" height="11.43" fill="#010066"/><circle cx="6" cy="5.7" r="3.6" fill="#FFCC00"/><circle cx="7.1" cy="5.7" r="3.1" fill="#010066"/><polygon points="11,3.3 11.6,5 13.4,5 12,6.1 12.5,7.8 11,6.8 9.5,7.8 10,6.1 8.6,5 10.4,5" fill="#FFCC00"/>',
+ KR:'<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="5" fill="#003478"/><path d="M10 10 A5 5 0 0 1 20 10 A2.5 2.5 0 0 1 15 10 A2.5 2.5 0 0 0 10 10Z" fill="#C60C30"/><g fill="#000"><rect x="4" y="3" width="5" height=".9" transform="rotate(34 6.5 4)"/><rect x="4" y="4.6" width="5" height=".9" transform="rotate(34 6.5 5)"/><rect x="21" y="3" width="5" height=".9" transform="rotate(-34 23.5 4)"/><rect x="21" y="4.6" width="5" height=".9" transform="rotate(-34 23.5 5)"/><rect x="4" y="15" width="5" height=".9" transform="rotate(-34 6.5 16)"/><rect x="4" y="16.6" width="5" height=".9" transform="rotate(-34 6.5 17)"/><rect x="21" y="15" width="5" height=".9" transform="rotate(34 23.5 16)"/><rect x="21" y="16.6" width="5" height=".9" transform="rotate(34 23.5 17)"/></g>',
+ ES:'<rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/>',
+ TW:'<rect width="30" height="20" fill="#FE0000"/><rect width="15" height="10" fill="#000095"/><circle cx="7.5" cy="5" r="3.4" fill="#fff"/><circle cx="7.5" cy="5" r="1.9" fill="#000095"/><circle cx="7.5" cy="5" r="1.6" fill="#fff"/>',
+ PL:'<rect width="30" height="10" fill="#fff"/><rect y="10" width="30" height="10" fill="#DC143C"/>',
+ IE:'<rect width="10" height="20" fill="#169B62"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#FF883E"/>',
+ IN:'<rect width="30" height="6.67" fill="#FF9933"/><rect y="6.67" width="30" height="6.66" fill="#fff"/><rect y="13.33" width="30" height="6.67" fill="#138808"/><circle cx="15" cy="10" r="2.4" fill="none" stroke="#000080" stroke-width=".6"/>'
+};
+const SK=['#E9B98F','#D9A27A','#C88A62','#B97A54'];
+function person(o){o=o||{};const sk=o.sk||SK[0],c=o.c||'#7A8FB5',x=[];
+ x.push('<svg viewBox="0 0 60 92" aria-hidden="true">');
+ x.push('<ellipse cx="30" cy="89" rx="16" ry="3" fill="rgba(0,0,0,.08)"/>');
+ x.push('<rect x="21" y="64" width="7" height="24" rx="3.5" fill="'+(o.leg||'#4A3B30')+'"/><rect x="32" y="64" width="7" height="24" rx="3.5" fill="'+(o.leg||'#4A3B30')+'"/>');
+ x.push('<path d="M16 40 Q16 30 30 30 Q44 30 44 40 L44 68 Q30 72 16 68 Z" fill="'+c+'"/>');
+ if(o.arm==='up')x.push('<rect x="41" y="14" width="6" height="26" rx="3" fill="'+c+'" transform="rotate(14 44 38)"/><circle cx="50" cy="13" r="3.5" fill="'+sk+'"/>');
+ else x.push('<rect x="40" y="36" width="6" height="24" rx="3" fill="'+c+'" transform="rotate(-8 43 36)"/>');
+ x.push('<rect x="14" y="36" width="6" height="24" rx="3" fill="'+c+'" transform="rotate(8 17 36)"/>');
+ x.push('<circle cx="30" cy="20" r="10" fill="'+sk+'"/>');
+ x.push('<path d="M20 18 Q22 8 30 8 Q38 8 40 18 Q35 13 30 14 Q25 13 20 18Z" fill="'+(o.hair||'#2A1E17')+'"/>');
+ if(o.hat==='nurse')x.push('<path d="M21 13 L39 13 L37 6 L23 6 Z" fill="#fff" stroke="#E2D6C8" stroke-width=".8"/><rect x="28.6" y="7.2" width="2.8" height="4.6" fill="#D63A2A"/><rect x="27.7" y="8.1" width="4.6" height="2.8" fill="#D63A2A"/>');
+ if(o.hat==='helm')x.push('<path d="M18 17 Q18 6 30 6 Q42 6 42 17 Z" fill="#F2B21B"/><rect x="16" y="16" width="28" height="3" rx="1.5" fill="#D99A0A"/><circle cx="30" cy="11" r="2.6" fill="#FFF3B0"/><path d="M30 11 L14 2 L12 8 Z" fill="rgba(255,240,160,.55)"/>');
+ if(o.hat==='cap')x.push('<path d="M19 15 Q20 7 30 7 Q40 7 41 15 Z" fill="'+(o.hc||'#3A5A8C')+'"/><rect x="38" y="13" width="10" height="2.6" rx="1.3" fill="'+(o.hc||'#3A5A8C')+'"/>');
+ if(o.hat==='straw')x.push('<path d="M12 15 L30 3 L48 15 Z" fill="#E3C27A" stroke="#C9A55A" stroke-width=".8"/>');
+ x.push('<circle cx="26.5" cy="21" r="1.1" fill="#2A1E17"/><circle cx="33.5" cy="21" r="1.1" fill="#2A1E17"/><path d="M26.5 25 Q30 27.5 33.5 25" stroke="#2A1E17" stroke-width="1.1" fill="none" stroke-linecap="round"/>');
+ if(o.item==='ring')x.push('<circle cx="50" cy="8" r="4.2" fill="none" stroke="#E3A21A" stroke-width="2"/><circle cx="50" cy="3.6" r="1.6" fill="#FFF3B0"/>');
+ if(o.item==='pick')x.push('<rect x="44" y="40" width="3" height="26" rx="1.5" fill="#8E6B4A" transform="rotate(-20 45 52)"/><path d="M38 40 Q46 34 56 40" stroke="#7A7A7A" stroke-width="3" fill="none" stroke-linecap="round"/>');
+ if(o.item==='bag')x.push('<rect x="44" y="58" width="14" height="18" rx="3" fill="#8E5A3A"/><rect x="48" y="55" width="6" height="4" rx="1.5" fill="none" stroke="#6E4428" stroke-width="1.5"/>');
+ if(o.item==='basket')x.push('<path d="M42 58 L58 58 L55 70 L45 70 Z" fill="none" stroke="#9A7B55" stroke-width="2"/><path d="M45 58 Q50 50 55 58" stroke="#9A7B55" stroke-width="2" fill="none"/>');
+ if(o.item==='sign')x.push('<rect x="46" y="2" width="2.5" height="36" fill="#8E6B4A"/><rect x="38" y="2" width="20" height="13" rx="2" fill="#fff" stroke="#D63A2A" stroke-width="1.2"/><rect x="41" y="6" width="14" height="1.6" fill="#D63A2A"/><rect x="41" y="9.5" width="10" height="1.6" fill="#D63A2A"/>');
+ if(o.item==='rice')x.push('<path d="M46 66 Q50 50 54 40 M50 66 Q54 52 58 44 M42 66 Q44 54 48 46" stroke="#5FA24A" stroke-width="2" fill="none" stroke-linecap="round"/>');
+ if(o.item==='heart')x.push('<path d="M50 14 C46 9 41 13 44 17 L50 23 L56 17 C59 13 54 9 50 14Z" fill="#D63A2A"/>');
+ if(o.item==='wrench')x.push('<rect x="44" y="40" width="3.4" height="22" rx="1.7" fill="#8C96A3" transform="rotate(-25 46 50)"/><circle cx="50" cy="40" r="4" fill="none" stroke="#8C96A3" stroke-width="3"/>');
+ x.push('</svg>');return x.join('');}
+const PPL={nurseMiner:[{c:'#F4F4F4',hat:'nurse',sk:SK[0],leg:'#DDD'},{c:'#55606E',hat:'helm',item:'pick',sk:SK[1]}],ring:[{c:'#C2560F',arm:'up',item:'ring',sk:SK[0],hair:'#3A2A20'},{c:'#7A8FB5',arm:'up',item:'ring',sk:SK[1]}],worker:[{c:'#3A5A8C',hat:'cap',item:'sign',sk:SK[1]},{c:'#8C3A3A',hat:'cap',hc:'#5A2A2A',sk:SK[2]}],farmer:[{c:'#5E8C4A',hat:'straw',item:'rice',sk:SK[2]}],shopper:[{c:'#8A7FA8',item:'basket',sk:SK[0],hair:'#7A5A3A'},{c:'#6E7F8A',hat:'cap',hc:'#4A4A5A',sk:SK[0]}],emigrant:[{c:'#3E7A5A',hat:'cap',hc:'#2E4A3A',item:'bag',sk:SK[0],hair:'#A0522D'}],kerja:[{c:'#0E8F6C',hat:'helm',item:'wrench',sk:SK[1]}],lobi:[{c:'#3A3A4A',item:'heart',sk:SK[0],hair:'#555'}]};
+document.querySelectorAll('[data-ppl]').forEach(el=>{const L=PPL[el.dataset.ppl];if(L)el.innerHTML=L.map(person).join('');});
+document.querySelectorAll('[data-flag]').forEach(el=>{const f=FL[el.dataset.flag];if(f)el.innerHTML='<svg viewBox="0 0 30 20" preserveAspectRatio="none" role="img" aria-label="bendera">'+f+'</svg>';});
+const NM={Indonesia:'ID',Vietnam:'VN',Malaysia:'MY',Thailand:'TH',Filipina:'PH'};
+document.querySelectorAll('.rb .rn').forEach(el=>{const c=NM[el.textContent.trim()];if(c&&FL[c])el.insertAdjacentHTML('afterbegin','<svg viewBox="0 0 30 20" preserveAspectRatio="none" aria-hidden="true">'+FL[c]+'</svg>');});
+const box=document.getElementById('flBox');document.querySelectorAll('.fl-sw button').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.m;box.classList.remove('k','d');void box.offsetWidth;box.classList.add(m);document.querySelectorAll('.fl-sw button').forEach(x=>x.className=x.dataset.m===m?('on-'+m):'');}));
+try{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.35});document.querySelectorAll('.vz,.min8').forEach(v=>io.observe(v));}catch(e){document.querySelectorAll('.vz,.min8').forEach(v=>v.classList.add('in'));}
 })();
 </script>
