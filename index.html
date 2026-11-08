@@ -573,19 +573,6 @@ mark.tegas{background:linear-gradient(transparent 50%,rgba(255,150,40,.6) 50%);c
 .use b{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .use p{margin:0;font-size:14px;line-height:1.5}
 @media (max-width:640px){.use div{grid-template-columns:1fr;gap:2px}}
-.gauntlet .hai{font:800 clamp(34px,6vw,58px)/1.05 var(--display);margin:4px 0 6px;background:linear-gradient(90deg,#7A3CC2,var(--accent) 60%,#C98A00);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 6px 14px rgba(194,86,15,.2))}
-@supports not ((-webkit-background-clip:text) or (background-clip:text)){.gauntlet .hai{background:none;color:var(--accent);-webkit-text-fill-color:currentColor}}
-.gauntlet mark{background:linear-gradient(transparent 55%,rgba(255,170,60,.55) 55%);color:inherit;padding:0 2px}
-.snap{list-style:none;counter-reset:sn;margin:14px 0;padding:0;display:flex;flex-direction:column;gap:10px;max-width:760px}
-.snap li{counter-increment:sn;position:relative;display:flex;flex-direction:column;gap:2px;padding:14px 16px 14px 56px;border-radius:16px;background:var(--paper);border:1.5px solid var(--line);box-shadow:0 10px 26px -22px rgba(120,60,20,.5);transition:opacity 1.1s ease,filter 1.1s ease,transform 1.1s ease,letter-spacing 1.1s ease}
-.snap li::before{content:counter(sn);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:#7A3CC2;color:#fff;font:700 14px/28px var(--body);text-align:center}
-.snap li b{font:700 17px var(--display)}
-.snap li span{font-size:14.5px;color:var(--muted)}
-.snap li.dust{opacity:0;filter:blur(6px);transform:translate(40px,-14px) scale(.96);letter-spacing:.12em}
-.snapbtn{align-self:flex-start;font:700 15px var(--body);border:0;border-radius:999px;padding:12px 20px;background:linear-gradient(90deg,#7A3CC2,#C98A00);color:#fff;cursor:pointer;box-shadow:0 10px 24px -12px rgba(122,60,194,.6);transition:transform .4s cubic-bezier(.34,1.8,.5,1)}
-.snapbtn:hover{transform:translateY(-2px)}
-.snapline{font:600 clamp(18px,2.4vw,22px)/1.4 var(--display)}
-@media (prefers-reduced-motion:reduce){.snap li{transition:none}}
 /* micro-motion angka & judul */
 .eng b,.kc b,.o b,.lx-hud b,.lb .v,.lx-st b{display:inline-block;transform-origin:50% 70%;transition:transform .5s cubic-bezier(.34,1.9,.5,1),text-shadow .3s;
   text-shadow:0 1px 0 rgba(255,255,255,.95),0 2px 2px rgba(120,70,20,.14),0 8px 18px rgba(194,86,15,.18);cursor:default}
@@ -623,7 +610,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     <div class="kicker">Simulasi skenario · 2025–2050</div>
     <h1>What if <em>Indonesia</em>?</h1>
     <p class="lead">Satu rantai pertanyaan. <b>Kenapa ekonomi tumbuh 5% dan tidak beranjak dari situ? Apa yang membocorkannya? Apa yang sudah dilakukan untuk menambalnya? Tuas mana yang paling menentukan?</b> Dan kalau tuas itu digerakkan ke arah berbeda, Indonesia sampai di mana pada 2050?</p>
-    <nav class="route" aria-label="Alur halaman"><a href="#pembuka">0 Pembuka</a><i>→</i><a href="#latar">1 Premis</a><i>→</i><a href="#boros">2 Mobil boros</a><i>→</i><a href="#tangki">3 Tangki bocor</a><i>→</i><a href="#bayan">4 Kasus Bayan</a><i>→</i><a href="#punchline">5 Punchline</a><i>→</i><a href="#tagihan">6 Tagihan</a><i>→</i><a href="#dicoba">7 Yang dicoba</a><i>→</i><a href="#simulator">8 What if</a><i>→</i><a href="#penutup">9 Penutup &amp; kesimpulan</a><i>→</i><a href="#kejepit">10 Yang paling kejepit</a><i>→</i><a href="#mereka">11 Cermin</a><i>→</i><a href="#chaos">12 Pilihan</a><i>→</i><a href="#catatan">13 Catatan pribadi</a><i>·</i><a href="#ruang">Ruang mesin</a></nav>
+    <nav class="route" aria-label="Alur halaman"><a href="#latar">1 Premis</a><i>→</i><a href="#boros">2 Mobil boros</a><i>→</i><a href="#tangki">3 Tangki bocor</a><i>→</i><a href="#bayan">4 Kasus Bayan</a><i>→</i><a href="#punchline">5 Punchline</a><i>→</i><a href="#tagihan">6 Tagihan</a><i>→</i><a href="#dicoba">7 Yang dicoba</a><i>→</i><a href="#simulator">8 What if</a><i>→</i><a href="#penutup">9 Penutup &amp; kesimpulan</a><i>→</i><a href="#kejepit">10 Yang paling kejepit</a><i>→</i><a href="#mereka">11 Cermin</a><i>→</i><a href="#chaos">12 Pilihan</a><i>→</i><a href="#catatan">13 Catatan pribadi</a><i>·</i><a href="#ruang">Ruang mesin</a></nav>
   </header>
 
   <!-- 1 MESIN -->
@@ -658,33 +645,6 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
   <!-- RUMUS -->
 
 
-
-  <section class="sec gauntlet" id="pembuka">
-    <div class="num">00 · PEMBUKA</div>
-    <p class="hai">Hai, gua Bina.</p>
-    <div class="prose">
-      <p class="lead">Dengan kebijaksanaan gua yang sekarang, gua rasa gua udah kelamaan marah sama negara ini tanpa pernah ngukur apa pun. Jadi kali ini gua mau mulai dari yang gila dulu.</p>
-      <p><b>Bayangin gua pegang Infinity Gauntlet.</b> Satu jentikan. Ada ±280 juta orang di bumi pertiwi. Thanos punya jawaban gampang: sumber daya terbatas, jadi separuh harus hilang biar sisanya sejahtera.</p>
-      <p>Jujur, gua sempat mikir gitu juga. Terus gua buka datanya, dan datanya ngetawain gua.</p>
-      <p>Indonesia gak kekurangan apa-apa. Tiap tahun kita nuang <b>28,77% PDB</b> ke investasi, lebih banyak dari banyak tetangga. Masalahnya bukan kebanyakan orang. <mark>Masalahnya duitnya ngalir ke mana.</mark></p>
-      <p>Jadi kalau gua jentikkan jari, <b>yang gua hapus bukan manusia</b>. Yang gua hapus ini, diurutkan dari yang paling mahal:</p>
-    </div>
-    <ol class="snap" id="snapList">
-      <li><b>Pajak yang sengaja gak dibayar</b><span>±Rp547 T per tahun</span></li>
-      <li><b>Mesin yang boros</b><span>±Rp305 T output hilang tiap tahun, karena ICOR kita 5,6, bukan 4,5</span></li>
-      <li><b>Premi risiko buatan sendiri</b><span>tiap naik 1 poin, ±Rp96 T bunga utang per tahun, dibayar dari pajak lu</span></li>
-      <li><b>Izin yang dijual</b><span>Rp50–200 juta per lembar</span></li>
-    </ol>
-    <button type="button" class="snapbtn" id="snapBtn">✊ Jentikkan jari</button>
-    <div class="prose">
-      <p class="snapline">Thanos ngejentik setengah. Gua ngejentik semuanya, karena yang ini gak punya keluarga yang bakal nangis.</p>
-    </div>
-    <div class="punch"><mark>Gak ada satu orang pun yang perlu hilang.</mark> Yang perlu hilang cuma satu: keran yang dibagi lewat kedekatan.</div>
-    <div class="prose">
-      <p>Masalahnya, gua gak punya Gauntlet. Lu juga enggak. Jadi kita pakai satu-satunya senjata yang ada: <b>ngukur.</b></p>
-    </div>
-    <p class="fine">Rp547 T: bagian ketidakpatuhan dari celah pajak, rata-rata 2016–2021 (Bank Dunia). Rp305 T: output yang hilang dari selisih ICOR 5,6 vs 4,5 (hitungan di Ruang mesin). Rp96 T: hitungan kasar efek kenaikan imbal hasil SBN 1 poin. Rp50–200 juta: dugaan dalam kasus Kepala Dinas ESDM Jawa Timur, status tersangka. Rp547 T adalah uang yang pindah tangan; Rp305 T adalah output yang benar-benar hilang.</p>
-  </section>
 
   <section class="sec story" id="latar">
     <div class="num">01 · PREMIS</div>
@@ -2475,9 +2435,4 @@ try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);}
   btn.addEventListener('click',()=>{try{on?stop():start();}catch(e){lab.textContent='Audio tidak didukung';}});
   document.addEventListener('visibilitychange',()=>{if(!ctx)return;if(document.hidden&&on)ctx.suspend();else if(!document.hidden&&on)ctx.resume();});
 })();
-</script>
-
-<script>
-(function(){const b=document.getElementById('snapBtn'),items=[...document.querySelectorAll('#snapList li')];if(!b)return;let done=false;
-b.addEventListener('click',()=>{if(!done){items.forEach((li,i)=>setTimeout(()=>li.classList.add('dust'),i*450));done=true;setTimeout(()=>{b.textContent='↺ Kembalikan';},items.length*450+600);}else{items.forEach(li=>li.classList.remove('dust'));done=false;b.textContent='✊ Jentikkan jari';}});})();
 </script>
