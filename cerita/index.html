@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What If Indonesia: Cerita Lengkap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#FBF5EC;--paper:#FFFDF9;--ink:#2A1E17;--muted:#76675B;--line:#EADCC8;--accent:#C2560F;--accent-soft:#FDEBDC;--good:#0E8F6C;--good-soft:#DDF3EA;--bad:#D63A2A;--bad-soft:#FDE4DF;--warn:#C98A00;--neutral:#A3968A;
+--disp:'Fraunces',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'DM Mono',ui-monospace,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#FBF5EC;--paper:#FFFDF9;--ink:#2A1E17}}
+:root[data-theme="dark"]{--bg:#FBF5EC;--paper:#FFFDF9;--ink:#2A1E17}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--body);overflow-x:hidden;min-height:100vh}
+/* ===== latar yang berubah mengikuti suasana ===== */
+.moods{position:fixed;inset:0;z-index:0;pointer-events:none}
+.moods i{position:absolute;inset:-10%;opacity:0;transition:opacity 1.6s ease}
+body[data-mood="calm"] .m-calm,body[data-mood="curious"] .m-curious,body[data-mood="tense"] .m-tense,body[data-mood="intense"] .m-intense,body[data-mood="hope"] .m-hope,body[data-mood="heavy"] .m-heavy,body[data-mood="inspire"] .m-inspire,body[data-mood="dramatic"] .m-dramatic,body[data-mood="philo"] .m-philo{opacity:1}
+.m-calm{background:radial-gradient(45% 40% at 12% 10%,rgba(255,181,165,.5),transparent 70%),radial-gradient(45% 40% at 90% 12%,rgba(255,216,160,.55),transparent 70%),radial-gradient(55% 50% at 80% 95%,rgba(168,230,207,.45),transparent 70%)}
+.m-curious{background:radial-gradient(45% 45% at 15% 15%,rgba(170,200,255,.5),transparent 70%),radial-gradient(40% 40% at 88% 20%,rgba(255,214,150,.55),transparent 70%),radial-gradient(50% 50% at 60% 100%,rgba(205,180,255,.4),transparent 70%)}
+.m-tense{background:radial-gradient(50% 45% at 10% 20%,rgba(255,180,90,.55),transparent 70%),radial-gradient(45% 45% at 92% 70%,rgba(255,140,110,.45),transparent 70%),radial-gradient(40% 40% at 50% 0%,rgba(255,225,150,.5),transparent 70%);animation:breathe 4s ease-in-out infinite}
+.m-intense{background:radial-gradient(55% 50% at 50% 50%,rgba(255,120,90,.42),transparent 70%),radial-gradient(45% 45% at 5% 5%,rgba(255,80,60,.4),transparent 70%),radial-gradient(45% 45% at 95% 95%,rgba(255,170,60,.5),transparent 70%),#FFF1EA;animation:breathe 1.1s ease-in-out infinite}
+.m-hope{background:radial-gradient(50% 45% at 15% 85%,rgba(120,220,180,.5),transparent 70%),radial-gradient(45% 45% at 85% 15%,rgba(150,215,255,.5),transparent 70%),radial-gradient(40% 40% at 50% 50%,rgba(255,240,170,.45),transparent 70%)}
+.m-heavy{background:radial-gradient(55% 50% at 50% 0%,rgba(205,180,170,.55),transparent 70%),radial-gradient(45% 45% at 0% 100%,rgba(190,170,200,.45),transparent 70%),#F6EFE8}
+.m-inspire{background:radial-gradient(60% 45% at 50% 100%,rgba(255,200,90,.6),transparent 70%),radial-gradient(40% 40% at 10% 10%,rgba(255,160,140,.45),transparent 70%),radial-gradient(40% 40% at 90% 15%,rgba(140,210,255,.4),transparent 70%)}
+.m-dramatic{background:radial-gradient(50% 50% at 0% 50%,rgba(255,110,90,.45),transparent 70%),radial-gradient(50% 50% at 100% 50%,rgba(150,130,255,.42),transparent 70%),radial-gradient(40% 30% at 50% 0%,rgba(255,215,140,.5),transparent 70%),#FFF6EE;animation:breathe 2.2s ease-in-out infinite}
+.m-philo{background:radial-gradient(60% 50% at 50% 30%,rgba(220,205,255,.5),transparent 70%),radial-gradient(45% 45% at 10% 90%,rgba(255,220,190,.5),transparent 70%),#FCF8F3}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+canvas#sky{position:fixed;inset:0;z-index:0;pointer-events:none}
+.flash{position:fixed;inset:0;z-index:5;pointer-events:none;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.9),rgba(255,200,150,.35) 40%,transparent 70%);opacity:0}
+.flash.go{animation:flash .7s ease-out}
+@keyframes flash{0%{opacity:.9}100%{opacity:0}}
+.app{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:16px 16px 0;min-height:100vh;display:flex;flex-direction:column}
+header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:10px 18px;flex-wrap:wrap}
+.brand{font:700 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.brand b{font:700 21px var(--disp);letter-spacing:0;word-spacing:.04em;text-transform:none;color:var(--ink);display:block}
+.chap{flex:1;min-width:260px;max-width:560px}
+.chap-now{font:600 13px var(--body);color:var(--muted);margin-bottom:6px;display:flex;justify-content:space-between;gap:8px}
+.chap-now b{color:var(--ink)}
+.segs{display:grid;grid-template-columns:repeat(13,1fr);gap:4px}
+.segs button{height:22px;border:0;background:none;padding:8px 0;cursor:pointer;position:relative}
+.segs button i{position:absolute;left:0;right:0;top:8px;height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.segs button i::after{content:"";position:absolute;inset:0;width:var(--p,0%);background:var(--accent);transition:width .4s}
+.segs button[aria-current="true"] i{box-shadow:0 0 0 2px var(--accent-soft)}
+.segs button:hover i{background:#E2CFB6}
+.stage{flex:1;position:relative;margin-top:14px}
+.stage.shake{animation:shake .5s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px) rotate(-.3deg)}40%,60%{transform:translateX(7px) rotate(.3deg)}}
+.scene{display:none;flex-direction:column;gap:14px;padding-bottom:10px}
+.scene>*{flex-shrink:0}
+.scene.on{display:flex;animation:sceneIn .8s cubic-bezier(.2,.9,.3,1)}
+@keyframes sceneIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.kick{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.scene h2{font:700 clamp(30px,5vw,54px)/1.08 var(--disp);letter-spacing:0;word-spacing:.03em;margin:0;text-shadow:0 1px 0 #fff,0 10px 26px rgba(194,86,15,.14)}
+[data-s]{opacity:0;transform:translateY(14px) scale(.97);transition:opacity .6s,transform .75s cubic-bezier(.34,1.56,.64,1)}
+[data-s].in{opacity:1;transform:none}
+[data-s].hot{animation:hot 1.2s ease-out}
+@keyframes hot{0%{box-shadow:0 0 0 0 rgba(214,58,42,.45)}100%{box-shadow:0 0 0 18px rgba(214,58,42,0)}}
+.card{background:rgba(255,253,249,.9);border:1.5px solid var(--line);border-radius:20px;padding:16px 18px;box-shadow:0 12px 30px -22px rgba(120,60,20,.45)}
+.card h3{font:700 19px/1.25 var(--disp);margin:0 0 4px}
+.card p{margin:6px 0 0;font-size:14.5px;color:var(--muted)}
+.big{font:700 clamp(28px,4.4vw,46px)/1 var(--disp);color:var(--accent);font-variant-numeric:lining-nums tabular-nums;text-shadow:0 1px 0 #fff,0 8px 18px rgba(194,86,15,.18)}
+.big.red{color:var(--bad)}.big.green{color:var(--good)}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.punch{font:700 clamp(24px,3.8vw,40px)/1.2 var(--disp);padding:18px 22px;border-radius:22px;background:linear-gradient(120deg,#FFE6D9,#FFF4E2 55%,#E2F5EC);border:1.5px solid #F3D3BF;max-width:860px;text-shadow:0 1px 0 #fff,0 6px 16px rgba(194,86,15,.14)}
+.punch mark,.quote mark{background:linear-gradient(transparent 55%,rgba(255,170,60,.55) 55%);color:inherit;padding:0 2px}
+.quote{font:600 clamp(20px,3vw,31px)/1.35 var(--disp);max-width:860px;margin:0}
+.fine{font-size:12.5px;color:var(--muted);margin:0}
+.cf{display:inline-block;font:700 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;vertical-align:middle;white-space:nowrap}
+.cf.hi{background:var(--good-soft);color:var(--good)}.cf.md{background:#FFF1CC;color:#8A6200}.cf.lo{background:var(--bad-soft);color:var(--bad)}
+.src{font-size:11.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+/* bab 1 */
+.big5{font:800 clamp(120px,22vw,250px)/.9 var(--disp);color:var(--accent);text-align:center;letter-spacing:-.02em;text-shadow:0 2px 0 #fff,0 24px 50px rgba(194,86,15,.28);animation:pulse5 2.6s ease-in-out infinite}
+@keyframes pulse5{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+.years{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;align-items:end;height:150px;padding:10px 4px 0}
+.years div{display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end;font:600 11px var(--mono);color:var(--muted)}
+.years div b{font:700 12px var(--mono);color:var(--ink)}
+.years div i{display:block;width:100%;max-width:34px;border-radius:8px 8px 3px 3px;background:linear-gradient(var(--accent),#E8955A);height:0;transition:height 1s cubic-bezier(.2,.9,.3,1)}
+.years div.neg i{background:var(--bad);opacity:.55}
+.in .years div i{height:var(--h)}
+/* bab 2 */
+.road{position:relative;height:70px;border-radius:999px;background:linear-gradient(90deg,#F3E6D5,#FBF1E4);overflow:hidden;border:1.5px solid var(--line)}
+.road::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:repeating-linear-gradient(90deg,#D9C6AE 0 18px,transparent 18px 34px);animation:lane 1.2s linear infinite}
+@keyframes lane{to{background-position:-34px 0}}
+.car{position:absolute;top:12px;left:4%;width:86px;height:44px;animation:drive 9s ease-in-out infinite alternate;z-index:1}
+@keyframes drive{0%{left:4%}100%{left:calc(96% - 86px)}}
+.puff{position:absolute;bottom:14px;width:12px;height:12px;border-radius:50%;background:rgba(122,106,94,.35);animation:puff 1.1s ease-out infinite}
+@keyframes puff{0%{transform:scale(.4);opacity:.8}100%{transform:translate(-26px,-10px) scale(2.2);opacity:0}}
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:30px 88px 1fr 66px;gap:10px;align-items:center;font-size:14px}
+.bar svg{width:30px;height:20px;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.bar .t{height:14px;border-radius:999px;background:#F1E6D8;position:relative;overflow:hidden}
+.bar .t i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:var(--neutral);transition:width 1.2s cubic-bezier(.2,.9,.3,1)}
+.in .bar .t i,.bar.in .t i{width:var(--w)}
+.bar.id .t i{background:linear-gradient(90deg,var(--warn),var(--bad))}
+.bar.id span{color:var(--bad);font-weight:800}
+.bar b{font:700 13px var(--mono);text-align:right}
+.slide{display:flex;flex-direction:column;gap:8px}
+.slide input[type=range]{width:100%;accent-color:var(--accent);height:28px}
+.slide .out{display:flex;gap:18px;flex-wrap:wrap;align-items:baseline}
+.slide .out b{font:700 34px var(--disp);color:var(--accent)}
+.gauge{display:flex;align-items:center;gap:10px;font:600 13px var(--body);color:var(--muted)}
+.gauge .tank{flex:1;height:16px;border-radius:999px;background:#F1E6D8;overflow:hidden;position:relative}
+.gauge .tank i{position:absolute;inset:0 auto 0 0;width:var(--f,28.77%);background:linear-gradient(90deg,#F2B04A,var(--accent));border-radius:999px;transition:width .5s}
+/* bab 3 */
+.leak{position:relative;height:120px;display:flex;align-items:flex-end;justify-content:center}
+.leak svg{height:120px}
+.drip{position:absolute;width:9px;height:12px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#E8955A;animation:drip 1.4s ease-in infinite;opacity:0}
+@keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(60px);opacity:0}}
+.dots{display:grid;grid-template-columns:repeat(20,1fr);gap:4px;max-width:380px}
+.dots i{aspect-ratio:1;border-radius:3px;background:var(--bad-soft);transition:background .5s}
+.in .dots i.g{background:var(--good);box-shadow:0 0 0 2px var(--good-soft)}
+.trio{counter-reset:t}
+.trio .card{position:relative;padding-left:58px}
+.trio .card::before{counter-increment:t;content:counter(t);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font:700 15px/30px var(--disp);text-align:center}
+/* bab 4 */
+.cmp{display:flex;flex-direction:column;gap:8px}
+.cmpr{display:grid;grid-template-columns:130px 1fr 60px;gap:10px;align-items:center;font-size:14px}
+.cmpr .t{height:22px;border-radius:8px;background:#F1E6D8;position:relative;overflow:hidden}
+.cmpr .t i{position:absolute;inset:0 auto 0 0;width:0;border-radius:8px;transition:width 1.2s cubic-bezier(.2,.9,.3,1)}
+.in .cmpr .t i{width:var(--w)}
+.cmpr b{font:700 14px var(--mono);text-align:right}
+.tl{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--line);margin-left:8px}
+.tl div{position:relative;padding:6px 0 10px 20px}
+.tl div::before{content:"";position:absolute;left:-9px;top:10px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--accent)}
+.tl div.in::before{background:var(--accent);animation:hot 1.2s}
+.tl time{font:700 12px var(--mono);color:var(--accent);display:block}
+.tl p{margin:2px 0 0;font-size:15px}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+.pcol{display:flex;flex-direction:column;align-items:center;gap:6px}
+.pcol .col{width:72%;max-width:150px;border-radius:12px 12px 4px 4px;height:0;transition:height 1.4s cubic-bezier(.2,.9,.3,1)}
+.in .pcol .col{height:var(--h)}
+.pcol b{font:700 22px var(--disp)}
+.pcol span{font-size:12.5px;color:var(--muted);text-align:center}
+.net{width:100%;height:auto;max-height:360px}
+.net line{stroke:#D9B79B;stroke-width:2;stroke-dasharray:6 5}
+.net .nd rect{fill:#fff;stroke:var(--line);stroke-width:1.5}
+.net .nd.c rect{fill:#FDE4DF;stroke:#F1B3A8}
+.net .nd.b rect{fill:#DDF3EA;stroke:#9ED8C2}
+.net text{font:600 12px var(--body);fill:var(--ink)}
+.net text.s{font:500 10.5px var(--body);fill:var(--muted)}
+.net .nd{opacity:0;transition:opacity .6s}
+.in .net .nd{opacity:1}
+.in .net .nd:nth-of-type(2){transition-delay:.2s}.in .net .nd:nth-of-type(3){transition-delay:.4s}.in .net .nd:nth-of-type(4){transition-delay:.6s}.in .net .nd:nth-of-type(5){transition-delay:.8s}.in .net .nd:nth-of-type(6){transition-delay:1s}
+.in .net line{animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.notacc{background:#FFF7E0;border:1.5px solid #F2DA9A;border-radius:18px;padding:14px 18px;font-size:15px}
+.notacc b{font:700 17px var(--disp)}
+.netlist{display:none;list-style:none;margin:6px 0 0;padding:0;flex-direction:column;gap:6px}
+.netlist li{border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff;font-size:13.5px;position:relative;margin-left:14px}
+.netlist li::before{content:"";position:absolute;left:-14px;top:50%;width:12px;border-top:2px dashed #D9B79B}
+.netlist li.c{margin-left:0;background:#FDE4DF;border-color:#F1B3A8}.netlist li.c::before{display:none}
+.netlist li.b{background:#DDF3EA;border-color:#9ED8C2}
+.netlist b{display:block;font:700 14px var(--body)}.netlist span{color:var(--muted);font-size:12.5px}
+/* bab 5 */
+.switch{display:flex;gap:0;border-radius:999px;background:#F1E6D8;padding:5px;width:max-content;max-width:100%}
+.switch button{border:0;background:none;font:700 15px var(--body);padding:10px 20px;border-radius:999px;cursor:pointer;color:var(--muted);transition:background .35s,color .35s}
+.switch button.on-k{background:var(--good);color:#fff}.switch button.on-d{background:var(--bad);color:#fff}
+.flow{position:relative;height:190px;border-radius:20px;background:rgba(255,253,249,.85);border:1.5px solid var(--line);overflow:hidden}
+.flow .tap{position:absolute;left:50%;top:10px;transform:translateX(-50%);text-align:center;font:700 13px var(--body)}
+.flow .tap svg{width:64px;height:48px;display:block;margin:0 auto}
+.flow .who{position:absolute;bottom:12px;width:130px;text-align:center;font:600 13px var(--body);transition:transform .5s,opacity .5s}
+.flow .who svg{width:56px;height:76px;display:block;margin:0 auto}
+.flow .wk{left:10%}.flow .wd{right:10%}
+.flow .who.win{transform:scale(1.12)}.flow .who.lose{opacity:.4}
+.coin{position:absolute;top:58px;left:50%;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE89A,#E3A21A);box-shadow:0 1px 2px rgba(0,0,0,.2);opacity:0}
+.flow.k .coin{animation:coinK 1.6s ease-in infinite}
+.flow.d .coin{animation:coinD 1.6s ease-in infinite}
+@keyframes coinK{0%{opacity:0;transform:translate(-8px,0)}10%{opacity:1}100%{opacity:.9;transform:translate(calc(-1 * min(28vw,320px)),70px)}}
+@keyframes coinD{0%{opacity:0;transform:translate(-8px,0)}10%{opacity:1}100%{opacity:.9;transform:translate(min(28vw,320px),70px)}}
+.pisa{display:flex;flex-direction:column;gap:8px}
+/* bab 6 */
+.crash{width:100%;height:auto;max-height:230px}
+.crash polyline{fill:none;stroke:var(--bad);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.4s ease-in}
+.in .crash polyline{stroke-dashoffset:0}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{background:rgba(255,253,249,.92);border:1.5px solid var(--line);border-radius:16px;padding:10px 14px;min-width:150px;flex:1}
+.chip b{font:700 24px var(--disp);color:var(--bad);display:block}
+.chip span{font-size:13px;color:var(--muted)}
+.layers{display:flex;flex-direction:column;gap:6px}
+.layers div{border-radius:14px;padding:10px 14px;font-size:14.5px}
+.layers .l1{background:#EEF1F8}.layers .l2{background:var(--bad-soft);border:1.5px dashed #EFA496}
+/* bab 7 */
+.pol .card{display:flex;flex-direction:column;gap:4px}
+.pol time{font:700 12px var(--mono);color:var(--accent)}
+.nik{display:flex;gap:10px;align-items:flex-end;height:110px;margin-top:6px}
+.nik div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font:600 12px var(--mono);gap:4px}
+.nik i{width:60%;max-width:46px;border-radius:8px 8px 3px 3px;background:var(--good);height:0;transition:height 1.3s cubic-bezier(.2,.9,.3,1)}
+.in .nik i{height:var(--h)}
+.rapor{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.rapor .card{text-align:center;padding:14px 10px}
+.rapor .card b{font:700 26px var(--disp);display:block}
+.rapor .card span{font-size:12.5px;color:var(--muted)}
+.up{color:var(--good)}.down{color:var(--bad)}.flat{color:var(--warn)}
+/* bab 8 */
+.sim{display:flex;flex-direction:column;gap:12px}
+.presets{display:flex;gap:8px;flex-wrap:wrap}
+.presets button{font:700 13.5px var(--body);border-radius:999px;border:1.5px solid var(--line);background:var(--paper);padding:9px 14px;cursor:pointer;transition:transform .4s cubic-bezier(.34,1.8,.5,1)}
+.presets button:hover{transform:translateY(-2px)}
+.presets button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.track{position:relative;height:84px;border-radius:18px;background:linear-gradient(90deg,#F7E9D6,#E9F6EF);border:1.5px solid var(--line);overflow:hidden}
+.track .lane{position:absolute;left:0;right:0;top:56%;height:2px;background:repeating-linear-gradient(90deg,#D9C6AE 0 14px,transparent 14px 26px)}
+.track .flag{position:absolute;right:12px;top:8px;font:700 12px var(--mono);text-align:right;color:var(--good)}
+.track .start{position:absolute;left:12px;top:8px;font:700 12px var(--mono);color:var(--muted)}
+.track .runner{position:absolute;top:30px;left:8px;width:70px;transition:left .1s linear}
+.simout{display:flex;gap:22px;flex-wrap:wrap;align-items:baseline}
+.simout .yr{font:800 clamp(52px,9vw,96px)/1 var(--disp);color:var(--good);font-variant-numeric:lining-nums tabular-nums;text-shadow:0 2px 0 #fff,0 14px 30px rgba(14,143,108,.25)}
+.simout .yr.slow{color:var(--warn)}.simout .yr.slower{color:var(--bad)}
+/* bab 9 */
+.tiers{display:flex;flex-direction:column;gap:10px}
+.tier{border-radius:20px;padding:14px 18px;border:1.5px solid}
+.tier h3{font:700 19px var(--disp);margin:0 0 6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tier ul{margin:0;padding-left:20px;font-size:15px}
+.tier li{margin:3px 0}
+.t1{background:var(--good-soft);border-color:#A9DCC8}.t2{background:#FFF4D6;border-color:#F1D98F}.t3{background:#F4EEF9;border-color:#D8CBEA}
+/* bab 10 */
+.sand{display:flex;flex-direction:column;gap:6px;max-width:560px}
+.sand div{border-radius:16px;padding:12px 16px;display:flex;justify-content:space-between;gap:10px;font-size:14.5px;transition:transform .8s cubic-bezier(.34,1.56,.64,1),padding .8s}
+.sand .top{background:#E8EEF8}.sand .mid{background:linear-gradient(90deg,#FFD9C9,#FFE8D2);border:2px solid #F0A98E;font-weight:700}.sand .bot{background:#E2F3EA}
+.sand.sq .top{transform:translateY(10px)}.sand.sq .bot{transform:translateY(-10px)}.sand.sq .mid{padding-top:5px;padding-bottom:5px;animation:sqz 1.4s ease-in-out infinite}
+@keyframes sqz{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.86)}}
+.paths{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.paths .card{padding:14px}
+.paths .card b{font:700 16px/1.25 var(--disp);display:block;margin-bottom:4px}
+/* bab 11 */
+.ctry{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cc{position:relative;background:rgba(255,253,249,.94);border:1.5px solid var(--line);border-radius:20px;padding:14px 16px 14px;overflow:hidden;display:flex;flex-direction:column;gap:6px}
+.cc .hd{display:flex;align-items:center;gap:10px}
+.cc .hd svg.fl{width:42px;height:28px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.25);flex-shrink:0}
+.cc .hd b{font:700 18px/1.15 var(--disp)}
+.cc .hd span{font:600 12px var(--mono);color:var(--accent);display:block}
+.cc .ppl{display:flex;gap:2px;align-items:flex-end;height:84px}
+.cc .ppl svg{height:80px;width:auto;animation:bob 2.4s ease-in-out infinite}
+.cc .ppl svg:nth-child(2){animation-delay:.4s}.cc .ppl svg:nth-child(3){animation-delay:.8s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.cc p{margin:0;font-size:14px;color:var(--muted)}
+.cc p b{color:var(--ink)}
+.cc .res{font-size:13.5px;color:var(--good);font-weight:700}
+.cc.in .hd svg.fl{animation:wave 2.6s ease-in-out infinite;transform-origin:left center}
+@keyframes wave{0%,100%{transform:skewY(0)}50%{transform:skewY(-4deg) scaleX(.97)}}
+.cc.me{background:linear-gradient(135deg,#FFF1EC,#FFFDF9);border-color:#F3C2B4}
+.ipk{width:100%;border-collapse:collapse;font-size:14px}
+.ipk td,.ipk th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+.ipk th{font:700 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ipk td svg{width:24px;height:16px;vertical-align:-3px;margin-right:6px;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+/* bab 12 */
+.yrs{display:flex;flex-direction:column;gap:10px}
+.yrrow{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:center;font-size:14.5px}
+.yrrow .t{position:relative;height:22px;border-radius:999px;background:#F1E6D8}
+.yrrow .t i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;transition:width 1.4s cubic-bezier(.2,.9,.3,1)}
+.yrrow.in .t i{width:var(--w)}
+.yrrow .t em{position:absolute;top:50%;transform:translate(8px,-50%);font:700 13px var(--mono);font-style:normal;white-space:nowrap;opacity:0;transition:opacity .4s 1s}
+.yrrow.in .t em{opacity:1;left:var(--w)}
+.yrrow.lost .t i{background:linear-gradient(90deg,#3a2a20 0 var(--l),var(--bad) 0)}
+.burn{position:relative;height:120px;border-radius:20px;background:rgba(255,253,249,.85);border:1.5px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.burn svg{height:70px}
+.flame{transform-origin:50% 100%;animation:flame .35s ease-in-out infinite alternate}
+@keyframes flame{from{transform:scaleY(1) scaleX(1)}to{transform:scaleY(1.18) scaleX(.9)}}
+.choose{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.choice{text-align:left;font:inherit;color:inherit;cursor:pointer;border-radius:22px;padding:18px 20px;border:2px solid var(--line);background:rgba(255,253,249,.94);transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .4s,border-color .4s,opacity .4s}
+.choice:hover{transform:translateY(-3px)}
+.choice h3{font:800 22px/1.2 var(--disp);margin:4px 0 8px}
+.choice .k{font:700 11.5px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.choice p{margin:6px 0 0;font-size:15px}
+.choice.a .k{color:var(--bad)}.choice.b .k{color:var(--good)}
+.choice.a.picked{border-color:var(--bad);box-shadow:0 18px 40px -20px rgba(214,58,42,.6)}
+.choice.b.picked{border-color:var(--good);box-shadow:0 18px 40px -20px rgba(14,143,108,.6)}
+.choice.dim{opacity:.45}
+.choice .more{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:14.5px}
+.choice.picked .more{display:block;animation:sceneIn .6s}
+.em-big{font:800 clamp(24px,3.6vw,38px)/1.2 var(--disp);margin:0;max-width:900px}
+.em-big em{font-style:normal;color:var(--bad)}
+/* bab 13 */
+.resp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.resp .card ul{margin:6px 0 0;padding-left:18px;font-size:14.5px}
+.resp .lft{border-color:#F1B3A8;background:#FFF5F2}.resp .rgt{border-color:#C9D8EE;background:#F5F8FD}
+.final{font:800 clamp(30px,5vw,56px)/1.12 var(--disp);letter-spacing:-.005em;margin:6px 0 0;text-align:center}
+.final em{font-style:normal;color:var(--bad)}.final em.g{color:var(--good)}
+.cnt{font-variant-numeric:lining-nums tabular-nums}
+/* dok */
+.dock{position:sticky;bottom:0;z-index:4;margin-top:8px;padding:10px 0 14px;background:none}
+.cap{min-height:56px;font:600 clamp(16px,2.1vw,20px)/1.45 var(--body);text-align:center;max-width:900px;margin:0 auto 10px;padding:10px 16px;border-radius:16px;background:rgba(255,253,249,.94);border:1.5px solid var(--line);box-shadow:0 10px 30px -24px rgba(120,60,20,.5)}
+.cap .w{transition:color .2s}
+.ctrl{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
+.ctrl button,.ctrl select{font:700 14px var(--body);border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);padding:10px 15px;cursor:pointer;transition:transform .4s cubic-bezier(.34,1.8,.5,1)}
+.ctrl button:hover{transform:translateY(-2px)}
+.ctrl .play{background:var(--accent);color:#fff;border-color:var(--accent);min-width:160px}
+.ctrl .rec{color:var(--bad)}
+.ctrl .rec.live{background:var(--bad);color:#fff;border-color:var(--bad);animation:recp 1.2s ease-in-out infinite}
+@keyframes recp{50%{box-shadow:0 0 0 8px rgba(214,58,42,.18)}}
+.ctrl button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ctrl select{font-weight:500;max-width:200px}
+.note{font-size:12px;color:var(--muted);text-align:center;margin:8px auto 0;max-width:820px}
+.prompter{display:none;position:fixed;inset:0;z-index:20;background:rgba(251,245,236,.97);flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 16px}
+.prompter.on{display:flex}
+.prompter .meta{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--bad);display:flex;gap:10px;align-items:center}
+.prompter .meta i{width:10px;height:10px;border-radius:50%;background:var(--bad);animation:recp 1s infinite}
+.prompter .line{font:700 clamp(26px,4.4vw,48px)/1.3 var(--disp);max-width:980px;text-align:center}
+.prompter .nextl{font:500 clamp(16px,2vw,20px)/1.4 var(--body);color:var(--muted);max-width:900px;text-align:center}
+.prompter .pbtn{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.prompter button{font:700 15px var(--body);border-radius:999px;border:1.5px solid var(--line);background:var(--paper);padding:12px 20px;cursor:pointer}
+.prompter button.go{background:var(--bad);color:#fff;border-color:var(--bad)}
+.prompter .hint{font-size:13px;color:var(--muted);text-align:center;max-width:620px}
+@media (max-width:900px){.g4,.paths,.rapor{grid-template-columns:repeat(2,minmax(0,1fr))}.ctry{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.g2,.g3,.choose,.resp,.ctry{grid-template-columns:minmax(0,1fr)}.yrrow{grid-template-columns:1fr;gap:4px}.bar{grid-template-columns:26px 74px 1fr 56px;gap:7px}.cmpr{grid-template-columns:100px 1fr 50px}.years{gap:3px;height:130px}.years div{font-size:9px}.years div b{font-size:9.5px}.dots{max-width:100%}
+.net{display:none}.netlist{display:flex}.ipk{font-size:12.5px}.ipk td,.ipk th{padding:5px 4px}#rate{display:none}.dock{padding:6px 0 8px}.cap{font-size:14px;min-height:0;padding:8px 12px;margin-bottom:6px}.note{display:none}.ctrl{gap:5px}.ctrl button,.ctrl select{padding:8px 11px;font-size:12.5px}.ctrl .play{min-width:118px}.ctrl select{max-width:120px}.flow .who{width:96px;font-size:11.5px}.flow .wk{left:3%}.flow .wd{right:3%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body data-mood="calm">
+<div class="moods" aria-hidden="true"><i class="m-calm"></i><i class="m-curious"></i><i class="m-tense"></i><i class="m-intense"></i><i class="m-hope"></i><i class="m-heavy"></i><i class="m-inspire"></i><i class="m-dramatic"></i><i class="m-philo"></i></div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="app">
+  <header class="top">
+    <div class="brand">Cerita lengkap<b>What if Indonesia 2050?</b></div>
+    <div class="chap">
+      <div class="chap-now"><span>Bab <b id="chn">1</b>/13 · <b id="cht">Lima persen</b></span><span id="chm" class="fine"></span></div>
+      <nav class="segs" id="segs" aria-label="Bab"></nav>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+
+    <!-- 1 -->
+    <section class="scene" data-mood="calm" data-title="Lima persen">
+      <div class="kick">Bab 01 · Premis</div>
+      <div class="big5" data-s="0">5%</div>
+      <div class="card" data-s="1">
+        <h3>Pertumbuhan ekonomi Indonesia, tiap tahun</h3>
+        <div class="years" id="years"></div>
+        <p class="fine">BPS. 2020–2021 tahun pandemi.</p>
+      </div>
+      <p class="quote" data-s="2">Stabil kan bagus? Bertahun-tahun gua ikut ngangguk.</p>
+      <div class="card" data-s="3"><h3>Pelajaran kuliah keuangan</h3><p>Setiap rupiah punya jejak. Kalau laba gak nyambung sama arus kas, analis langsung curiga: ada yang bocor, ditutupi, atau salah urus.</p></div>
+      <p class="quote" data-s="4">Kalau perusahaan bisa dibedah kayak gitu, <mark>kenapa negara enggak?</mark></p>
+      <div class="punch" data-s="5">Awalnya gua marah. Gua mau bikin ini buat nunjuk muka.</div>
+      <p class="quote" data-s="6">Tapi data berkali-kali ngebantah gua. <mark>Marah itu gampang. Adil itu yang susah.</mark></p>
+      <div class="g2">
+        <div class="card" data-s="7"><div class="big">±2051</div><p>Indonesia jadi negara berpendapatan tinggi kalau pertumbuhan jalan seperti sekarang. Tahun itu generasi gua lagi di puncak usia kerja.</p></div>
+        <div class="card" data-s="8"><div class="big green">5,9%</div><p>rata-rata pertumbuhan yang dibutuhkan, 20 tahun berturut-turut, buat sampai di 2045 seperti janji Indonesia Emas.</p></div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="scene" data-mood="curious" data-title="Mobil boros">
+      <div class="kick">Bab 02 · Set-up</div>
+      <h2 data-s="0">Mobil yang boros bensin</h2>
+      <div class="road" data-s="1"><div class="car" id="car2"><svg viewBox="0 0 86 44" width="86" height="44" aria-hidden="true"><rect x="6" y="16" width="74" height="18" rx="8" fill="#C2560F"/><path d="M22 16 L32 5 H56 L66 16 Z" fill="#E07A3A"/><rect x="35" y="8" width="9" height="7" rx="2" fill="#FFF4E2"/><rect x="47" y="8" width="11" height="7" rx="2" fill="#FFF4E2"/><circle cx="24" cy="35" r="7" fill="#2A1E17"/><circle cx="62" cy="35" r="7" fill="#2A1E17"/><circle cx="24" cy="35" r="3" fill="#EADCC8"/><circle cx="62" cy="35" r="3" fill="#EADCC8"/></svg><span class="puff" style="left:-6px"></span><span class="puff" style="left:-6px;animation-delay:.5s"></span></div></div>
+      <div class="g3">
+        <div class="card" data-s="2"><div class="big"><span class="cnt" data-to="28.77" data-dec="2"></span> liter</div><p>dari tiap 100 liter penghasilan ekonomi 2025 dituang ke tangki investasi (PMTB 28,77% PDB, BPS).</p></div>
+        <div class="card" data-s="3"><div class="big"><span class="cnt" data-to="5.11" data-dec="2"></span> km</div><p>tambahan jarak mobilnya. Ini pertumbuhan ekonomi 2025 (BPS).</p></div>
+        <div class="card" data-s="4"><div class="big red"><span class="cnt" data-to="5.6" data-dec="1"></span> l/km</div><p>28,77 ÷ 5,11. Ekonom nyebutnya ICOR. Makin besar, makin boros.</p></div>
+      </div>
+      <div class="card bars" data-s="5" id="icor"></div>
+      <div class="card slide" data-s="6">
+        <h3>Coba sendiri: benerin mesinnya</h3>
+        <div class="gauge">Bensin <div class="tank"><i></i></div> 28,77 liter (tetap)</div>
+        <label for="icorR" class="fine">Konsumsi bensin (ICOR): geser ke kiri = makin irit</label>
+        <input type="range" id="icorR" min="3.5" max="7" step="0.1" value="5.6">
+        <div class="out"><span>ICOR <b id="icorV">5,6</b></span><span>Pertumbuhan <b id="growV">5,1%</b></span></div>
+        <p class="fine" id="icorN">Pertumbuhan ≈ porsi investasi ÷ ICOR (Harrod–Domar, disederhanakan). Target pemerintah: ICOR 4,5.</p>
+      </div>
+      <div class="card" data-s="7"><h3>Mau 8% pakai mobil seboros ini?</h3><p>Bensinnya harus <b style="color:var(--bad)">45 dari tiap 100 liter</b>, naik 16 liter dari sekarang. Gak realistis.</p></div>
+      <div class="punch" data-s="8">Bensinnya ada. <mark>Mobilnya yang boros.</mark><br>Pertanyaannya: bocornya di mana?</div>
+      <p class="src">ICOR negara lain: data pemerintah dikutip Koran Jakarta (Sep 2026); Luhut/DEN (Des 2024); Sarasehan 100 Ekonom dikutip Kontan (Des 2024). Angka antarsumber beda; arahnya konsisten.</p>
+    </section>
+
+    <!-- 3 -->
+    <section class="scene" data-mood="tense" data-title="Tangki bocor">
+      <div class="kick">Bab 03 · Set-up</div>
+      <h2 data-s="0">Tangkinya bocor di mana?</h2>
+      <div class="trio" style="display:flex;flex-direction:column;gap:12px">
+        <div class="card" data-s="1"><h3>Bensin yang gak pernah masuk tangki: pajak</h3><div class="big red">±Rp<span class="cnt" data-to="944"></span> T<small style="font-size:.45em;color:var(--muted)"> per tahun</small></div><p>Pajak PPN dan PPh badan yang seharusnya masuk tapi gak tertagih (rata-rata 2016–2021, Bank Dunia).</p></div>
+        <div class="card" data-s="2"><p style="margin:0">Gak semuanya kejahatan: sekitar <b>Rp547 T</b> dari ketidakpatuhan (penjualan gak dilaporin, faktur fiktif, harga ekspor dimainin). Sisanya keringanan pajak yang sengaja dikasih negara.</p></div>
+      </div>
+      <div class="card" data-s="3" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+        <div class="dots" id="dots"></div>
+        <div style="flex:1;min-width:220px"><div class="big green">Rp3</div><p>dari tiap Rp100 yang bocor, yang balik lewat penindakan besar. Itu batas atas.</p></div>
+      </div>
+      <div class="trio" style="display:flex;flex-direction:column;gap:12px;counter-reset:t 1">
+        <div class="card" data-s="4"><h3>Bensin yang dicolong di jalan: proyek</h3><p>Di 600+ proyek jalan desa, waktu peluang diaudit naik dari 4% ke 100%, dana yang "hilang" turun ±8 poin persen (Olken, 2007, <i>Journal of Political Economy</i>). Bocornya nyata, dan bisa ditekan.</p></div>
+        <div class="card" data-s="5"><h3>Rute yang salah: izin dan kuota</h3><p>Izin tambang, kuota produksi, lahan, kredit. Semuanya lewat meja pejabat.</p></div>
+        <div class="card" data-s="6" style="counter-increment:none;padding-left:18px"><div class="big red">Rp50–200 juta</div><p>per izin, diduga diminta Kepala Dinas ESDM Jawa Timur buat "mempercepat" izin yang sengaja dilambatkan. Status tersangka, belum tentu bersalah.</p></div>
+      </div>
+      <div class="punch" data-s="7">Pajak yang bocor bikin bensin kurang.<br><mark>Rute yang salah bikin bensin yang ada kebuang.</mark></div>
+    </section>
+
+    <!-- 4 -->
+    <section class="scene" data-mood="tense" data-title="Kasus Bayan">
+      <div class="kick">Bab 04 · Satu kasus nyata</div>
+      <h2 data-s="0">Bayan dan kerannya</h2>
+      <div class="card cmp" data-s="1">
+        <h3>Laba dari tiap Rp100 penjualan, 2025</h3>
+        <div class="cmpr"><span><b style="font:700 14px var(--body)">Bayan Resources</b></span><div class="t"><i style="--w:90%;background:var(--good)"></i></div><b>Rp22,4</b></div>
+        <div class="cmpr"><span>Bukit Asam (BUMN)</span><div class="t"><i style="--w:28%;background:var(--neutral)"></i></div><b>Rp6,9</b></div>
+      </div>
+      <div class="card" data-s="2"><h3>Keran = kuota produksi (RKAB)</h3><p>Menurut Moody's, tanpa tambahan kuota, produksi Bayan bisa turun dari ±68 juta ton ke 39 juta ton. Keran itu nentuin sekitar <b>40%</b> bisnisnya.</p></div>
+      <div class="card">
+        <div class="tl">
+          <div data-s="3"><time>14 Sep 2026</time><p>Kuota belum disetujui. Bayan menyatakan <i>force majeure</i>.</p></div>
+          <div data-s="4"><time>16 Sep 2026</time><p>Low Tuck Kwong dan putrinya meneken perjanjian jual saham bersyarat ke PT Jhonlin Baratama milik Haji Isam.</p></div>
+          <div data-s="5"><time>Akhir Sep 2026</time><p>Kuota disetujui, tambahan ±20 juta ton. Pemerintah membantah ada kaitan dengan penjualan saham.</p></div>
+          <div data-s="6"><time>7 Okt 2026</time><p>30,25% saham pindah ke Jhonlin. Total Rp26,1 T.</p></div>
+        </div>
+      </div>
+      <div class="card price" data-s="6">
+        <div class="pcol"><div class="col" style="--h:150px;background:linear-gradient(var(--good),#6CC7A6)"></div><b>Rp12.875</b><span>harga pasar per saham</span></div>
+        <div class="pcol"><div class="col" style="--h:30px;background:var(--bad)"></div><b style="color:var(--bad)">Rp2.588</b><span>harga transaksi: ±80% di bawah pasar</span></div>
+      </div>
+      <div class="card" data-s="7">
+        <h3>Modal kinerja vs modal kedekatan</h3>
+        <svg class="net" viewBox="0 0 640 330" role="img" aria-label="Jaringan Haji Isam di kabinet">
+          <line x1="320" y1="150" x2="120" y2="50"/><line x1="320" y1="150" x2="520" y2="50"/><line x1="320" y1="150" x2="110" y2="270"/><line x1="320" y1="150" x2="530" y2="270"/><line x1="320" y1="150" x2="320" y2="290"/>
+          <g class="nd c"><rect x="215" y="120" width="210" height="60" rx="14"/><text x="320" y="146" text-anchor="middle">Haji Isam · Jhonlin Group</text><text class="s" x="320" y="165" text-anchor="middle">pembeli 30,25% saham Bayan</text></g>
+          <g class="nd"><rect x="10" y="20" width="220" height="60" rx="12"/><text x="120" y="45" text-anchor="middle">Andi Amran Sulaiman</text><text class="s" x="120" y="63" text-anchor="middle">Mentan · sepupu Haji Isam</text></g>
+          <g class="nd"><rect x="410" y="20" width="220" height="60" rx="12"/><text x="520" y="45" text-anchor="middle">Dudy Purwagandhi</text><text class="s" x="520" y="63" text-anchor="middle">Menhub · eks direktur 2 perusahaan Jhonlin</text></g>
+          <g class="nd"><rect x="0" y="240" width="220" height="60" rx="12"/><text x="110" y="265" text-anchor="middle">Dody Hanggodo</text><text class="s" x="110" y="283" text-anchor="middle">Menteri PU · eks komisaris Pradiksi</text></g>
+          <g class="nd"><rect x="420" y="240" width="220" height="60" rx="12"/><text x="530" y="265" text-anchor="middle">Sulaiman Umar</text><text class="s" x="530" y="283" text-anchor="middle">Wamenhut · ipar, eks ketua kampanye Kalsel</text></g>
+          <g class="nd b"><rect x="240" y="265" width="160" height="56" rx="12"/><text x="320" y="289" text-anchor="middle">Bayan Resources</text><text class="s" x="320" y="306" text-anchor="middle">modal kinerja: laba Rp22,4</text></g>
+        </svg>
+        <ul class="netlist">
+          <li class="c"><b>Haji Isam · Jhonlin Group</b><span>pembeli 30,25% saham Bayan</span></li>
+          <li><b>Andi Amran Sulaiman</b><span>Menteri Pertanian · sepupu Haji Isam, eks Presiden Komisaris Jhonlin Agro Raya</span></li>
+          <li><b>Dudy Purwagandhi</b><span>Menteri Perhubungan · eks direktur dua perusahaan Jhonlin (2008–2009)</span></li>
+          <li><b>Dody Hanggodo</b><span>Menteri PU · eks komisaris Pradiksi Gunatama, anak usaha milik anak-anak Haji Isam</span></li>
+          <li><b>Sulaiman Umar</b><span>Wakil Menteri Kehutanan · ipar, eks ketua tim kampanye Prabowo–Gibran di Kalsel</span></li>
+          <li class="b"><b>Bayan Resources</b><span>modal kinerja: laba Rp22,4 dari tiap Rp100</span></li>
+        </ul>
+        <p class="fine">Bisnis.com (21 Okt 2024), Tempo, Kompas; keterbukaan informasi BEI.</p>
+      </div>
+      <div class="card" data-s="8"><h3>Bantahan</h3><p>Amran membantah diangkat karena Haji Isam; ia menyebut dirinya profesional yang sudah jadi menteri sejak 2014. Bayan, lewat surat ke BEI (26 Sep 2026), menyatakan persetujuan kuota tidak berkaitan dengan transaksi.</p></div>
+      <div class="notacc" data-s="9"><b>Ini bukan tuduhan.</b> Gak ada bukti transaksi ini melanggar hukum. Urutan waktu bukan bukti sebab-akibat. Yang ditunjukkan di sini <b>strukturnya</b>: kalau nilai perusahaan ditentukan izin negara, dan pembelinya punya jaringan di kabinet, publik berhak bertanya. Di sistem yang sehat, pertanyaan itu dijawab pakai dokumen.</div>
+      <div class="punch" data-s="10">Bayan cuma satu keran. <mark>Negara pegang ribuan.</mark></div>
+    </section>
+
+    <!-- 5 -->
+    <section class="scene" data-mood="intense" data-title="Punchline">
+      <div class="kick">Bab 05 · Punchline</div>
+      <h2 data-s="0">Nah, ini dia.</h2>
+      <div class="punch" data-s="1" style="font-size:clamp(28px,4.6vw,50px)">Masalahnya bukan uang.<br><mark>Masalahnya siapa yang dapat.</mark></div>
+      <p class="quote" data-s="2">Pajak, proyek, izin, kuota: semuanya keran yang dipegang negara. Tiap keran cuma punya dua cara dibuka.</p>
+      <div class="card" data-s="3" style="display:flex;flex-direction:column;gap:12px">
+        <div class="switch" role="group" aria-label="Cara keran dibuka"><button type="button" id="swK">Kinerja</button><button type="button" id="swD">Kedekatan</button></div>
+        <div class="flow" id="flow">
+          <div class="tap"><svg viewBox="0 0 64 48" aria-hidden="true"><rect x="4" y="8" width="40" height="12" rx="4" fill="#A3968A"/><rect x="40" y="12" width="12" height="22" rx="4" fill="#8E7F73"/><rect x="18" y="2" width="12" height="8" rx="2" fill="#C2560F"/><circle cx="24" cy="2" r="2" fill="#C2560F"/></svg>Keran negara</div>
+          <i class="coin"></i><i class="coin" style="animation-delay:.4s"></i><i class="coin" style="animation-delay:.8s"></i><i class="coin" style="animation-delay:1.2s"></i>
+          <div class="who wk" id="whoK"></div><div class="who wd" id="whoD"></div>
+        </div>
+        <p id="flowTxt" style="margin:0;font-size:15px">Klik salah satu.</p>
+      </div>
+      <div class="g3">
+        <div class="card" data-s="5"><h3>Pasar ngehargain koneksi</h3><p>Tiap rumor kesehatan Soeharto memburuk, saham perusahaan yang paling bergantung padanya jatuh paling dalam (Fisman, 2001, <i>American Economic Review</i>).</p></div>
+        <div class="card" data-s="6"><h3>Izin ngikutin koneksi</h3><p>Perusahaan dekat kekuasaan 6–22 poin lebih mungkin dapat izin impor (Mobarak &amp; Purbasari, 2005).</p></div>
+        <div class="card" data-s="7"><h3>Modal salah alamat</h3><p>Data pabrik BPS 2004–2013: kalau alokasi dirapikan, produktivitas manufaktur secara teori bisa naik 122–133% (Pratama, 2025). Batas atas, bukan janji.</p></div>
+      </div>
+      <div class="card pisa" data-s="8">
+        <h3>Tapi gua harus jujur: bantahan serius</h3>
+        <p style="margin:0">Glaeser dkk. (2004): urutannya kebalik, SDM dulu baru institusi. Skor matematika PISA 2022:</p>
+        <div class="cmpr"><span>Indonesia</span><div class="t"><i style="--w:61%;background:var(--bad)"></i></div><b>366</b></div>
+        <div class="cmpr"><span>Rata-rata OECD</span><div class="t"><i style="--w:79%;background:var(--neutral)"></i></div><b>±472</b></div>
+        <p class="fine">Gua belum bisa matahin bantahan ini sepenuhnya.</p>
+      </div>
+      <div class="punch" data-s="9">Kedekatan kerasa gratis buat yang dapat.<br><mark>Tagihannya datang ke kita semua.</mark></div>
+    </section>
+
+    <!-- 6 -->
+    <section class="scene" data-mood="intense" data-title="Tagihan">
+      <div class="kick">Bab 06 · Akibat</div>
+      <h2 data-s="0">Investor gak baca niat. Mereka baca harga.</h2>
+      <div class="card" data-s="1"><h3>27 Januari 2026</h3><p>MSCI membekukan penambahan bobot saham Indonesia. Alasannya: porsi saham beredar di publik gak transparan, ada indikasi perdagangan terkoordinasi.</p></div>
+      <div class="card" data-s="2">
+        <svg class="crash" viewBox="0 0 600 200" role="img" aria-label="IHSG turun tajam dalam sehari"><line x1="0" y1="60" x2="600" y2="60" stroke="#EADCC8" stroke-dasharray="4 4"/><polyline points="0,62 40,58 80,64 120,56 160,60 200,54 240,58 280,55 300,60 330,120 350,110 380,170 410,160 440,175 480,168 520,172 560,165 600,170"/><text x="590" y="195" text-anchor="end" font-family="DM Mono" font-size="13" fill="#D63A2A" font-weight="700">IHSG −7,35% dalam sehari</text></svg>
+        <p class="fine">Bentuk garis ilustrasi; angka resmi: −7,35% (28–29 Jan 2026), perdagangan dihentikan sementara dua kali.</p>
+      </div>
+      <div class="chips" data-s="3"><div class="chip"><b>Rp13,92 T</b><span>jual bersih asing dalam sepekan</span></div><div class="chip"><b>Mundur</b><span>Direktur Utama BEI dan pimpinan OJK</span></div></div>
+      <div class="chips" data-s="4"><div class="chip"><b>±4%</b><span>pelemahan rupiah yang dikaitkan Bank Dunia dengan arus modal keluar</span></div></div>
+      <div class="card" data-s="5"><div class="big red">Rp<span class="cnt" data-to="599"></span> T</div><p>bunga utang negara di APBN 2026. Dibayar dari pajak. Pajak lu, pajak gua.</p></div>
+      <div class="layers" data-s="6"><div class="l1"><b>Lapis 1 · bunga dasar dunia.</b> Ditentukan The Fed, gak bisa kita atur.</div><div class="l2"><b>Lapis 2 · premi risiko Indonesia.</b> Buatan sendiri: kepastian hukum, kredibilitas anggaran, kasus seperti MSCI dan Bayan. Tiap naik 1 poin ≈ ±Rp96 T bunga per tahun (hitungan kasar).</div></div>
+      <div class="card" data-s="7"><h3>November 2026: tinjauan penentuan MSCI</h3><p>Kalau turun kelas, Goldman Sachs memperkirakan hingga US$13 miliar dana bisa keluar.</p></div>
+      <div class="punch" data-s="8">Kedekatan itu gak gratis.<br><mark>Tagihannya dibayar lewat rupiah dan bunga utang.</mark> Alias pajak kita.</div>
+    </section>
+
+    <!-- 7 -->
+    <section class="scene" data-mood="calm" data-title="Yang dicoba">
+      <div class="kick">Bab 07 · Biar adil</div>
+      <h2 data-s="0">Pemerintah gak diam</h2>
+      <div class="g2 pol">
+        <div class="card" data-s="1"><time>Jan 2020</time><h3>Larangan ekspor bijih nikel</h3><div class="nik"><div><i style="--h:9%"></i>2014<br>±US$3 M</div><div><i style="--h:100%"></i>2022<br>±US$34 M</div></div><p>Ekspor turunan nikel. Berapa laba dan kerja yang tinggal di Indonesia masih diperdebatkan.</p></div>
+        <div class="card" data-s="2"><time>Mar 2025</time><h3>Devisa ekspor wajib ditahan</h3><p>Hasil ekspor sumber daya alam disimpan 100% di dalam negeri selama setahun. Belum ada laporan berapa yang terselamatkan.</p></div>
+        <div class="card" data-s="3"><time>2025–26</time><h3>Sawit ilegal diambil alih</h3><div class="big green">4,12 juta ha</div><p>Setoran Agrinas ke negara baru Rp0,53 T (2025).</p></div>
+        <div class="card" data-s="4"><time>Mei 2026</time><h3>Harga ekspor wajib dicatat</h3><p>Lewat Danantara Sumberdaya Indonesia: batu bara, CPO, ferroalloy. Umurnya baru beberapa bulan.</p></div>
+      </div>
+      <div class="rapor" data-s="5">
+        <div class="card"><b class="up">2,92%</b><span>Inflasi Des 2025, dalam target</span></div>
+        <div class="card"><b class="flat">5,03→5,11%</b><span>Pertumbuhan 2024→2025, datar</span></div>
+        <div class="card"><b class="down">37→34</b><span>Indeks Persepsi Korupsi 2024→2025</span></div>
+        <div class="card"><b class="down">4,78%</b><span>uang korupsi yang balik (ICW, 2024)</span></div>
+      </div>
+      <div class="punch" data-s="6">Makro stabil. <mark>Institusi melemah.</mark></div>
+      <p class="quote" data-s="7">Semua kebijakan itu memperbesar kendali negara atas keran. Bisa nutup bocor, bisa jadi rente baru. Penentunya: <mark>kinerja atau kedekatan.</mark></p>
+    </section>
+
+    <!-- 8 -->
+    <section class="scene" data-mood="hope" data-title="What if">
+      <div class="kick">Bab 08 · What if</div>
+      <h2 data-s="0">Sekarang lu yang pegang kerannya</h2>
+      <div class="card" data-s="1"><p style="margin:0;font-size:16px;color:var(--ink)">Start 2025: pendapatan per orang <b>±US$5.000</b>. Finis: negara berpendapatan tinggi, <b>±US$14.000</b>. Tembus tahun berapa?</p></div>
+      <div class="card sim" data-s="2">
+        <div class="presets" id="presets"></div>
+        <label class="fine" for="simR">Cara keran dibagi: kiri = kedekatan, kanan = kinerja</label>
+        <input type="range" id="simR" min="0" max="100" step="1" value="45" style="width:100%;accent-color:var(--good);height:28px">
+        <div class="track"><span class="start">2025 · US$5.000</span><span class="flag">🏁 US$14.000</span><div class="lane"></div><div class="runner" id="runner"><svg viewBox="0 0 86 44" width="70" height="36" aria-hidden="true"><rect x="6" y="16" width="74" height="18" rx="8" fill="#0E8F6C"/><path d="M22 16 L32 5 H56 L66 16 Z" fill="#3DB38D"/><rect x="35" y="8" width="9" height="7" rx="2" fill="#F2FFF9"/><rect x="47" y="8" width="11" height="7" rx="2" fill="#F2FFF9"/><circle cx="24" cy="35" r="7" fill="#2A1E17"/><circle cx="62" cy="35" r="7" fill="#2A1E17"/></svg></div></div>
+        <div class="simout"><span class="yr" id="simY">±2051</span><span><b id="simG" style="font:700 22px var(--disp)">4,7%</b><br><span class="fine">rata-rata pertumbuhan PDB 2025–2050</span></span></div>
+        <p class="fine">Ringkasan dari simulator lengkap (model Solow yang dikalibrasi ke data BPS). Titik di antara preset diinterpolasi. Ilustrasi, bukan ramalan.</p>
+      </div>
+      <div class="g3">
+        <div class="card" data-s="2"><div class="big green">±2046</div><p>keran dibagi lewat kinerja</p></div>
+        <div class="card" data-s="3"><div class="big" style="color:var(--warn)">±2051</div><p>kondisi sekarang berlanjut</p></div>
+        <div class="card" data-s="4"><div class="big red">±2059</div><p>kedekatan penuh: 13 tahun lebih telat</p></div>
+      </div>
+      <div class="punch" data-s="5">Selama gak ada krisis besar, di semua skenario pendapatan per orang <mark>tetap naik</mark>. Yang beda cuma kecepatannya.</div>
+      <div class="notacc" data-s="6"><b>⚠ Ini simulasi jalan mulus.</b> Semua tahun di atas menganggap Indonesia gak kena guncangan besar selama 25 tahun. Yang <b>gak</b> dihitung: krisis keuangan (global seperti 2008, moneter seperti 1998), guncangan politik dalam negeri (konflik elite, pengkhianatan di lingkar kekuasaan, kerusuhan), perang, pandemi, dan anjloknya komoditas. Padahal dalam 30 tahun terakhir Indonesia sudah kena tiga: 1998, 2008–2009, 2020. Kalau ada krisis, semua tahun mundur, dan negara dengan institusi lemah cenderung jatuh lebih sering dan lebih dalam (Acemoglu dkk., 2003). Jadi jarak kinerja vs kedekatan di sini kemungkinan malah terlalu kecil.</div>
+    </section>
+
+    <!-- 9 -->
+    <section class="scene" data-mood="calm" data-title="Kesimpulan">
+      <div class="kick">Bab 09 · Kesimpulan</div>
+      <h2 data-s="0">Gua pisahin jadi tiga</h2>
+      <div class="tiers">
+        <div class="tier t1" data-s="1"><h3>Yang udah kebukti</h3><ul><li>Gak kekurangan bensin (investasi 28,77% PDB), tapi mobilnya paling boros.</li><li>Bocornya nyata: ±Rp944 T pajak gak ketagih, yang balik ±Rp3 dari Rp100.</li><li>Keran negara bisa diperjualbelikan: ada pejabat tersangka di kasus kuota dan izin.</li><li>Makro stabil, institusi melemah (IPK 37→34).</li><li>Pasar udah ngasih harga: MSCI, IHSG −7,35%, rupiah ±4%.</li></ul></div>
+        <div class="tier t2" data-s="2"><h3>Yang kemungkinan besar bener</h3><ul><li>Benerin mesin (ICOR ke 4,5) ±+1,3 poin per tahun; nambal seluruh bocor pajak cuma +0,3 s/d +0,7.</li><li>Borosnya paling parah di titik negara bagi keran.</li><li>8% tanpa rombak struktur gak didukung hitungan.</li></ul></div>
+        <div class="tier t3" data-s="3"><h3>Yang belum kebukti</h3><ul><li>Seberapa besar efek institusi ke pertumbuhan Indonesia.</li><li>SDM dulu atau institusi dulu.</li><li>Kuota Bayan berkaitan dengan penjualan sahamnya atau enggak.</li><li>Produktivitas kita hari ini: estimasi lama hampir nol, kalibrasi simulator ±2,1%.</li></ul></div>
+      </div>
+      <div class="punch" data-s="4">Indonesia mentok di 5% bukan karena miskin modal, <mark>tapi karena modalnya dipakai boros.</mark> Itu inferensi, bukan vonis.</div>
+      <div class="card" data-s="5"><h3>Kalau gua salah, salahnya kemungkinan di sini</h3><p>SDM ternyata lebih menentukan daripada cara negara bagi keran, atau produktivitas kita memang mendekati nol, sehingga semua skenario terlalu optimistis.</p></div>
+    </section>
+
+    <!-- 10 -->
+    <section class="scene" data-mood="heavy" data-title="Yang paling kejepit">
+      <div class="kick">Bab 10 · Yang paling kejepit</div>
+      <h2 data-s="0">Satu alamat: yang di tengah</h2>
+      <div class="g2">
+        <div class="card" data-s="1"><div class="big red"><span class="cnt" data-from="57.3" data-to="47.9" data-dec="1"></span> juta</div><p>kelas menengah Indonesia, turun dari 57,3 juta (2019) ke 47,9 juta orang (2024). Sekitar 9,4 juta turun kelas. (BPS)</p></div>
+        <div class="card" data-s="2"><div class="sand" id="sand"><div class="top"><span>Atas · 0,4%</span><span>aset, dolar, koneksi</span></div><div class="mid"><span>Tengah · kelas menengah</span><span>gak ada bantalan</span></div><div class="bot"><span>Bawah · miskin</span><span>bansos, BPJS PBI</span></div></div><p>Terlalu kaya buat dibantu. Terlalu miskin buat aman.</p></div>
+      </div>
+      <div class="paths">
+        <div class="card" data-s="3"><b>Yang patuh nanggung</b><p>Gaji dipotong langsung (PPh 21), sementara ekonomi yang gak tercatat gak ketagih.</p></div>
+        <div class="card" data-s="4"><b>Tangganya patah</b><p>Pabrik gak tumbuh. 2025: <b style="color:var(--bad)">88.519</b> pekerja kena PHK, mayoritas manufaktur (Kemnaker).</p></div>
+        <div class="card" data-s="5"><b>Cicilan rupiah</b><p>Rupiah melemah, bunga gak turun. Belanja rumah sudah 28,52% pengeluaran mereka.</p></div>
+        <div class="card" data-s="5"><b>Tabungan saham</b><p>32,17 juta investor, 99,82% perorangan, ikut kena IHSG −7,35%.</p></div>
+      </div>
+      <div class="card" data-s="6"><h3>Biar adil</h3><p>"Paling kejepit" bukan "paling menderita". Penderitaan absolut terbesar tetap di 8,5% warga miskin. Kemenkeu juga menyebut pandemi sebagai penyebab utama menyusutnya kelas menengah; yang ditunjukkan di sini kenapa mereka belum pulih.</p></div>
+      <p class="quote" data-s="7">Kedengarannya berat? <mark>Lihat dulu orang-orang yang pernah di posisi lebih berat.</mark></p>
+    </section>
+
+    <!-- 11 -->
+    <section class="scene" data-mood="inspire" data-title="Cermin">
+      <div class="kick">Bab 11 · Cermin</div>
+      <h2 data-s="0">Mereka yang pernah lebih susah dari kita</h2>
+      <div class="ctry" id="ctry"></div>
+      <div class="card" data-s="8">
+        <h3>Bedanya bukan rakyatnya lebih suci</h3>
+        <div class="g2" style="margin-top:6px"><p style="margin:0"><b style="color:var(--ink)">1. Pengorbanan rakyat dibalas.</b> Upah dibekukan ditukar reformasi pajak; emas rakyat jadi utang yang lunas lebih cepat.</p><p style="margin:0"><b style="color:var(--ink)">2. Yang berkuasa bisa dihukum.</b> Korea memenjarakan mantan presiden. Spanyol menjatuhkan perdana menteri. Irlandia membongkar korupsi mantan perdana menteri.</p></div>
+        <table class="ipk" style="margin-top:10px" id="ipk"><thead><tr><th>Indeks Persepsi Korupsi</th><th>2012</th><th>2025</th><th>Arah</th></tr></thead><tbody></tbody></table>
+        <p class="fine" style="margin-top:6px">Transparency International.</p>
+      </div>
+      <div class="punch" data-s="9">Mereka gak berhenti nyalahin pemerintah.<br>Mereka nanggung bagian mereka, <mark>dan nagih bagian negaranya sampai lunas.</mark></div>
+    </section>
+
+    <!-- 12 -->
+    <section class="scene" data-mood="dramatic" data-title="Pilihan">
+      <div class="kick">Bab 12 · Pilihan</div>
+      <h2 data-s="0">Haruskah chaos dulu?</h2>
+      <p class="quote" data-s="1">Tunggu. <mark>Hitung dulu</mark>, sebelum ada yang beneran nyalain korek.</p>
+      <div class="g2">
+        <div class="card" data-s="2"><div style="display:flex;gap:18px;align-items:baseline;flex-wrap:wrap"><span class="big green">53%</span><span class="big red">26%</span></div><p>Tingkat berhasil gerakan perlawanan besar 1900–2006: tanpa kekerasan vs dengan kekerasan (Chenoweth &amp; Stephan, 2008).</p></div>
+        <div class="card" data-s="3"><h3>Musim Semi Arab 2011</h3><p>Mesir kembali ke pemerintahan militer (2013). Libya, Suriah, Yaman jatuh ke perang saudara; Suriah mencatat lebih dari 5 juta pengungsi terdaftar. Tunisia sempat demokrasi, mundur lagi sejak 2021.</p></div>
+      </div>
+      <div class="card" data-s="4"><div class="big red">−13,2%</div><p>ekonomi Indonesia 1998. Pendapatan per orang baru balik ke level sebelum krisis tahun 2002: lima tahun hidup satu generasi hilang. Output yang hilang umumnya gak balik ke jalur semula (Cerra &amp; Saxena, 2008).</p></div>
+      <div class="card yrs">
+        <h3 data-s="5">Tembus US$14.000 per orang, ceteris paribus</h3>
+        <div class="yrrow" data-s="5"><span><b>Sabar + reformasi</b></span><div class="t" style="--w:58.8%"><i style="background:var(--good)"></i><em>±2046</em></div></div>
+        <div class="yrrow" data-s="5"><span><b>Sabar, tanpa perubahan</b></span><div class="t" style="--w:73.5%"><i style="background:var(--warn)"></i><em>±2051</em></div></div>
+        <div class="yrrow lost" data-s="6"><span><b>Chaos, skenario terbaik</b></span><div class="t" style="--w:76.5%;--l:19.2%"><i></i><em>±2052</em></div></div>
+        <div class="yrrow lost" data-s="6"><span><b>Chaos, skenario umum</b></span><div class="t" style="--w:91.2%;--l:16.1%"><i></i><em>±2057</em></div></div>
+        <div class="yrrow" data-s="6"><span>Kedekatan penuh, tanpa chaos</span><div class="t" style="--w:97%"><i style="background:#8E7F73"></i><em>±2059</em></div></div>
+        <p class="fine" data-s="6">Bagian gelap = lima tahun hilang karena krisis, meniru 1998. Ilustrasi model, bukan ramalan.</p>
+      </div>
+      <div class="burn" data-s="7">
+        <svg viewBox="0 0 90 60" aria-hidden="true"><rect x="6" y="26" width="78" height="20" rx="8" fill="#8E7F73"/><path d="M22 26 L32 13 H58 L68 26 Z" fill="#A3968A"/><circle cx="25" cy="47" r="7" fill="#2A1E17"/><circle cx="65" cy="47" r="7" fill="#2A1E17"/><text x="45" y="40" text-anchor="middle" font-size="9" font-family="DM Mono" fill="#fff">BOROS</text></svg>
+        <span style="font:700 15px var(--body);color:var(--muted)">tetap jalan, pelan</span>
+        <svg viewBox="0 0 90 60" aria-hidden="true"><rect x="6" y="30" width="78" height="18" rx="8" fill="#3a2a20"/><circle cx="25" cy="49" r="7" fill="#2A1E17"/><circle cx="65" cy="49" r="7" fill="#2A1E17"/><g class="flame"><path d="M30 32 C26 20 36 18 34 6 C44 14 46 22 44 32 Z" fill="#FF8A3D"/><path d="M48 32 C46 22 54 18 56 8 C64 18 64 26 60 32 Z" fill="#FFB347"/><path d="M38 32 C36 24 42 22 42 16 C48 22 50 28 48 32 Z" fill="#FFE07A"/></g></svg>
+        <span style="font:700 15px var(--body);color:var(--bad)">chaos: mobilnya dibakar</span>
+      </div>
+      <p class="em-big" data-s="8">Either way: chaos <em>gak pernah mempercepat</em>. Paling bagus, chaos cuma memperlambat.</p>
+      <div class="card" data-s="9"><h3>Tapi ini bukan pembelaan buat kedekatan</h3><p>Kedekatan penuh bikin kita 13 tahun lebih telat dari kinerja (2059 vs 2046). Anak yang masuk SD hari ini, lulus SMA, masih tinggal di negara berkembang.</p></div>
+      <h3 data-s="10" style="font:800 clamp(24px,3.4vw,36px)/1.2 var(--disp);margin:6px 0 0">Dua jalan. Dua harga.<br>Lu cuma boleh pilih satu. <span style="color:var(--accent)">Klik.</span></h3>
+      <div class="choose">
+        <button type="button" class="choice a" data-s="11"><span class="k">Jalan pertama · amarah</span><h3>Bakar sekarang</h3><p>Silakan turun ke jalan. Teriak, nuntut, sulut apinya. <b>Rasanya gagah. Rasanya menang.</b></p>
+          <div class="more"><p style="margin:0">Tapi jujur ke diri sendiri: lu udah ngerti belum, <b>apa yang mau lu ganti, dan gantinya apa?</b></p><p>Kalau apinya udah nyala dan ternyata keadaan malah <b>lebih buruk dari sebelum lu bakar</b>, korek itu gak bisa ditarik balik. 1998 udah ngasih harganya: lima tahun hidup hilang.</p><p>Kalau lu 25 tahun hari ini, di skenario paling mulus pun negara yang lu impikan baru datang waktu lu <b>51</b>. Lebih sering <b>56</b>. Atau gak pernah datang.</p><p style="color:var(--bad);font-weight:700">Lu menang hari ini. Lalu masa muda lu habis di atas abunya.</p></div></button>
+        <button type="button" class="choice b" data-s="13"><span class="k">Jalan kedua · sabar</span><h3>Tahan, bayar, tagih</h3><p>Lu kalah hari ini. Ego lu gak kepuasan. <b>Gak ada yang tepuk tangan.</b></p>
+          <div class="more"><p style="margin:0">Gak ada hadiah instan. Yang bisa lu taruh di meja cuma satu: <b>masa muda lu</b>.</p><p>Dihabisin buat gak nyari kambing hitam, ngeredam ego, bayar bagian lu, nagih bagian negara pakai angka, dan terus benerin diri sendiri. Sampai Tuhan kasih kestabilan buat lu, keluarga lu, anak lu.</p><p><b>Kaya? Bahkan paling kaya?</b> Pintunya tetap kebuka. Ego yang udah jinak dan sabar yang seluas laut itu <b>modal, bukan kekalahan</b>. Dan kalau keran dibagi lewat kinerja, tangga itu kebuka buat orang yang modalnya cuma kemampuan, bukan koneksi.</p><p>Dijamin? Enggak. Gak semua orang sabar jadi kaya. Tapi orang yang bakar mobilnya, <b>mulai lagi dari nol</b>.</p><p>Kalau tagihan itu berhasil, lu ngerasain hasilnya sekitar umur <b>45</b>. Kalau gagal, lu tetap sampai, sekitar <b>50</b>, tanpa lima tahun yang terbakar.</p><p style="color:var(--good);font-weight:700">Dan di hari tua, lu bisa istirahat dengan tenang. Masa muda lu gak habis buat nyalahin hal yang gak bisa lu kontrol.</p></div></button>
+      </div>
+      <p class="fine" data-s="13">Umur dihitung dari skenario di atas (2046, 2051, 2052, 2057) untuk orang berusia 25 tahun di 2026. Ilustrasi model, bukan ramalan.</p>
+      <div class="punch" data-s="17">Gak ada jaminan. Sabar bukan obat.<br><mark>Tapi cuma sabar yang gak mundurin garis start.</mark><br><span style="font-size:.7em">Satu jalan muasin amarah lu hari ini. Satu jalan lagi ngasih ketenangan buat masa tua lu, dan masa depan anak lu.</span></div>
+    </section>
+
+    <!-- 13 -->
+    <section class="scene" data-mood="philo" data-title="Catatan gua">
+      <div class="kick">Bab 13 · Catatan pribadi (opini)</div>
+      <h2 data-s="0">Apa iya semuanya salah presiden?</h2>
+      <p class="quote" data-s="1">Harga naik, salah presiden. Pajak naik, salah presiden. IHSG anjlok, salah presiden. <mark>Apa iya 100%?</mark></p>
+      <div class="resp">
+        <div class="card lft" data-s="2"><h3>Di tangan presiden: tagih penuh</h3><ul><li>Cara keran dibagi: izin, kuota, proyek.</li><li>Siapa yang diangkat: 165 dari 562 komisaris BUMN terafiliasi politik (TII, 2025).</li><li>Arah kebijakan dan prioritas penegakan hukum.</li><li>Yang memburuk di masa jabatannya: IPK 37→34.</li></ul></div>
+        <div class="card rgt" data-s="3"><h3>Bukan di tangan presiden seorang</h3><ul><li>Warisan sebelum Oktober 2024: ICOR 6,96 (2019–2023), kelas menengah menyusut.</li><li>Faktor luar: The Fed, harga komoditas, demografi.</li><li>Pelaku lain: usaha yang gak bayar PPN, emiten, DPR, kepala daerah pilihan rakyat.</li><li>Waktu: reformasi institusi butuh bertahun-tahun.</li></ul></div>
+      </div>
+      <p class="quote" data-s="4">Kalau semuanya dilempar ke satu orang, <mark>pelaku lain malah bebas</mark>, karena gak ada yang nagih mereka.</p>
+      <div class="punch" data-s="5">Ngomel itu murah. Ngukur itu mahal.<br><mark>Cuma yang kedua yang bisa ngubah sesuatu.</mark></div>
+      <p class="quote" data-s="6" style="font-size:clamp(24px,3.6vw,38px)">Indonesia perlu ganti presiden, atau ganti rakyat?</p>
+      <div class="punch" data-s="7">Bukan dua-duanya. <mark>Ganti cara kita menilai keduanya.</mark> Dari nunjuk, jadi ngukur.</div>
+      <p class="quote" data-s="8">Lima persen itu bukan takdir. Itu konsumsi bensin. <mark>Dan konsumsi bensin bisa dibenerin.</mark></p>
+      <p class="quote" data-s="9">Delapan puluh satu tahun setelah merdeka: kita udah beneran merdeka, atau cuma ganti siapa yang megang kerannya?</p>
+      <p class="final" data-s="10">Mau jadi generasi yang <em>menang</em>,<br>atau generasi yang <em class="g">memenangkan</em>?</p>
+    </section>
+  </main>
+
+  <div class="dock">
+    <div class="cap" id="cap" aria-live="polite"></div>
+    <div class="ctrl">
+      <button type="button" id="prev" aria-label="Bab sebelumnya">←</button>
+      <button type="button" class="play" id="play">▶ Putar cerita</button>
+      <button type="button" id="next" aria-label="Bab berikutnya">→</button>
+      <button type="button" id="bgm" aria-pressed="false" title="Musik latar">♪ Musik</button>
+      <button type="button" class="rec" id="rec" title="Rekam suara lu sendiri untuk bab ini">● Rekam bab ini</button>
+      <select id="voice" aria-label="Suara"></select>
+      <select id="rate" aria-label="Kecepatan"><option value="0.88">Pelan</option><option value="0.98" selected>Normal</option><option value="1.1">Cepat</option></select>
+    </div>
+    <p class="note" id="vnote"></p>
+  </div>
+</div>
+
+<div class="prompter" id="prompter" role="dialog" aria-label="Mode rekam">
+  <div class="meta"><i></i><span id="pmeta">Merekam</span></div>
+  <div class="line" id="pline"></div>
+  <div class="nextl" id="pnext"></div>
+  <div class="pbtn"><button type="button" class="go" id="pgo">Baris berikutnya (spasi)</button><button type="button" id="pcancel">Batal</button></div>
+  <p class="hint">Baca kalimat besar, lalu tekan spasi atau tombol merah buat lanjut. Jeda dikit sebelum pindah. Rekaman disimpan di browser ini dan otomatis dipakai waktu cerita diputar.</p>
+</div>
+
+<script>
+(function(){
+/* ======================= NASKAH ======================= */
+const N=[
+[ "Lima persen. Tiap tahun angka itu muncul di berita, dibacain dengan nada lega.",
+  "Dua ribu empat belas, lima persen. Dua ribu sembilan belas, lima persen. Dua ribu dua puluh lima, lima koma sebelas. Kayak kaset yang diputer ulang.",
+  "Dan bertahun-tahun gua ikut ngangguk. Stabil kan bagus?",
+  "Sampai gua kuliah keuangan, dan belajar satu hal: setiap rupiah punya jejak. Kalau laba gak nyambung sama arus kas, pasti ada yang bocor.",
+  "Terus gua mikir. Kalau perusahaan bisa dibedah kayak gitu, kenapa negara enggak?",
+  ["Jadi gua bedah. Dan jujur, awalnya gua marah. Gua mau bikin ini buat nunjuk muka.",{m:"tense",fx:"shake"}],
+  ["Tapi makin dalam gua gali, makin sering data ngebantah gua sendiri. Marah itu gampang. Adil itu yang susah.",{m:"calm"}],
+  "Kenapa dua ribu lima puluh? Karena itu tahun generasi gua lagi di puncak usia kerja. Kalau jalannya kayak sekarang, Indonesia baru jadi negara berpendapatan tinggi sekitar dua ribu lima puluh satu.",
+  "Mau sampai dua ribu empat puluh lima, kayak janji Indonesia Emas? Rata-ratanya harus lima koma sembilan persen, dua puluh tahun berturut-turut. Selisih beberapa koma itu, bertahun-tahun hidup satu generasi."],
+[ "Oke, biar gampang. Bayangin ekonomi Indonesia itu mobil.",
+  "Biar maju, mobil butuh bensin. Bensin ekonomi namanya investasi: pabrik, jalan, mesin, gedung.",
+  "Tahun lalu, dari tiap seratus liter penghasilan ekonomi kita, dua puluh delapan koma tujuh tujuh liter dituang ke tangki.",
+  "Hasilnya? Mobilnya maju lima koma sebelas kilometer.",
+  ["Bagi aja. Dua puluh delapan koma tujuh tujuh, dibagi lima koma sebelas. Lima koma enam liter per kilometer. Ekonom nyebutnya ICOR. Makin gede, makin boros.",{fx:"burst"}],
+  "Sekarang lihat mobil tetangga. Vietnam, Thailand, Filipina, Malaysia. Semuanya lebih irit dari kita.",
+  ["Coba geser sendiri. Kalau mobil kita seirit target pemerintah, empat koma lima, dengan bensin yang sama kita maju enam koma empat kilometer.",{fx:"icor45"}],
+  ["Mau tumbuh delapan persen pakai mobil seboros ini? Bensinnya harus empat puluh lima liter dari tiap seratus. Gak realistis.",{fx:"icor56"}],
+  ["Jadi bensinnya ada. Mobilnya yang boros. Pertanyaannya: bocornya di mana?",{fx:"burst"}]],
+[ "Mobil boros biasanya karena tiga hal. Bensinnya gak pernah masuk tangki. Dicolong di jalan. Atau rutenya salah.",
+  "Satu. Pajak. Sekitar sembilan ratus empat puluh empat triliun rupiah per tahun seharusnya masuk, tapi gak tertagih.",
+  "Gak semuanya kejahatan. Sekitar lima ratus empat puluh tujuh triliun dari ketidakpatuhan. Sisanya keringanan yang memang sengaja dikasih negara.",
+  ["Dan dari tiap seratus rupiah yang bocor, yang balik lewat penindakan besar paling banyak tiga rupiah. Tiga.",{m:"intense",fx:"shake"}],
+  ["Dua. Dicolong di jalan. Di lebih dari enam ratus proyek jalan desa, waktu peluang diaudit dinaikin jadi seratus persen, dana yang hilang turun sekitar delapan poin persen. Bocornya nyata. Dan bisa ditekan.",{m:"tense"}],
+  "Tiga. Rute yang salah. Izin, kuota, lahan, kredit. Semuanya lewat meja pejabat.",
+  "Ada kepala dinas yang diduga sengaja melambatkan izin, lalu minta lima puluh sampai dua ratus juta per izin buat mempercepat. Statusnya tersangka. Belum tentu bersalah.",
+  "Pajak yang bocor bikin bensin kurang. Tapi rute yang salah bikin bensin yang ada kebuang. Dan efeknya nempel bertahun-tahun."],
+[ "Biar gak abstrak, gua kasih satu kasus nyata. Bayan Resources.",
+  "Salah satu tambang batu bara paling efisien di negeri ini. Dari tiap seratus rupiah penjualan, labanya dua puluh dua koma empat. BUMN batu bara, Bukit Asam: enam koma sembilan.",
+  "Tiap tahun pemerintah nentuin berapa ton yang boleh ditambang. Anggap aja keran. Buat Bayan, keran itu nentuin sekitar empat puluh persen bisnisnya.",
+  "Empat belas September dua ribu dua puluh enam. Kuota belum disetujui. Bayan nyatain force majeure.",
+  "Dua hari kemudian, pemiliknya, Low Tuck Kwong, neken perjanjian jual saham ke Jhonlin Baratama, milik Haji Isam.",
+  "Akhir September, kuota disetujui. Plus dua puluh juta ton.",
+  ["Tujuh Oktober. Tiga puluh koma dua lima persen saham pindah tangan di harga dua ribu lima ratus delapan puluh delapan. Harga pasarnya dua belas ribu delapan ratus tujuh puluh lima. Delapan puluh persen lebih murah.",{m:"intense",fx:"shake"}],
+  "Sekarang lihat jaringannya. Empat orang dari lingkaran Haji Isam masuk kabinet: Menteri Pertanian, Menteri Perhubungan, Menteri Pekerjaan Umum, dan Wakil Menteri Kehutanan.",
+  ["Biar adil. Amran membantah diangkat karena Haji Isam. Bayan juga nyatain kuota gak ada hubungannya dengan transaksi.",{m:"tense"}],
+  "Ini bukan tuduhan. Urutan waktu bukan bukti. Yang gua tunjukin itu strukturnya: kalau nilai perusahaan ditentuin izin negara, dan pembelinya punya jaringan di kabinet, publik berhak bertanya. Di sistem yang sehat, pertanyaan itu dijawab pakai dokumen, bukan cuma bantahan.",
+  ["Dan Bayan cuma satu keran. Negara pegang ribuan.",{fx:"burst"}]],
+[ "Nah. Ini punchline-nya.",
+  ["Masalah Indonesia bukan uang. Masalahnya, siapa yang dapat.",{fx:"burst"}],
+  "Pajak, proyek, izin, kuota. Semuanya keran yang dipegang negara. Dan tiap keran cuma punya dua cara dibuka.",
+  ["Kinerja: dikasih ke yang paling mampu dan paling patuh. Modal jatuh ke yang paling produktif. Mobilnya makin irit.",{fx:"swK",m:"hope"}],
+  ["Kedekatan: dikasih ke yang paling dekat. Yang gak dekat, bayar pelicin atau mundur. Modal jatuh ke yang paling jago lobi.",{fx:"swD",m:"intense"}],
+  "Ini bukan teori awang-awang. Waktu ada rumor kesehatan Soeharto memburuk, saham perusahaan yang paling bergantung padanya jatuh paling dalam. Pasar sendiri ngehargain koneksi.",
+  "Perusahaan yang dekat kekuasaan, enam sampai dua puluh dua poin lebih mungkin dapat izin impor.",
+  "Dan data pabrik BPS nunjukin: kalau modal dialokasikan ulang dengan rapi, produktivitas manufaktur secara teori bisa naik lebih dari dua kali lipat. Itu batas atas, bukan janji.",
+  ["Tapi gua harus jujur. Ada ekonom yang bilang urutannya kebalik: SDM dulu, baru institusi. Skor matematika PISA kita tiga ratus enam puluh enam. Rata-rata OECD sekitar empat ratus tujuh puluh dua. Bantahan ini serius, dan gua belum bisa matahin sepenuhnya.",{m:"calm"}],
+  ["Kedekatan kerasa gratis buat yang dapat. Tapi tagihannya tetap datang. Ke kita semua.",{m:"intense"}]],
+[ "Investor global gak baca niat. Mereka baca harga.",
+  "Dua puluh tujuh Januari dua ribu dua puluh enam. MSCI membekukan penambahan bobot saham Indonesia. Alasannya: saham yang beredar gak transparan, ada indikasi perdagangan terkoordinasi.",
+  ["IHSG anjlok tujuh koma tiga lima persen dalam sehari. Perdagangan dihentikan dua kali.",{fx:"shake"}],
+  "Asing jual bersih tiga belas koma sembilan dua triliun dalam sepekan. Direktur Utama BEI dan pimpinan OJK mundur.",
+  "Rupiah melemah sekitar empat persen.",
+  ["Dan bunga utang negara tahun ini: lima ratus sembilan puluh sembilan triliun rupiah. Dibayar dari pajak. Pajak lu, pajak gua.",{fx:"burst"}],
+  ["Bunga itu dua lapis. Lapis pertama dari The Fed, gak bisa kita atur. Lapis kedua premi risiko Indonesia. Dan yang kedua itu buatan sendiri.",{m:"tense"}],
+  "Bulan November ini, MSCI ngumumin tinjauan penentuannya. Kalau turun kelas, Goldman Sachs memperkirakan sampai tiga belas miliar dolar bisa keluar.",
+  ["Kedekatan itu gak gratis. Tagihannya dibayar lewat rupiah dan bunga utang. Alias pajak kita.",{m:"intense"}]],
+[ "Biar adil. Pemerintah gak diem.",
+  "Dua ribu dua puluh, ekspor bijih nikel dilarang. Ekspor turunan nikel naik dari tiga miliar dolar ke tiga puluh empat miliar dolar. Berapa yang beneran tinggal di Indonesia, masih diperdebatkan.",
+  "Dua ribu dua puluh lima, devisa hasil ekspor sumber daya alam wajib ditahan seratus persen di dalam negeri selama setahun.",
+  "Empat koma dua belas juta hektare sawit ilegal di kawasan hutan diambil alih. Tapi setoran ke negara baru nol koma lima tiga triliun.",
+  "Mei dua ribu dua puluh enam, harga ekspor batu bara, CPO, dan ferroalloy wajib dicatat lewat Danantara Sumberdaya Indonesia.",
+  ["Rapornya? Inflasi aman. Pertumbuhan datar. Indeks Persepsi Korupsi turun, dari tiga puluh tujuh ke tiga puluh empat.",{m:"tense"}],
+  "Makro stabil. Institusi melemah.",
+  ["Benang merahnya: semua kebijakan itu memperbesar kendali negara atas keran. Kendali itu bisa nutup bocor. Bisa juga jadi sumber rente baru. Penentunya balik lagi: kinerja, atau kedekatan.",{m:"calm"}]],
+[ "Sekarang giliran lu yang pegang kerannya.",
+  "Titik awalnya dua ribu dua puluh lima. Pendapatan per orang Indonesia sekitar lima ribu dolar setahun. Garis finisnya negara berpendapatan tinggi, sekitar empat belas ribu dolar.",
+  ["Kalau keran dibagi lewat kinerja, kita tembus sekitar dua ribu empat puluh enam.",{fx:"sim100"}],
+  ["Kalau kondisi kayak sekarang jalan terus, sekitar dua ribu lima puluh satu.",{fx:"sim45"}],
+  ["Kalau kedekatan penuh, sekitar dua ribu lima puluh sembilan. Tiga belas tahun lebih telat dari kinerja.",{fx:"sim0",m:"tense"}],
+  ["Perhatiin satu hal. Selama gak ada krisis besar, di semua skenario pendapatan per orang tetap naik. Yang beda cuma kecepatannya.",{m:"hope",fx:"sim45"}],
+  ["Tapi inget. Ini simulasi jalan mulus. Krisis global, guncangan politik di dalam negeri, perang, pandemi, gak ada yang masuk hitungan. Padahal tiga puluh tahun terakhir kita udah kena tiga kali. Kalau krisis datang, semua tahun mundur. Dan yang institusinya lemah, biasanya jatuh paling dalam.",{m:"tense",fx:"shake"}]],
+[ "Jadi kesimpulannya apa? Gua pisahin jadi tiga.",
+  "Yang udah kebukti. Indonesia gak kekurangan bensin, tapi mobilnya paling boros. Bocornya nyata. Keran negara bisa diperjualbelikan. Makro stabil, institusi melemah. Dan pasar udah ngasih harga.",
+  "Yang kemungkinan besar bener. Benerin mesin lebih ampuh daripada nambah bensin. Dan borosnya paling parah di titik negara bagi keran.",
+  "Yang belum kebukti, dan harus gua akui. Seberapa besar efek institusi ke pertumbuhan kita. SDM dulu atau institusi dulu. Dan apakah kuota Bayan ada hubungannya dengan penjualan sahamnya.",
+  ["Jadi inferensi gua. Indonesia mentok di lima persen bukan karena miskin modal, tapi karena modalnya dipakai boros. Itu inferensi, bukan vonis.",{fx:"burst"}],
+  "Dan kalau gua salah, kemungkinan salahnya di sini: SDM ternyata lebih menentukan, atau produktivitas kita memang hampir nol."],
+[ "Semua angka tadi punya satu alamat. Bukan yang paling miskin. Bukan yang paling kaya. Yang di tengah.",
+  "Kelas menengah. Dua ribu sembilan belas, lima puluh tujuh koma tiga juta orang. Dua ribu dua puluh empat, empat puluh tujuh koma sembilan juta. Sembilan koma empat juta orang turun kelas.",
+  ["Yang di atas dilindungi aset dan dolar. Yang di bawah dilindungi bansos. Yang di tengah? Terlalu kaya buat dibantu. Terlalu miskin buat aman.",{fx:"squeeze"}],
+  "Gajinya kelihatan negara, jadi dipotong duluan. Sementara usaha yang gak tercatat gak ketagih.",
+  "Tangga naiknya kerja formal. Tapi pabrik gak tumbuh. Tahun lalu, delapan puluh delapan ribu lima ratus sembilan belas pekerja kena PHK, mayoritas dari manufaktur.",
+  "Cicilannya dalam rupiah. Rupiah melemah, bunga gak turun. Dan yang baru belajar nabung lewat saham, ikut kena anjloknya IHSG.",
+  "Biar adil. Paling kejepit bukan berarti paling menderita. Yang paling menderita tetap yang miskin. Tapi kelas menengah yang paling banyak kehilangan, dan paling sedikit yang ngelindungin.",
+  ["Kedengarannya berat? Lihat dulu orang-orang yang pernah ada di posisi lebih berat lagi.",{m:"inspire"}]],
+[ "Sebelum lu bilang negara ini gak mungkin berubah, kenalan dulu sama mereka. Bukan pahlawan di buku sejarah. Orang biasa.",
+  "Korea Selatan, tahun enam puluhan. Lebih miskin dari kita hari ini. Lebih dari sepuluh ribu perawat dan sekitar delapan ribu penambang berangkat ke Jerman Barat. Gaji mereka dijadiin jaminan pinjaman negara.",
+  ["Korea lagi, sembilan belas sembilan delapan. Krisis. Tiga koma lima juta orang nyerahin cincin kawin dan kalung mereka. Terkumpul sekitar dua ratus dua puluh tujuh ton emas.",{fx:"gold"}],
+  "Spanyol, sembilan belas tujuh tujuh. Baru keluar dari kediktatoran, inflasi sekitar empat puluh persen. Buruhnya terima upah dibekukan. Ditukar reformasi pajak dan pendidikan gratis.",
+  "Taiwan. Tuan tanah wajib jual tanahnya ke petani penggarap. Kekayaannya pindah ke industri. Dari situ, puluhan tahun kemudian, lahir TSMC.",
+  "Polandia, sembilan belas sembilan puluh. Rak toko kosong. Kenaikan gaji sengaja ditahan di bawah inflasi. Sekarang negara berpendapatan tinggi.",
+  "Irlandia. Satu generasi pergi merantau karena gak ada kerja. Sekarang salah satu negara terkaya di Eropa.",
+  ["Dan kita juga pernah. Sembilan belas sembilan delapan, ekonomi kita nyusut tiga belas persen, dan rakyatnya nanggung. Hari ini, Indonesia nomor satu dunia di World Giving Index tujuh tahun berturut-turut. Kita bukan bangsa yang pelit berkorban.",{fx:"gold"}],
+  "Mereka gak lebih suci dari kita. Mereka juga marah. Bedanya dua: pengorbanan rakyat dibalas negara, dan yang berkuasa bisa dihukum. Korea memenjarakan mantan presidennya. Spanyol menjatuhkan perdana menterinya.",
+  ["Mereka gak berhenti nyalahin pemerintah. Mereka nanggung bagian mereka. Dan nagih bagian negaranya sampai lunas.",{fx:"burst"}]],
+[ "Dari kisah-kisah tadi, gampang banget nyimpulin: berarti kita harus chaos dulu.",
+  ["Tunggu. Hitung dulu, sebelum ada yang beneran nyalain korek.",{fx:"shake"}],
+  "Dari tiga ratus dua puluh tiga gerakan perlawanan besar di dunia, yang tanpa kekerasan berhasil lima puluh tiga persen. Yang pakai kekerasan, cuma dua puluh enam.",
+  "Musim Semi Arab. Mesir balik ke militer. Libya, Suriah, Yaman, perang saudara.",
+  ["Dan kita pernah bayar harganya. Sembilan belas sembilan delapan, ekonomi nyusut tiga belas koma dua persen. Pendapatan per orang baru balik ke level sebelum krisis tahun dua ribu dua. Lima tahun hidup satu generasi, hilang.",{m:"intense",fx:"shake"}],
+  ["Sekarang hitung. Sabar sambil reformasi, dua ribu empat puluh enam. Diam aja, dua ribu lima puluh satu.",{m:"dramatic"}],
+  "Chaos, skenario terbaik: dua ribu lima puluh dua. Lebih telat dari diam. Skenario umum: dua ribu lima puluh tujuh.",
+  ["Kedekatan itu mobil boros. Pelan, nyebelin, tapi tetap jalan. Chaos itu beda. Chaos itu bakar mobilnya, jalan kaki lima tahun, baru beli mobil baru.",{m:"intense"}],
+  ["Jadi either way. Chaos gak pernah mempercepat. Paling bagus, chaos cuma memperlambat.",{fx:"burst"}],
+  ["Tapi jangan salah baca. Ini bukan pembelaan buat kedekatan. Kedekatan bikin kita telat tiga belas tahun. Itu anak yang masuk SD hari ini, lulus SMA, masih tinggal di negara berkembang.",{m:"dramatic"}],
+  "Sekarang bagian paling susah. Dua jalan, dua harga. Lu cuma boleh pilih satu.",
+  ["Jalan pertama: bakar sekarang. Silakan turun ke jalan. Teriak, nuntut, sulut apinya. Rasanya gagah. Rasanya menang. Tapi jujur ke diri sendiri: lu udah ngerti belum, apa yang mau lu ganti, dan gantinya apa?",{fx:"pickA",m:"intense"}],
+  ["Kalau apinya udah nyala, dan ternyata keadaan malah lebih buruk dari sebelum lu bakar, korek itu gak bisa ditarik balik. Kalau lu dua puluh lima tahun hari ini, negara yang lu impikan baru datang waktu lu lima puluh satu. Lebih sering lima puluh enam. Lu menang hari ini. Lalu masa muda lu habis di atas abunya.",{fx:"shake"}],
+  ["Jalan kedua: tahan, bayar, tagih. Lu kalah hari ini. Ego lu gak kepuasan. Gak ada yang tepuk tangan. Gak ada hadiah instan.",{fx:"pickB",m:"heavy"}],
+  ["Yang bisa lu taruh di meja cuma satu: masa muda lu. Dihabisin buat gak nyari kambing hitam, ngeredam ego, bayar bagian lu, nagih bagian negara pakai angka, dan terus benerin diri sendiri. Sampai Tuhan kasih kestabilan buat lu, keluarga lu, anak lu.",{m:"hope"}],
+  ["Kaya? Bahkan paling kaya? Pintunya tetap kebuka. Ego yang udah jinak, sabar yang seluas laut, itu modal, bukan kekalahan. Dan kalau keran dibagi lewat kinerja, tangga itu kebuka buat orang yang modalnya cuma kemampuan. Dijamin? Enggak. Gak semua orang sabar jadi kaya. Tapi orang yang bakar mobilnya, mulai lagi dari nol.",{m:"inspire",fx:"burst"}],
+  "Kalau tagihan itu berhasil, lu ngerasain hasilnya sekitar umur empat puluh lima. Kalau gagal, lu tetap sampai, sekitar lima puluh, tanpa lima tahun yang terbakar. Dan di hari tua, lu bisa istirahat dengan tenang.",
+  ["Gak ada jaminan. Sabar bukan obat. Tapi cuma sabar yang gak mundurin garis start. Satu jalan muasin amarah lu hari ini. Satu jalan lagi ngasih ketenangan buat masa tua lu, dan masa depan anak lu.",{m:"dramatic",fx:"gold"}]],
+[ "Ini bagian opini pribadi gua. Gak pakai label keyakinan. Bedain ya.",
+  "Harga naik, salah presiden. Pajak naik, salah presiden. IHSG anjlok, salah presiden. Apa iya seratus persen?",
+  "Presiden bukan gak bersalah. Yang megang keran paling atas ya dia. Cara keran dibagi, siapa yang diangkat, dan Indeks Persepsi Korupsi yang turun di masa jabatannya. Itu tagih penuh.",
+  "Tapi ada yang bukan di tangannya seorang. Warisan sebelum dia menjabat. The Fed. Usaha yang gak bayar PPN. DPR. Kepala daerah yang kita pilih sendiri.",
+  "Kalau semuanya dilempar ke satu orang, pelaku lain malah bebas. Karena gak ada yang nagih mereka.",
+  ["Ngomel itu murah. Ngukur itu mahal. Tapi cuma yang kedua yang bisa ngubah sesuatu.",{fx:"burst"}],
+  "Jadi. Indonesia perlu ganti presiden, atau ganti rakyat?",
+  ["Menurut gua, bukan dua-duanya. Ganti cara kita menilai keduanya. Dari nunjuk, jadi ngukur.",{fx:"gold"}],
+  "Lima persen itu bukan takdir. Itu konsumsi bensin. Dan konsumsi bensin bisa dibenerin.",
+  "Delapan puluh satu tahun setelah merdeka, pertanyaan gua masih sama. Kita udah beneran merdeka, atau cuma ganti siapa yang megang kerannya?",
+  ["Lu mau jadi generasi yang menang? Atau generasi yang memenangkan?",{fx:"gold",m:"inspire"}]]
+];
+const NL=N.map(ch=>ch.map(l=>Array.isArray(l)?{t:l[0],...l[1]}:{t:l}));
+window.__NASKAH=NL;
+
+/* ======================= GAMBAR: bendera & orang ======================= */
+const FL={
+ ID:'<rect width="30" height="10" fill="#CE1126"/><rect y="10" width="30" height="10" fill="#fff"/>',
+ VN:'<rect width="30" height="20" fill="#DA251D"/><polygon points="15,4.2 16.4,8.5 20.9,8.5 17.3,11.2 18.6,15.5 15,12.9 11.4,15.5 12.7,11.2 9.1,8.5 13.6,8.5" fill="#FFCD00"/>',
+ TH:'<rect width="30" height="20" fill="#A51931"/><rect y="3.33" width="30" height="13.34" fill="#F4F5F8"/><rect y="6.67" width="30" height="6.66" fill="#2D2A4A"/>',
+ PH:'<rect width="30" height="10" fill="#0038A8"/><rect y="10" width="30" height="10" fill="#CE1126"/><polygon points="0,0 17.3,10 0,20" fill="#fff"/><circle cx="6" cy="10" r="2.4" fill="#FCD116"/>',
+ MY:'<rect width="30" height="20" fill="#fff"/>'+Array.from({length:7},(_,i)=>'<rect y="'+(i*2*20/14).toFixed(2)+'" width="30" height="'+(20/14).toFixed(2)+'" fill="#CC0001"/>').join('')+'<rect width="15" height="11.43" fill="#010066"/><circle cx="6" cy="5.7" r="3.6" fill="#FFCC00"/><circle cx="7.1" cy="5.7" r="3.1" fill="#010066"/><polygon points="11,3.3 11.6,5 13.4,5 12,6.1 12.5,7.8 11,6.8 9.5,7.8 10,6.1 8.6,5 10.4,5" fill="#FFCC00"/>',
+ KR:'<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="5" fill="#003478"/><path d="M10 10 A5 5 0 0 1 20 10 A2.5 2.5 0 0 1 15 10 A2.5 2.5 0 0 0 10 10Z" fill="#C60C30"/><g fill="#000"><rect x="4" y="3" width="5" height=".9" transform="rotate(34 6.5 4)"/><rect x="4" y="4.6" width="5" height=".9" transform="rotate(34 6.5 5)"/><rect x="21" y="3" width="5" height=".9" transform="rotate(-34 23.5 4)"/><rect x="21" y="4.6" width="5" height=".9" transform="rotate(-34 23.5 5)"/><rect x="4" y="15" width="5" height=".9" transform="rotate(-34 6.5 16)"/><rect x="4" y="16.6" width="5" height=".9" transform="rotate(-34 6.5 17)"/><rect x="21" y="15" width="5" height=".9" transform="rotate(34 23.5 16)"/><rect x="21" y="16.6" width="5" height=".9" transform="rotate(34 23.5 17)"/></g>',
+ ES:'<rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/>',
+ TW:'<rect width="30" height="20" fill="#FE0000"/><rect width="15" height="10" fill="#000095"/><circle cx="7.5" cy="5" r="3.4" fill="#fff"/><circle cx="7.5" cy="5" r="1.9" fill="#000095"/><circle cx="7.5" cy="5" r="1.6" fill="#fff"/>',
+ PL:'<rect width="30" height="10" fill="#fff"/><rect y="10" width="30" height="10" fill="#DC143C"/>',
+ IE:'<rect width="10" height="20" fill="#169B62"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#FF883E"/>',
+ IN:'<rect width="30" height="6.67" fill="#FF9933"/><rect y="6.67" width="30" height="6.66" fill="#fff"/><rect y="13.33" width="30" height="6.67" fill="#138808"/><circle cx="15" cy="10" r="2.4" fill="none" stroke="#000080" stroke-width=".6"/>'
+};
+function flag(c,cls){return '<svg class="'+(cls||'')+'" viewBox="0 0 30 20" preserveAspectRatio="none" aria-label="bendera">'+FL[c]+'</svg>';}
+const SK=['#E9B98F','#D9A27A','#C88A62','#B97A54'];
+function person(o){o=o||{};const sk=o.sk||SK[0],c=o.c||'#7A8FB5',x=[];
+ x.push('<svg viewBox="0 0 60 92" aria-hidden="true">');
+ x.push('<ellipse cx="30" cy="89" rx="16" ry="3" fill="rgba(0,0,0,.08)"/>');
+ x.push('<rect x="21" y="64" width="7" height="24" rx="3.5" fill="'+(o.leg||'#4A3B30')+'"/><rect x="32" y="64" width="7" height="24" rx="3.5" fill="'+(o.leg||'#4A3B30')+'"/>');
+ x.push('<path d="M16 40 Q16 30 30 30 Q44 30 44 40 L44 68 Q30 72 16 68 Z" fill="'+c+'"/>');
+ if(o.arm==='up')x.push('<rect x="41" y="14" width="6" height="26" rx="3" fill="'+c+'" transform="rotate(14 44 38)"/><circle cx="50" cy="13" r="3.5" fill="'+sk+'"/>');
+ else x.push('<rect x="40" y="36" width="6" height="24" rx="3" fill="'+c+'" transform="rotate(-8 43 36)"/>');
+ x.push('<rect x="14" y="36" width="6" height="24" rx="3" fill="'+c+'" transform="rotate(8 17 36)"/>');
+ x.push('<circle cx="30" cy="20" r="10" fill="'+sk+'"/>');
+ x.push('<path d="M20 18 Q22 8 30 8 Q38 8 40 18 Q35 13 30 14 Q25 13 20 18Z" fill="'+(o.hair||'#2A1E17')+'"/>');
+ if(o.hat==='nurse')x.push('<path d="M21 13 L39 13 L37 6 L23 6 Z" fill="#fff" stroke="#E2D6C8" stroke-width=".8"/><rect x="28.6" y="7.2" width="2.8" height="4.6" fill="#D63A2A"/><rect x="27.7" y="8.1" width="4.6" height="2.8" fill="#D63A2A"/>');
+ if(o.hat==='helm')x.push('<path d="M18 17 Q18 6 30 6 Q42 6 42 17 Z" fill="#F2B21B"/><rect x="16" y="16" width="28" height="3" rx="1.5" fill="#D99A0A"/><circle cx="30" cy="11" r="2.6" fill="#FFF3B0"/><path d="M30 11 L14 2 L12 8 Z" fill="rgba(255,240,160,.55)"/>');
+ if(o.hat==='cap')x.push('<path d="M19 15 Q20 7 30 7 Q40 7 41 15 Z" fill="'+(o.hc||'#3A5A8C')+'"/><rect x="38" y="13" width="10" height="2.6" rx="1.3" fill="'+(o.hc||'#3A5A8C')+'"/>');
+ if(o.hat==='straw')x.push('<path d="M12 15 L30 3 L48 15 Z" fill="#E3C27A" stroke="#C9A55A" stroke-width=".8"/>');
+ x.push('<circle cx="26.5" cy="21" r="1.1" fill="#2A1E17"/><circle cx="33.5" cy="21" r="1.1" fill="#2A1E17"/><path d="M26.5 25 Q30 27.5 33.5 25" stroke="#2A1E17" stroke-width="1.1" fill="none" stroke-linecap="round"/>');
+ if(o.item==='ring')x.push('<circle cx="50" cy="8" r="4.2" fill="none" stroke="#E3A21A" stroke-width="2"/><circle cx="50" cy="3.6" r="1.6" fill="#FFF3B0"/>');
+ if(o.item==='pick')x.push('<rect x="44" y="40" width="3" height="26" rx="1.5" fill="#8E6B4A" transform="rotate(-20 45 52)"/><path d="M38 40 Q46 34 56 40" stroke="#7A7A7A" stroke-width="3" fill="none" stroke-linecap="round"/>');
+ if(o.item==='bag')x.push('<rect x="44" y="58" width="14" height="18" rx="3" fill="#8E5A3A"/><rect x="48" y="55" width="6" height="4" rx="1.5" fill="none" stroke="#6E4428" stroke-width="1.5"/>');
+ if(o.item==='basket')x.push('<path d="M42 58 L58 58 L55 70 L45 70 Z" fill="none" stroke="#9A7B55" stroke-width="2"/><path d="M45 58 Q50 50 55 58" stroke="#9A7B55" stroke-width="2" fill="none"/>');
+ if(o.item==='sign')x.push('<rect x="46" y="2" width="2.5" height="36" fill="#8E6B4A"/><rect x="38" y="2" width="20" height="13" rx="2" fill="#fff" stroke="#D63A2A" stroke-width="1.2"/><rect x="41" y="6" width="14" height="1.6" fill="#D63A2A"/><rect x="41" y="9.5" width="10" height="1.6" fill="#D63A2A"/>');
+ if(o.item==='rice')x.push('<path d="M46 66 Q50 50 54 40 M50 66 Q54 52 58 44 M42 66 Q44 54 48 46" stroke="#5FA24A" stroke-width="2" fill="none" stroke-linecap="round"/>');
+ if(o.item==='heart')x.push('<path d="M50 14 C46 9 41 13 44 17 L50 23 L56 17 C59 13 54 9 50 14Z" fill="#D63A2A"/>');
+ if(o.item==='wrench')x.push('<rect x="44" y="40" width="3.4" height="22" rx="1.7" fill="#8C96A3" transform="rotate(-25 46 50)"/><circle cx="50" cy="40" r="4" fill="none" stroke="#8C96A3" stroke-width="3"/>');
+ x.push('</svg>');return x.join('');}
+
+/* ======================= isi dinamis ======================= */
+// bab 1: grafik tahunan
+const YR=[[2014,5.01],[2015,4.88],[2016,5.03],[2017,5.07],[2018,5.17],[2019,5.02],[2020,-2.07],[2021,3.70],[2022,5.31],[2023,5.05],[2024,5.03],[2025,5.11]];
+document.getElementById('years').innerHTML=YR.map(([y,g])=>'<div class="'+(g<0?'neg':'')+'"><b>'+String(g.toFixed(2)).replace('.',',')+'</b><i style="--h:'+(Math.abs(g)/5.4*78).toFixed(0)+'%"></i>\''+String(y).slice(2)+'</div>').join('');
+// bab 2: ICOR dengan bendera
+const IC=[['ID','Indonesia','86%','5,6–7',1],['VN','Vietnam','64%','4,6–5,7'],['TH','Thailand','55%','4,4'],['PH','Filipina','49%','3,4–4,4'],['MY','Malaysia','43%','2,7–4,9']];
+document.getElementById('icor').innerHTML='<h3>Konsumsi bensin mobil tetangga (ICOR)</h3>'+IC.map(r=>'<div class="bar'+(r[4]?' id':'')+'">'+flag(r[0])+'<span>'+r[1]+'</span><div class="t"><i style="--w:'+r[2]+'"></i></div><b>'+r[3]+'</b></div>').join('')+'<p class="fine">irit ← → boros</p>';
+const icorR=document.getElementById('icorR'),icorV=document.getElementById('icorV'),growV=document.getElementById('growV'),icorN=document.getElementById('icorN'),car2=document.getElementById('car2');
+function upIcor(){const v=+icorR.value,g=28.77/v;icorV.textContent=v.toFixed(1).replace('.',',');growV.textContent=g.toFixed(1).replace('.',',')+'%';growV.style.color=g>=6?'var(--good)':g<5?'var(--bad)':'var(--accent)';car2.style.animationDuration=(9*5.11/g).toFixed(1)+'s';}
+icorR.addEventListener('input',upIcor);upIcor();
+// bab 3: 100 titik
+const dz=document.getElementById('dots');for(let i=0;i<100;i++){const x=document.createElement('i');if(i<3)x.className='g';dz.appendChild(x);}
+// bab 5: saklar
+const flow=document.getElementById('flow'),whoK=document.getElementById('whoK'),whoD=document.getElementById('whoD'),swK=document.getElementById('swK'),swD=document.getElementById('swD'),flowTxt=document.getElementById('flowTxt');
+whoK.innerHTML=person({c:'#0E8F6C',hat:'helm',item:'wrench',sk:SK[1]})+'Yang jago kerja';
+whoD.innerHTML=person({c:'#3A3A4A',item:'heart',sk:SK[0],hair:'#555'})+'Yang jago lobi';
+function sw(m){flow.classList.remove('k','d');void flow.offsetWidth;flow.classList.add(m);swK.className=m==='k'?'on-k':'';swD.className=m==='d'?'on-d':'';whoK.className='who wk '+(m==='k'?'win':'lose');whoD.className='who wd '+(m==='d'?'win':'lose');
+ flowTxt.innerHTML=m==='k'?'<b style="color:var(--good)">Kinerja:</b> izin, kuota, kredit, jabatan ke yang paling mampu dan patuh. Modal ke yang paling produktif. Mobil makin irit.':'<b style="color:var(--bad)">Kedekatan:</b> ke yang paling dekat. Yang gak dekat bayar pelicin atau mundur. Investor jujur nambahin "premi takut".';}
+swK.onclick=()=>sw('k');swD.onclick=()=>sw('d');
+// bab 8: simulator mini
+const PR=[{n:'Kedekatan penuh',p:0,y:2059,g:3.8},{n:'Kondisi sekarang',p:45,y:2051,g:4.7},{n:'Netral (tren 2025)',p:55,y:2050,g:4.8},{n:'Lewat kinerja',p:100,y:2046,g:5.7}];
+const simR=document.getElementById('simR'),simY=document.getElementById('simY'),simG=document.getElementById('simG'),runner=document.getElementById('runner'),pBox=document.getElementById('presets');
+pBox.innerHTML=PR.map((p,i)=>'<button type="button" data-p="'+p.p+'">'+p.n+'</button>').join('');
+function interp(v){for(let i=0;i<PR.length-1;i++){const a=PR[i],b=PR[i+1];if(v<=b.p){const t=(v-a.p)/(b.p-a.p);return{y:a.y+(b.y-a.y)*t,g:a.g+(b.g-a.g)*t};}}return PR[PR.length-1];}
+let runRaf=0;
+function upSim(anim){const v=+simR.value,r=interp(v),Y=Math.round(r.y);simY.textContent='±'+Y;simG.textContent=r.g.toFixed(1).replace('.',',')+'%';simY.className='yr'+(Y>=2055?' slower':Y>=2049?' slow':'');
+ [...pBox.children].forEach(b=>b.classList.toggle('on',+b.dataset.p===v));
+ cancelAnimationFrame(runRaf);const dur=anim?1600:0,t0=performance.now(),track=runner.parentElement;
+ const step=t=>{const k=dur?Math.min(1,(t-t0)/dur):1,e=1-Math.pow(1-k,3);const maxX=track.clientWidth-80;const pos=e*maxX*((2060-Y)/(2060-2045)*.25+.75);runner.style.left=(8+pos)+'px';if(dur){simY.textContent='±'+Math.round(2025+(Y-2025)*e);}if(k<1)runRaf=requestAnimationFrame(step);};runRaf=requestAnimationFrame(step);}
+simR.addEventListener('input',()=>upSim(false));simR.addEventListener('change',()=>upSim(true));
+pBox.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;simR.value=b.dataset.p;upSim(true);});
+// bab 11: negara
+const CT=[
+ {f:'KR',n:'Korea Selatan',y:'1959–1977',p:[{c:'#F4F4F4',hat:'nurse',sk:SK[0],leg:'#DDD'},{c:'#55606E',hat:'helm',item:'pick',sk:SK[1]}],t:'Lebih miskin dari Indonesia hari ini. <b>10.000+ perawat dan ±8.000 penambang</b> kerja di Jerman Barat; gaji mereka jadi jaminan pinjaman negara.',r:'Pendapatan per orang (PPP): ±30% level AS (1980-an) → 73% (2023).'},
+ {f:'KR',n:'Korea Selatan',y:'1998',p:[{c:'#C2560F',arm:'up',item:'ring',sk:SK[0],hair:'#3A2A20'},{c:'#7A8FB5',arm:'up',item:'ring',sk:SK[1]}],t:'Krisis moneter. <b>3,51 juta orang</b> menyerahkan cincin kawin dan kalung: <b>±227 ton emas</b>.',r:'Utang IMF lunas 2001, lebih cepat dari jadwal.'},
+ {f:'ES',n:'Spanyol',y:'1977',p:[{c:'#3A5A8C',hat:'cap',item:'sign',sk:SK[1]},{c:'#8C3A3A',hat:'cap',hc:'#5A2A2A',sk:SK[2]}],t:'Keluar dari 36 tahun kediktatoran, inflasi ±40%. Buruh menerima <b>upah dibekukan</b> (Pakta Moncloa).',r:'Ditukar reformasi pajak, pendidikan gratis. Masuk Uni Eropa 1986.'},
+ {f:'TW',n:'Taiwan',y:'1949–1953',p:[{c:'#5E8C4A',hat:'straw',item:'rice',sk:SK[2]}],t:'Tuan tanah <b>wajib menjual tanahnya</b> ke penggarap, dibayar sebagian dengan saham perusahaan negara.',r:'Kekayaan pindah ke industri; dari ITRI lahir TSMC (1987).'},
+ {f:'PL',n:'Polandia',y:'1990',p:[{c:'#8A7FA8',item:'basket',sk:SK[0],hair:'#7A5A3A'},{c:'#6E7F8A',hat:'cap',hc:'#4A4A5A',sk:SK[0]}],t:'Hiperinflasi, rak toko kosong. Kenaikan gaji <b>ditahan di bawah inflasi</b>; upah riil jatuh.',r:'Masuk Uni Eropa 2004. Kini berpendapatan tinggi.'},
+ {f:'IE',n:'Irlandia',y:'1950-an',p:[{c:'#3E7A5A',hat:'cap',hc:'#2E4A3A',item:'bag',sk:SK[0],hair:'#A0522D'}],t:'Ekonomi stagnan. <b>Ratusan ribu orang</b>, satu generasi, merantau mencari kerja.',r:'Kini salah satu negara terkaya di Eropa per kapita.'},
+ {f:'ID',n:'Indonesia',y:'1998 & hari ini',me:1,p:[{c:'#CE1126',item:'heart',sk:SK[2]},{c:'#C2560F',sk:SK[1],hair:'#2A1E17'},{c:'#E07A3A',item:'heart',sk:SK[3]}],t:'Ekonomi menyusut <b>±13%</b> dalam setahun, dan rakyatnya menanggung.',r:'Peringkat 1 dunia World Giving Index tujuh tahun berturut-turut.'}
+];
+document.getElementById('ctry').innerHTML=CT.map((c,i)=>'<div class="cc'+(c.me?' me':'')+'" data-s="'+(i+1)+'"><div class="hd">'+flag(c.f,'fl')+'<div><span>'+c.y+'</span><b>'+c.n+'</b></div></div><div class="ppl">'+c.p.map(person).join('')+'</div><p>'+c.t+'</p><div class="res">→ '+c.r+'</div></div>').join('');
+const IPK=[['IE','Irlandia',69,76,'▲','up'],['KR','Korea Selatan',56,63,'▲','up'],['ES','Spanyol',65,55,'▼ pelakunya dijatuhkan','down'],['VN','Vietnam',31,41,'▲','up'],['IN','India',36,39,'≈','flat'],['ID','Indonesia',32,34,'≈ sempat 40 (2019)','flat']];
+document.querySelector('#ipk tbody').innerHTML=IPK.map(r=>'<tr><td>'+flag(r[0])+r[1]+'</td><td>'+r[2]+'</td><td><b>'+r[3]+'</b></td><td class="'+r[5]+'">'+r[4]+'</td></tr>').join('');
+// bab 12: pilihan
+const chA=document.querySelector('.choice.a'),chB=document.querySelector('.choice.b');
+function pick(w){chA.classList.toggle('picked',w==='a');chB.classList.toggle('picked',w==='b');chA.classList.toggle('dim',w==='b');chB.classList.toggle('dim',w==='a');}
+chA.onclick=()=>{pick('a');setMood('intense');burst();};chB.onclick=()=>{pick('b');setMood('hope');burst(true);};
+
+/* ======================= mesin cerita ======================= */
+const scenes=[...document.querySelectorAll('.scene')],segs=document.getElementById('segs');
+scenes.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.title=(i+1)+' · '+s.dataset.title;b.setAttribute('aria-label','Bab '+(i+1)+': '+s.dataset.title);b.innerHTML='<i></i>';b.onclick=()=>jump(i);segs.appendChild(b);});
+const tabs=[...segs.children];
+const cap=document.getElementById('cap'),playB=document.getElementById('play'),vSel=document.getElementById('voice'),rSel=document.getElementById('rate'),vnote=document.getElementById('vnote'),stage=document.getElementById('stage'),flashEl=document.getElementById('flash');
+const chn=document.getElementById('chn'),cht=document.getElementById('cht'),chm=document.getElementById('chm');
+let cur=0,si=-1,playing=false,timer=null,token=0,curAudio=null;
+const sky={speed:1,hue:0,warm:0};
+const MOODS={calm:{s:1,w:0,lv:0},curious:{s:1.2,w:.1,lv:1},tense:{s:1.8,w:.5,lv:2},intense:{s:3.6,w:1,lv:3},hope:{s:1.3,w:-.4,lv:1},heavy:{s:.6,w:.2,lv:0},inspire:{s:1.6,w:.3,lv:2},dramatic:{s:2.4,w:.7,lv:2},philo:{s:.7,w:-.2,lv:0}};
+const MLAB={calm:'tenang',curious:'penasaran',tense:'tegang',intense:'kencang',hope:'harapan',heavy:'berat',inspire:'bangkit',dramatic:'dramatis',philo:'renung'};
+function setMood(m){if(!MOODS[m])return;document.body.dataset.mood=m;sky.speed=MOODS[m].s;sky.warm=MOODS[m].w;chm.textContent='suasana: '+MLAB[m];music.level(MOODS[m].lv,m);}
+function shake(){stage.classList.remove('shake');void stage.offsetWidth;stage.classList.add('shake');}
+function flash(){flashEl.classList.remove('go');void flashEl.offsetWidth;flashEl.classList.add('go');}
+let bursts=[];function burst(green){const W=innerWidth,H=innerHeight;for(let i=0;i<46;i++){const a=Math.random()*6.283,v=2+Math.random()*5;bursts.push({x:W/2,y:H*.42,vx:Math.cos(a)*v,vy:Math.sin(a)*v-1.5,life:1,c:green?[14,143,108]:(Math.random()<.5?[227,162,26]:[194,86,15])});}}
+function gold(){const W=innerWidth;for(let i=0;i<60;i++)bursts.push({x:Math.random()*W,y:-10-Math.random()*80,vx:(Math.random()-.5)*1.2,vy:1.5+Math.random()*2.5,life:1.4,c:[227,162,26]});}
+function countUp(el){if(el.dataset.done)return;el.dataset.done=1;const to=+el.dataset.to,from=+(el.dataset.from||0),dec=+(el.dataset.dec||0),t0=performance.now(),d=1400;const f=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3),v=from+(to-from)*e;el.textContent=v.toLocaleString('id-ID',{minimumFractionDigits:dec,maximumFractionDigits:dec});if(k<1)requestAnimationFrame(f);};requestAnimationFrame(f);}
+function revealEl(el){if(el.classList.contains('in'))return;el.classList.add('in');el.querySelectorAll('.cnt').forEach(countUp);if(el.classList.contains('cnt'))countUp(el);}
+function reveal(n,scroll){const els=[...scenes[cur].querySelectorAll('[data-s]')];let last=null;els.forEach(el=>{if(+el.dataset.s<=n){if(!el.classList.contains('in'))last=el;revealEl(el);if(+el.dataset.s===n){el.classList.remove('hot');void el.offsetWidth;el.classList.add('hot');}}});
+ if(scroll&&last){try{const r=last.getBoundingClientRect(),dockH=document.querySelector('.dock').offsetHeight;if(r.bottom>innerHeight-dockH-10||r.top<70)window.scrollBy({top:r.top-Math.max(80,(innerHeight-dockH-r.height)/2),behavior:'smooth'});}catch(e){}}}
+function revealAll(){scenes[cur].querySelectorAll('[data-s]').forEach(revealEl);}
+function setProg(){tabs.forEach((t,i)=>{t.setAttribute('aria-current',i===cur);const p=i<cur?100:i>cur?0:Math.round(((si+1)/NL[cur].length)*100);t.querySelector('i').style.setProperty('--p',p+'%');});chn.textContent=cur+1;cht.textContent=scenes[cur].dataset.title;}
+const FX={shake:()=>{shake();flash();},burst:()=>burst(),gold:()=>gold(),swK:()=>sw('k'),swD:()=>{sw('d');shake();},squeeze:()=>document.getElementById('sand').classList.add('sq'),
+ icor45:()=>{icorR.value=4.5;upIcor();},icor56:()=>{icorR.value=5.6;upIcor();},sim100:()=>{simR.value=100;upSim(true);},sim45:()=>{simR.value=45;upSim(true);},sim0:()=>{simR.value=0;upSim(true);},
+ pickA:()=>{pick('a');shake();},pickB:()=>{pick('b');burst(true);}};
+function applyLine(i){const L=NL[cur][i];if(!L)return;if(L.m)setMood(L.m);if(L.fx&&FX[L.fx])FX[L.fx]();}
+function resetScene(k){const s=scenes[k];s.querySelectorAll('[data-s]').forEach(el=>el.classList.remove('in','hot'));s.querySelectorAll('.cnt').forEach(el=>{delete el.dataset.done;el.textContent=el.dataset.from?(+el.dataset.from).toLocaleString('id-ID',{minimumFractionDigits:+(el.dataset.dec||0)}):'0';});
+ if(k===9)document.getElementById('sand').classList.remove('sq');if(k===11){chA.classList.remove('picked','dim');chB.classList.remove('picked','dim');}if(k===4){flow.classList.remove('k','d');swK.className='';swD.className='';whoK.className='who wk';whoD.className='who wd';flowTxt.textContent='Klik salah satu.';}}
+function show(i,full){const nx=Math.max(0,Math.min(scenes.length-1,i));resetScene(nx);cur=nx;scenes.forEach((s,k)=>s.classList.toggle('on',k===cur));
+ setMood(scenes[cur].dataset.mood);si=-1;
+ if(full){revealAll();si=NL[cur].length-1;cap.textContent=NL[cur][si].t;if(cur===4)sw('k');if(cur===7)upSim(true);if(cur===9)document.getElementById('sand').classList.add('sq');}
+ setProg();try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}}
+function jump(i){const was=playing;stop(false);show(i,!was);if(was)start();}
+
+/* ---- suara: rekaman sendiri > suara perangkat > teks ---- */
+const REC={};// bab -> {blob,url,cues}
+const synth=('speechSynthesis' in window)?window.speechSynthesis:null;let voices=[];
+function loadVoices(){if(!synth)return;voices=synth.getVoices();const id=voices.filter(v=>/^id|in-ID|id-ID/i.test(v.lang)||/indones/i.test(v.name));vSel.innerHTML='';
+ id.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name.replace(/Microsoft |Google /,'').slice(0,30);vSel.appendChild(o);});
+ const o=document.createElement('option');o.value='';o.textContent='Teks saja';vSel.appendChild(o);noteUpd();}
+if(synth){loadVoices();synth.onvoiceschanged=loadVoices;}else{vSel.innerHTML='<option value="">Teks saja</option>';}
+function noteUpd(){const n=Object.keys(REC).length;vnote.textContent=n?('Rekaman suara lu tersimpan untuk '+n+' bab di browser ini dan dipakai otomatis. Bab lain pakai suara perangkat.'):(voices.some(v=>/^id|in-ID|id-ID/i.test(v.lang))?'Sementara pakai suara perangkat (text-to-speech). Tekan ● Rekam bab ini buat ganti dengan suara lu sendiri.':'Perangkat ini belum punya suara Bahasa Indonesia, jadi cerita jalan sebagai teks. Tekan ● Rekam bab ini buat pakai suara lu sendiri.');}
+function capWords(txt){cap.innerHTML=txt.split(' ').map(w=>'<span class="w">'+w+'</span>').join(' ');return [...cap.querySelectorAll('.w')];}
+function speakLine(){
+ const my=++token,lines=NL[cur];si++;
+ if(si>=lines.length){if(cur<scenes.length-1){timer=setTimeout(()=>{if(my!==token||!playing)return;show(cur+1,false);timer=setTimeout(()=>{if(my===token&&playing)beginChapter();},1000);},1200);}else stop(true);return;}
+ reveal(si,true);applyLine(si);setProg();const txt=lines[si].t;const ws=capWords(txt);
+ const done=()=>{if(my!==token||!playing)return;timer=setTimeout(()=>{if(my===token&&playing)speakLine();},si===lines.length-1?800:380);};
+ const v=voices.find(x=>x.name===vSel.value);
+ if(synth&&v){const u=new SpeechSynthesisUtterance(txt);u.voice=v;u.lang=v.lang;u.rate=+rSel.value;
+  ws.forEach(w=>w.style.color='var(--muted)');u.onboundary=e=>{if(e.name&&e.name!=='word')return;let c=0,k=0;for(;k<ws.length;k++){c+=ws[k].textContent.length+1;if(c>e.charIndex)break;}ws.forEach((w,j)=>w.style.color=j<=k?'var(--ink)':'var(--muted)');};
+  u.onend=done;u.onerror=done;synth.speak(u);}
+ else{const words=txt.split(/\s+/).length;timer=setTimeout(done,Math.max(2400,words/2.6*1000/(+rSel.value)));}
+}
+// putar rekaman sendiri: baris muncul di detik yang dicatat waktu merekam
+function playRecording(){const R=REC[cur],my=++token;const a=new Audio(R.url);curAudio=a;a.playbackRate=1;let shownIdx=-1;
+ const tick=()=>{if(my!==token||!playing)return;const t=a.currentTime;let idx=-1;for(let i=0;i<R.cues.length;i++)if(t>=R.cues[i])idx=i;
+  if(idx>shownIdx){for(let k=shownIdx+1;k<=idx;k++){si=k;reveal(si,true);applyLine(si);}shownIdx=idx;setProg();if(NL[cur][idx])capWords(NL[cur][idx].t);}
+  if(!a.ended)requestAnimationFrame(tick);};
+ a.onended=()=>{if(my!==token||!playing)return;si=NL[cur].length-1;reveal(si,false);setProg();if(cur<scenes.length-1){timer=setTimeout(()=>{if(my!==token||!playing)return;show(cur+1,false);timer=setTimeout(()=>{if(my===token&&playing)beginChapter();},1000);},1200);}else stop(true);};
+ a.play().then(()=>requestAnimationFrame(tick)).catch(()=>{delete REC[cur];speakLine();});}
+function beginChapter(){if(REC[cur]&&si<0)playRecording();else speakLine();}
+function start(){if(playing)return;playing=true;playB.textContent='❚❚ Jeda';if(synth)synth.cancel();music.wake();
+ if(si>=NL[cur].length-1){show(playB.textContent.startsWith('↺')&&cur===scenes.length-1?0:cur,false);}
+ else if(si>=0){si=Math.max(-1,si-1);}
+ beginChapter();}
+function stop(end){playing=false;token++;clearTimeout(timer);if(synth)synth.cancel();if(curAudio){try{curAudio.pause();}catch(e){}curAudio=null;}const wasLabel=playB.textContent;playB.textContent=end?'↺ Putar ulang':(wasLabel.startsWith('❚❚')?'▶ Lanjutkan':wasLabel);if(end){si=NL[cur].length-1;setProg();}}
+playB.addEventListener('click',()=>{try{playing?stop(false):start();}catch(e){cap.textContent='Suara gak bisa diputar di perangkat ini; geser pakai panah.';}});
+document.getElementById('next').addEventListener('click',()=>jump(cur+1));
+document.getElementById('prev').addEventListener('click',()=>jump(cur-1));
+document.addEventListener('keydown',e=>{if(prompter.classList.contains('on')){if(e.key===' '||e.key==='Enter'||e.key==='ArrowRight'){e.preventDefault();recNext();}if(e.key==='Escape')recCancel();return;}
+ if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;if(e.key==='ArrowRight')jump(cur+1);if(e.key==='ArrowLeft')jump(cur-1);if(e.key===' '&&(e.target===document.body)){e.preventDefault();playB.click();}});
+
+/* ---- mode rekam (teleprompter) ---- */
+const prompter=document.getElementById('prompter'),pline=document.getElementById('pline'),pnext=document.getElementById('pnext'),pmeta=document.getElementById('pmeta'),recB=document.getElementById('rec');
+let mr=null,chunks=[],rIdx=0,rT0=0,rCues=[],rCh=0,rStream=null;
+async function recStart(){stop(false);rCh=cur;
+ try{rStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});}
+ catch(e){cap.innerHTML='Mikrofon gak bisa dibuka di halaman ini. Rekam pakai perekam suara di HP atau laptop dengan naskah dari tombol <b>Unduh naskah</b> di bawah, lalu kirim filenya.';return;}
+ chunks=[];rCues=[];rIdx=0;const mime=['audio/webm;codecs=opus','audio/webm','audio/mp4',''].find(m=>!m||(window.MediaRecorder&&MediaRecorder.isTypeSupported(m)));
+ try{mr=new MediaRecorder(rStream,mime?{mimeType:mime}:undefined);}catch(e){cap.textContent='Browser ini belum bisa merekam. Coba Chrome terbaru.';rStream.getTracks().forEach(t=>t.stop());return;}
+ mr.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data);};
+ mr.onstop=()=>{rStream.getTracks().forEach(t=>t.stop());if(!mr._ok)return;const blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'});saveRec(rCh,blob,rCues);};
+ show(rCh,false);prompter.classList.add('on');recB.classList.add('live');mr.start();rT0=performance.now();rCues.push(0);paintPrompt();}
+function paintPrompt(){const L=NL[rCh];pmeta.textContent='Merekam bab '+(rCh+1)+' · baris '+(rIdx+1)+'/'+L.length;pline.textContent=L[rIdx].t;pnext.textContent=L[rIdx+1]?('Berikutnya: '+L[rIdx+1].t):'Ini baris terakhir. Tekan sekali lagi buat selesai.';document.getElementById('pgo').textContent=L[rIdx+1]?'Baris berikutnya (spasi)':'Selesai (spasi)';
+ cur=rCh;reveal(rIdx,false);applyLine(rIdx);}
+function recNext(){const L=NL[rCh];if(rIdx<L.length-1){rIdx++;rCues.push((performance.now()-rT0)/1000);paintPrompt();}else{mr._ok=true;setTimeout(()=>{try{mr.stop();}catch(e){}},500);prompter.classList.remove('on');recB.classList.remove('live');}}
+function recCancel(){if(mr){mr._ok=false;try{mr.stop();}catch(e){}}prompter.classList.remove('on');recB.classList.remove('live');cap.textContent='Rekaman dibatalkan.';}
+document.getElementById('pgo').onclick=recNext;document.getElementById('pcancel').onclick=recCancel;
+recB.onclick=()=>{if(prompter.classList.contains('on'))return;recStart();};
+// simpan di IndexedDB (kalau bisa), plus tombol unduh
+let db=null;try{const rq=indexedDB.open('whatif-cerita',1);rq.onupgradeneeded=()=>rq.result.createObjectStore('rec');rq.onsuccess=()=>{db=rq.result;try{const tx=db.transaction('rec').objectStore('rec').openCursor();tx.onsuccess=e=>{const c=e.target.result;if(c){const v=c.value;REC[c.key]={blob:v.blob,cues:v.cues,url:URL.createObjectURL(v.blob)};c.continue();}else{noteUpd();addDl();}};}catch(e){}};}catch(e){}
+function saveRec(ch,blob,cues){if(REC[ch])URL.revokeObjectURL(REC[ch].url);REC[ch]={blob,cues,url:URL.createObjectURL(blob)};try{if(db)db.transaction('rec','readwrite').objectStore('rec').put({blob,cues},ch);}catch(e){}
+ noteUpd();addDl();cap.innerHTML='Rekaman bab '+(ch+1)+' tersimpan. Tekan <b>▶ Putar cerita</b> buat dengar hasilnya bareng animasinya.';show(ch,false);}
+let dlNS=null;try{if(window.claude&&window.claude.use)window.claude.use('downloads').then(n=>{dlNS=n;addDl();}).catch(()=>{});}catch(e){}
+function addDl(){let box=document.getElementById('dlbox');if(!box){box=document.createElement('p');box.id='dlbox';box.className='note';box.style.display='block';document.querySelector('.dock').appendChild(box);}
+ const ks=Object.keys(REC).map(Number).sort((a,b)=>a-b);const ext=k=>(REC[k].blob.type||'').includes('mp4')?'mp4':'webm';
+ box.innerHTML=(ks.length?'Rekaman lu: '+ks.map(k=>'<a href="#" data-rec="'+k+'">bab '+(k+1)+'</a>').join(' · ')+' · <a href="#" id="dlcues">waktu baris (JSON)</a> · ':'')+'<a href="#" id="dlscript">Unduh naskah</a>';
+ box.querySelectorAll('[data-rec]').forEach(a=>a.onclick=e=>{e.preventDefault();const k=+a.dataset.rec;dl('bab'+String(k+1).padStart(2,'0')+'.'+ext(k),REC[k].blob);});
+ const dc=document.getElementById('dlcues');if(dc)dc.onclick=e=>{e.preventDefault();const o={};ks.forEach(k=>o['bab'+(k+1)]=REC[k].cues.map(x=>+x.toFixed(2)));dl('waktu-baris.json',JSON.stringify(o,null,1));};
+ document.getElementById('dlscript').onclick=e=>{e.preventDefault();dl('naskah-what-if.txt',NL.map((c,i)=>'BAB '+(i+1)+' · '+scenes[i].dataset.title.toUpperCase()+'\n'+c.map((l,j)=>(j+1)+'. '+l.t).join('\n')).join('\n\n'));};}
+async function dl(name,data){if(dlNS){try{await dlNS.save({filename:name,data});cap.textContent='File '+name+' siap.';}catch(err){cap.textContent=err&&err.code==='declined'?'Unduhan dibatalkan.':'Unduhan gak tersedia di tampilan ini.';}return;}
+ try{const a=document.createElement('a');a.href=URL.createObjectURL(data instanceof Blob?data:new Blob([data]));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),100);}catch(e){cap.textContent='Unduhan gak tersedia di tampilan ini.';}}
+addDl();
+
+/* ---- musik latar yang ikut suasana ---- */
+const music=(function(){let ac=null,master=null,lvl=0,mood='calm',on=false,next=0,step=0,iv=null,rev=null;
+ const WARM=[[53,57,60,64],[52,55,59,62],[50,53,57,60],[48,52,55,59]],DARK=[[45,48,52,57],[41,45,48,53],[38,41,45,50],[40,44,47,52]];
+ const hz=m=>440*Math.pow(2,(m-69)/12);
+ function init(){ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=0;master.connect(ac.destination);
+  const len=ac.sampleRate*2.4,b=ac.createBuffer(2,len,ac.sampleRate);for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6);}rev=ac.createConvolver();rev.buffer=b;const rg=ac.createGain();rg.gain.value=.5;rev.connect(rg);rg.connect(master);}
+ function note(f,t,d,type,g,dest){const o=ac.createOscillator(),e=ac.createGain(),lp=ac.createBiquadFilter();o.type=type;o.frequency.value=f;lp.type='lowpass';lp.frequency.value=type==='sine'?3000:900+lvl*500;e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+Math.min(.04,d*.2)+(type==='triangle'?.6:0));e.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(lp);lp.connect(e);e.connect(master);e.connect(rev);o.start(t);o.stop(t+d+.05);}
+ function kick(t){const o=ac.createOscillator(),e=ac.createGain();o.frequency.setValueAtTime(120,t);o.frequency.exponentialRampToValueAtTime(42,t+.18);e.gain.setValueAtTime(.55,t);e.gain.exponentialRampToValueAtTime(.001,t+.3);o.connect(e);e.connect(master);o.start(t);o.stop(t+.32);}
+ function tick(t){const n=ac.createBufferSource(),b=ac.createBuffer(1,ac.sampleRate*.05,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);n.buffer=b;const hp=ac.createBiquadFilter();hp.type='highpass';hp.frequency.value=6000;const e=ac.createGain();e.gain.value=.12;n.connect(hp);hp.connect(e);e.connect(master);n.start(t);}
+ function sched(){const bpm=[64,74,92,118][lvl],sp=60/bpm/2;while(next<ac.currentTime+.25){const bar=Math.floor(step/8)%4,pos=step%8,dark=['tense','intense','dramatic','heavy'].includes(mood),ch=(dark?DARK:WARM)[bar];
+   if(pos===0)ch.forEach(m=>note(hz(m),next,sp*8.4,'triangle',.05,master));
+   const rate=lvl>=2?1:lvl===1?2:4;if(pos%rate===0){const m=ch[(step/rate|0)%4]+12+(lvl>=3&&pos%2?12:0);note(hz(m),next,sp*2.2,'sine',lvl>=3?.05:.04);}
+   if(lvl>=2&&pos%(lvl>=3?2:4)===0)kick(next);if(lvl>=3&&pos%2===1)tick(next);
+   next+=sp;step++;}}
+ return{toggle(){if(!ac)init();if(ac.state==='suspended')ac.resume();on=!on;master.gain.cancelScheduledValues(ac.currentTime);master.gain.linearRampToValueAtTime(on?.55:0,ac.currentTime+.8);if(on&&!iv){next=ac.currentTime+.1;iv=setInterval(sched,80);}if(!on&&iv){setTimeout(()=>{if(!on){clearInterval(iv);iv=null;}},900);}return on;},
+  level(l,m){lvl=l;mood=m;},wake(){if(ac&&ac.state==='suspended')ac.resume();},isOn(){return on;}};})();
+const bgmB=document.getElementById('bgm');bgmB.onclick=()=>{try{const o=music.toggle();bgmB.setAttribute('aria-pressed',o);bgmB.textContent=o?'♪ Musik nyala':'♪ Musik';}catch(e){bgmB.disabled=true;}};
+
+/* ---- langit: bintang yang ngebut kalau suasana kencang ---- */
+const cv=document.getElementById('sky'),cx=cv.getContext('2d');let W=0,H=0,st=[];let reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+const PAL=[[201,138,0],[194,86,15],[214,98,120],[150,110,200],[14,143,108]];let spd=1,warm=0;
+function rs(){const dpr=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(dpr,0,0,dpr,0,0);
+ st=Array.from({length:Math.round(Math.min(420,W*H/3000))},()=>{const t=Math.random(),off=(Math.random()+Math.random()+Math.random()-1.5)*H*.35;return{x:t*W+off*.5,y:H-t*H+off,r:Math.random()<.06?1.6+Math.random():.4+Math.random()*.9,ph:Math.random()*6.3,sp:600+Math.random()*1400,c:PAL[Math.floor(Math.random()*4)],v:.2+Math.random()*.8};});}
+let lt=0;function fr(tt){const dt=Math.min(50,tt-lt||16);lt=tt;spd+=(sky.speed-spd)*.03;warm+=(sky.warm-warm)*.03;cx.clearRect(0,0,W,H);
+ for(const s of st){s.x+=s.v*spd*dt*.012;s.y-=s.v*spd*dt*.012;if(s.x>W+10){s.x=-10;}if(s.y<-10){s.y=H+10;}
+  const a=(.35+.4*Math.sin(tt/(s.sp/Math.max(1,spd*.7))+s.ph))*(s.r>1.5?1:.8);const c=warm>.6&&s.r<1.5?[214,58,42]:s.c;cx.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${Math.max(0,a)})`;
+  if(spd>2.4){cx.strokeStyle=cx.fillStyle;cx.lineWidth=s.r;cx.beginPath();cx.moveTo(s.x,s.y);cx.lineTo(s.x-s.v*spd*5,s.y+s.v*spd*5);cx.stroke();}
+  else{cx.beginPath();cx.arc(s.x,s.y,s.r,0,7);cx.fill();}
+  if(s.r>1.5){const l=s.r*4;cx.strokeStyle=`rgba(${c[0]},${c[1]},${c[2]},${Math.max(0,a*.6)})`;cx.lineWidth=.7;cx.beginPath();cx.moveTo(s.x-l,s.y);cx.lineTo(s.x+l,s.y);cx.moveTo(s.x,s.y-l);cx.lineTo(s.x,s.y+l);cx.stroke();}}
+ for(let i=bursts.length-1;i>=0;i--){const b=bursts[i];b.x+=b.vx;b.y+=b.vy;b.vy+=.08;b.life-=.016;if(b.life<=0){bursts.splice(i,1);continue;}cx.fillStyle=`rgba(${b.c[0]},${b.c[1]},${b.c[2]},${Math.min(1,b.life)})`;cx.beginPath();cx.arc(b.x,b.y,2.4,0,7);cx.fill();}
+ if(!reduce)requestAnimationFrame(fr);else if(bursts.length)requestAnimationFrame(fr);}
+rs();addEventListener('resize',()=>{rs();});requestAnimationFrame(fr);
+
+/* ---- mulai ---- */
+show(0,true);cap.innerHTML='Tekan <b>▶ Putar cerita</b> buat mulai dari bab 1, atau loncat ke bab mana pun lewat garis di atas.';
+window.__dbg={show,jump,setMood,FX,get cur(){return cur}};
+})();
+</script>
+</body>
+</html>
