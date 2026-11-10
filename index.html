@@ -736,6 +736,37 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
 .mcgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0}
 @media (max-width:700px){.mcgrid{grid-template-columns:1fr}}
 .mct{width:100%;border-collapse:collapse;font-size:14px}.mct th,.mct td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}.mct th{font:600 12px var(--mono);color:var(--muted);letter-spacing:.03em}
+
+.pain{padding:16px}
+.therm3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+@media (max-width:760px){.therm3{grid-template-columns:1fr}}
+.th{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.th-k{font:700 11px var(--mono);letter-spacing:.06em;color:var(--accent)}
+.th-row{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:8px;font:500 12.5px var(--body);color:var(--muted)}
+.th-row i{display:block;height:12px;border-radius:6px;background:#F3E9DC;position:relative;overflow:hidden}
+.th-row i::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--ink);border-radius:6px;transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
+.th-row.hot i::after{background:var(--bad)}
+.vz.in .th-row i::after{transform:scaleX(1)}
+.th-row b{font:700 13px var(--mono);color:var(--ink)}.th-row.hot b{color:var(--bad)}
+.th p{margin:0;font-size:13.5px;line-height:1.5}
+.th-s{font:500 11px var(--body);color:var(--muted)}
+.hk-ctl{display:flex;align-items:center;gap:12px;margin:8px 0 2px}
+.hk-ctl input{flex:1;accent-color:var(--accent)}
+.hk-ctl output{font:700 18px var(--mono);color:var(--accent);width:100px;text-align:right}
+.hk-marks{position:relative;height:16px;font:500 10.5px var(--mono);color:var(--muted);margin:0 112px 10px 0}.hk-marks span{position:absolute;transform:translateX(-50%);white-space:nowrap}.hk-marks span:first-child{transform:none}.hk-marks span:last-child{transform:translateX(-100%)}
+.hk-row{display:grid;grid-template-columns:190px 1fr 110px;gap:10px;align-items:center;margin:8px 0;font-size:13.5px}
+.hk-n em{font-style:normal;color:var(--muted);font:500 11.5px var(--mono)}
+.hk-bar{height:16px;background:#F3E9DC;border-radius:8px;position:relative}
+.hk-bar i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--accent),var(--bad));border-radius:8px;transition:width .25s}
+.hk-bar s{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.55}
+.hk-row b{font:700 13px var(--mono)}.hk-row small{font:600 11px var(--mono);margin-left:4px}.hk-row small.up{color:var(--bad)}.hk-row small.dn{color:var(--good)}
+@media (max-width:640px){.hk-row{grid-template-columns:1fr 92px}.hk-row .hk-n{grid-column:1/-1}.hk-marks span:first-child,.hk-marks span:last-child{display:none}}
+.cope{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin:10px 0 6px}
+@media (max-width:760px){.cope{grid-template-columns:1fr}}
+.cope-c{background:rgba(255,253,249,.9);border:1.5px solid var(--line);border-radius:20px;padding:16px 18px}
+.cope-c:last-child{background:var(--accent-soft)}
+.cope-k{font:700 11.5px var(--mono);letter-spacing:.06em;color:var(--accent)}
+.cope ol{margin:10px 0 6px;padding-left:20px}.cope li{margin:9px 0;font-size:14.5px;line-height:1.55}
 </style>
 
 <div class="wrap">
@@ -1255,6 +1286,102 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
 
     <div class="inf"><h4>Inferensi</h4><p>Kelas menengah paling kejepit karena empat hal sekaligus: penghasilannya <b>paling kelihatan</b> oleh negara, asetnya <b>paling sensitif</b> terhadap bunga dan kurs, tangga naiknya <b>paling dirusak</b> oleh mobil yang boros dan keran yang dibagi lewat kedekatan, dan mereka <b>gak masuk</b> jaring pengaman mana pun.</p></div>
     <p class="fine"><b>Tiga catatan supaya adil.</b> Pertama, "paling kejepit" bukan berarti "paling menderita". Penderitaan absolut terbesar tetap ada di 8,5% warga miskin; kelas menengah paling kejepit karena paling banyak yang hilang dan paling sedikit yang melindungi. Kedua, Badan Kebijakan Fiskal Kemenkeu menyebut pandemi COVID-19 sebagai penyebab utama menyusutnya kelas menengah. Halaman ini tidak membantah itu; yang ditunjukkan di sini adalah kenapa mereka <b>belum pulih</b> setelah pandemi selesai. Ketiga, soal pajak: Ditjen Pajak menyebut kelas menengah menyumbang hanya sekitar 1% PPh orang pribadi. Beban mereka bukan di situ, tapi di potongan gaji (PPh 21) dan pajak belanja.</p>
+    <h3 class="pl-h">Rasa sakitnya diukur pakai apa?</h3>
+    <div class="prose">
+      <p>Angka pertumbuhan 5% gak pernah bikin orang kenyang. Yang dirasain di warung itu cabai yang naik, minyak goreng yang naik, HP baru yang makin jauh dari jangkauan. Makanya ekonomi bisa tumbuh, tapi dompet tetap terasa sesak. Dua-duanya bisa benar sekaligus, karena yang satu ngukur <b>ekonomi</b>, yang satu ngukur <b>rumah tangga</b>.</p>
+      <p>Simulator di bagian 08 cuma ngukur yang pertama. Jadi di sini gua pakai tiga termometer lain, yang lebih dekat ke rasa sakit sehari-hari.</p>
+    </div>
+    <div class="vz vz-tx pain">
+      <h4>Tiga termometer rasa sakit</h4>
+      <div class="therm3">
+        <div class="th">
+          <span class="th-k">1 · INFLASI DAPUR</span>
+          <div class="th-bars">
+            <div class="th-row"><span>Inflasi umum</span><i style="--w:32%"></i><b>3,23%</b></div>
+            <div class="th-row hot"><span>Bahan makanan</span><i style="--w:56%"></i><b>5,61%</b></div>
+          </div>
+          <p>Harga di dapur naik hampir dua kali angka resmi. Keluarga yang belanjanya didominasi makanan merasakan yang kedua, bukan yang pertama.</p>
+          <span class="th-s">BPS, Oktober 2026, tahunan</span>
+        </div>
+        <div class="th">
+          <span class="th-k">2 · INDEKS KESENGSARAAN</span>
+          <div class="th-bars">
+            <div class="th-row"><span>2025</span><i style="--w:9.3%"></i><b>7,7</b></div>
+            <div class="th-row"><span>2026</span><i style="--w:9.6%"></i><b>8,0</b></div>
+            <div class="th-row hot"><span>1998</span><i style="--w:100%"></i><b>±83</b></div>
+          </div>
+          <p>Inflasi ditambah pengangguran (Okun). Sekarang naik tipis dibanding tahun lalu, tapi masih jauh dari 1998. Sakit, belum krisis.</p>
+          <span class="th-s">2026: inflasi 3,23% + pengangguran 4,75% (Agu). 2025: 2,86% + 4,85%. 1998: inflasi 77,6%</span>
+        </div>
+        <div class="th">
+          <span class="th-k">3 · KURS</span>
+          <div class="th-bars">
+            <div class="th-row"><span>Sekarang</span><i style="--w:86%"></i><b>Rp18.062</b></div>
+            <div class="th-row hot"><span>Kalau tembus</span><i style="--w:100%"></i><b>Rp21.000</b></div>
+          </div>
+          <p>Paling kerasa di barang yang harganya ditetapkan dalam dolar: gadget, laptop, langganan aplikasi, kursus online, obat dengan bahan baku impor.</p>
+          <span class="th-s">Kurs 10 Nov 2026; Rp21.000 skenario, bukan ramalan</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vz vz-tx pain" id="hariKerja">
+      <h4>Berapa hari kerja buat beli barang yang harganya dolar?</h4>
+      <p class="tx-sub">Geser kurs. Upah rata-rata buruh Rp3,39 juta per bulan (BPS), 22 hari kerja.</p>
+      <div class="hk-ctl"><input type="range" id="hkR" min="16000" max="22000" step="100" value="18062" aria-label="Kurs rupiah per dolar"><output id="hkO">Rp18.062</output></div>
+      <div class="hk-marks"><span style="left:0">Rp16.000</span><span style="left:34.4%">sekarang</span><span style="left:83.3%">Rp21.000</span><span style="left:100%">Rp22.000</span></div>
+      <div id="hkList"></div>
+      <p class="tx-cap">Aritmetika murni: harga dolar × kurs ÷ upah harian. Harga dolar barangnya contoh. Barang lokal seperti nasi dan sayur naiknya jauh lebih kecil, karena kenaikan kurs gak merembet penuh ke harga (Achsani &amp; Nababan, 2008). Yang di tengah, seperti tempe dan roti, ikut kena karena kedelai dan gandumnya sebagian besar diimpor.</p>
+    </div>
+
+    <div class="prose">
+      <h3 style="font-size:19px">Ekonomi tumbuh, dompet sesak: dua hal yang beda</h3>
+      <p>Pendapatan per orang dalam rupiah naik sekitar 7% per tahun (pertumbuhan riil ±4% plus inflasi ±3%). Jadi rupiah ke Rp21.000, yang berarti melemah ±16% dari sekarang, rasanya beda banget tergantung seberapa cepat terjadinya:</p>
+    </div>
+    <div class="table-wrap"><table class="mct"><thead><tr><th>Rp21.000 tercapai dalam</th><th>Pelemahan per tahun</th><th>Pendapatan per orang dalam dolar</th><th>Rasanya</th></tr></thead><tbody>
+      <tr><td>1 tahun</td><td>±16%</td><td><b>turun ±9%</b> tahun itu</td><td>Krisis kecil. Barang impor melonjak, simulator "jalan mulus" gak berlaku</td></tr>
+      <tr><td>3 tahun</td><td>±5%</td><td>masih naik ±2% per tahun</td><td>Sesak, tapi ekonomi tetap maju</td></tr>
+      <tr><td>5 tahun</td><td>±3%</td><td>masih naik ±4% per tahun</td><td>Barang dolar makin mahal pelan-pelan</td></tr>
+    </tbody></table></div>
+    <p class="fine">Jadi kalimat "di semua skenario PDB per kapita tetap naik" di bagian 08 berlaku untuk ukuran <b>riil</b>. Dalam dolar, dan dalam daya beli barang impor, angkanya bisa turun sementara.</p>
+
+    <h3 class="pl-h">Terus, rasa sakitnya dihadapi gimana?</h3>
+    <div class="cope">
+      <div class="cope-c">
+        <span class="cope-k">YANG BISA DILAKUKAN DI RUMAH</span>
+        <ol>
+          <li><b>Hitung inflasi pribadi lu.</b> Catat 10 pengeluaran terbesar selama tiga bulan. Inflasi lu bisa jauh di atas 3,23% kalau belanja lu kebanyakan makanan dan transportasi.</li>
+          <li><b>Pisahin belanja "berharga dolar".</b> Gadget, langganan aplikasi, dan barang impor paling cepat naik. Itu yang paling masuk akal untuk ditunda, diganti versi lokal, atau dibeli bekas.</li>
+          <li><b>Beresin utang yang bunganya tinggi atau mengambang dulu.</b> Paylater, pinjol, kartu kredit. Kalau penghasilan lu rupiah, hindari utang dalam dolar.</li>
+          <li><b>Siapin dana darurat.</b> Patokan umum perencana keuangan: 3–6 bulan pengeluaran wajib, ditaruh di tempat yang gampang dicairkan.</li>
+          <li><b>Jangan taruh semua tabungan di satu keranjang.</b> Aset yang nilainya ikut harga dunia, seperti emas atau reksa dana berdenominasi dolar, bisa jadi penyeimbang saat rupiah melemah. Tapi harganya naik-turun dan gak ada jaminan.</li>
+          <li><b>Naikin nilai tawar.</b> Penghasilan yang dibayar pasar ekspor atau kerja jarak jauh (bahasa asing, skill digital) adalah pelindung alami: kalau rupiah melemah, penghasilan itu justru naik dalam rupiah.</li>
+          <li><b>Belanja bareng.</b> Koperasi atau patungan beli grosir bahan pokok bisa menekan harga per orang.</li>
+        </ol>
+        <p class="fine">Ini informasi umum, bukan saran investasi atau keuangan pribadi. Kondisi tiap orang beda.</p>
+      </div>
+      <div class="cope-c">
+        <span class="cope-k">YANG HARUS DILAKUKAN NEGARA</span>
+        <ol>
+          <li><b>Jangka pendek: redam harga pangan.</b> Penyumbang inflasi terbesar Oktober 2026 itu cabai rawit, ikan, beras, dan minyak goreng. Stabilisasi pasokan pangan langsung terasa ke dapur.</li>
+          <li><b>Jangka pendek: jaga rupiah.</b> Bank Indonesia sudah menaikkan fasilitas simpanan dan menahan suku bunga. Itu meredam, tapi gak menyembuhkan.</li>
+          <li><b>Jangka menengah: bereskan transparansi pasar modal.</b> Selama ancaman MSCI belum selesai, dana asing di saham bisa terus kabur dan menekan rupiah.</li>
+          <li><b>Jangka panjang: mesin yang irit.</b> Rupiah yang kuat dalam jangka panjang datang dari ekonomi yang produktif dan ekspor yang bernilai tambah. Itu balik lagi ke diagnosis halaman ini: keran dibuka lewat kinerja, bukan kedekatan.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="punch">Rasa sakitnya nyata.<br>Tapi obat jangka panjangnya sama dengan diagnosisnya.</div>
+    <p class="fine">Sumber: <a href="https://www.cnbcindonesia.com/news/20261103091030-4-781777/inflasi-bahan-makanan-tembus-561-oktober-2026" target="_blank" rel="noopener">BPS via CNBC Indonesia (inflasi Okt 2026)</a>; <a href="https://katadata.co.id/finansial/makro/6aec0ca522957/bps-catat-jumlah-orang-menganggur-di-ri-turun-jadi-7-38-juta-orang" target="_blank" rel="noopener">BPS via Katadata (pengangguran Agu 2026)</a>; <a href="https://www.bps.go.id/id/pressrelease/2026/08/05/2606/tingkat-pengangguran-terbuka--tpt--sebesar-4-65-persen---rata-rata-upah-buruh-sebesar-3-39-juta-rupiah-.html" target="_blank" rel="noopener">BPS (upah rata-rata buruh Rp3,39 juta, rilis Agu 2026)</a>; <a href="https://scholarhub.ui.ac.id/jepi/vol9/iss1/1/" target="_blank" rel="noopener">Achsani &amp; Nababan (2008), Jurnal Ekonomi dan Pembangunan Indonesia</a>. Indeks kesengsaraan: Arthur Okun. Inflasi 1998: BPS.</p>
+    <script>
+    (function(){var W=3390000/22,I=[['HP kelas menengah',250],['Laptop kerja',600],['Kursus online setahun',180],['Langganan aplikasi setahun',120]];
+     var r=document.getElementById('hkR'),o=document.getElementById('hkO'),L=document.getElementById('hkList');if(!r)return;
+     var f=function(n){return 'Rp'+Math.round(n).toLocaleString('id-ID')};
+     L.innerHTML=I.map(function(x,i){return '<div class="hk-row"><span class="hk-n">'+x[0]+' <em>US$'+x[1]+'</em></span><div class="hk-bar"><i id="hkb'+i+'"></i><s id="hkg'+i+'"></s></div><b id="hkd'+i+'"></b></div>'}).join('');
+     var base=I.map(function(x){return x[1]*18062/W});var mx=600*22000/W;
+     function u(){var k=+r.value;o.textContent=f(k);I.forEach(function(x,i){var d=x[1]*k/W;document.getElementById('hkb'+i).style.width=(d/mx*100)+'%';document.getElementById('hkg'+i).style.left=(base[i]/mx*100)+'%';
+       var diff=d-base[i];document.getElementById('hkd'+i).innerHTML=d.toFixed(1).replace('.',',')+' hari'+(Math.abs(diff)>=.05?' <small class="'+(diff>0?'up':'dn')+'">'+(diff>0?'+':'−')+Math.abs(diff).toFixed(1).replace('.',',')+'</small>':'');});}
+     r.addEventListener('input',u);u();})();
+    </script>
     <div class="bridge"><span>→</span><p>Kedengarannya berat? Lihat dulu orang-orang yang pernah ada di posisi lebih berat lagi.</p></div>
   </section>
 
