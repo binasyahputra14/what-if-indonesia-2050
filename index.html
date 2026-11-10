@@ -692,6 +692,38 @@ h3{font-weight:650}
 .punch,.pq,.ch-q,.ask{font-weight:700!important;word-spacing:.04em;font-variation-settings:"opsz" 48}
 .eng b,.kc b,.lk-big,.rapor b,.levers b,.o b,.lx-hud b,.lb .v,.trio .eng b,.op{font-family:var(--display)!important;font-weight:700!important;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.01em}
 body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
+
+.vz-tx{padding:16px 16px 12px}
+.vz-tx h4{margin:0 0 2px;font:700 15.5px var(--body);color:var(--ink)}
+.vz-tx .tx-sub{margin:0 0 6px;font:500 13px var(--body);color:var(--muted)}
+.vz-tx svg{width:100%;height:auto;display:block}
+.vz-tx text{font:600 12px var(--body);fill:var(--ink)}
+.vz-tx .m{font:500 10.5px var(--mono);fill:var(--muted);letter-spacing:.03em}
+.vz-tx .tx-cap{margin:6px 0 0;font:500 11.5px var(--body);color:var(--muted);line-height:1.45}
+.tx1 .dt{opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:center;transition:opacity .4s,transform .5s cubic-bezier(.34,1.56,.64,1)}
+.vz.in .tx1 .dt,.vz.in.tx1 .dt{opacity:1;transform:scale(1)}
+.tx1 .cheat{animation:txpulse 1.8s ease-in-out infinite}
+@keyframes txpulse{50%{opacity:.45}}
+.tx1 .bar{transform:scaleX(0);transform-box:fill-box;transform-origin:left center;transition:transform 1.4s cubic-bezier(.22,1,.36,1) .9s}
+.vz.in.tx1 .bar{transform:scaleX(1)}
+.tx2 .hb{transform:scaleY(0);transform-box:fill-box;transform-origin:center bottom;transition:transform .9s cubic-bezier(.34,1.4,.64,1)}
+.vz.in.tx2 .hb{transform:scaleY(1)}
+.tx2 .spike{animation:txspike 1.6s ease-in-out 2s infinite}
+@keyframes txspike{50%{fill:#E2701F}}
+.tx2 .exp{stroke-dasharray:6 5;stroke-dashoffset:600;transition:stroke-dashoffset 2s ease 1.2s}
+.vz.in.tx2 .exp{stroke-dashoffset:0}
+.tx2 .ann{opacity:0;transition:opacity .6s 2.2s}.vz.in.tx2 .ann{opacity:1}
+.tx3 .ev{animation:txev 7s ease-in-out infinite;transform-box:fill-box}
+@keyframes txev{0%,22%{transform:translate(0,0);opacity:1}46%,86%{transform:translate(26px,34px);opacity:0}100%{transform:translate(0,0);opacity:1}}
+.tx3 .ok{animation:txok 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
+@keyframes txok{0%,30%,100%{transform:scaleY(1)}50%,86%{transform:scaleY(.9)}}
+.tx3 .beam{animation:txbeam 7s ease-in-out infinite}
+@keyframes txbeam{0%,30%,100%{transform:translateY(0)}50%,86%{transform:translateY(6px)}}
+.tx3 .fill{transform-box:fill-box;transform-origin:center bottom;animation:txfill 7s ease-in-out infinite}
+@keyframes txfill{0%,30%,100%{transform:scaleY(.6)}50%,86%{transform:scaleY(.82)}}
+.tx3 .t10{animation:txa 7s infinite}.tx3 .t11{animation:txb 7s infinite}
+@keyframes txa{0%,32%,100%{opacity:1}44%,88%{opacity:0}}
+@keyframes txb{0%,32%,100%{opacity:0}44%,88%{opacity:1}}
 </style>
 
 <div class="wrap">
@@ -1384,8 +1416,56 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <p>Coba balik ke angka di halaman ini sendiri. Dari celah pajak sekitar Rp547 T yang bisa ditagih, porsi terbesarnya, sekitar Rp386 T, datang dari PPN, terutama ekonomi yang gak tercatat. Itu bukan cuma urusan meja menteri. Itu juga toko, distributor, dan usaha yang omzetnya jalan tapi pajaknya enggak, padahal tarifnya belum "membunuh".</p>
       <p>Dari semua yang gua pelajari dari bawah, gua nangkep satu hal: concern terbesar pemerintahan sekarang adalah <b>gimana caranya nutup celah pajak yang bocor</b>, dengan berbagai cara. Makanya beberapa keputusannya terkesan otoriter: mendadak, dipaksakan, minim diskusi. Gua gak membenarkan caranya. Tapi gua ngerti kenapa sasarannya ke situ.</p>
       <p>Kalau dihitung dalam rupiah, porsi terbesar yang hilang <b>kemungkinan</b> ada di perusahaan menengah dan besar. Logikanya begini. Bank Dunia menemukan sedikitnya 1 dari 4 perusahaan Indonesia mengelak pajak, dan besar-kecilnya perusahaan gak bikin beda (Bank Dunia, 2026). Kalau proporsi yang curang sama, rupiah yang hilang paling banyak ada di tempat omzet dan labanya paling besar. Seribu warung yang gak lapor tetap kalah nilainya dari satu grup usaha yang mindahin labanya. Tapi ini logika, bukan hasil ukur: sampai sekarang belum ada data yang memecah celah pajak per ukuran usaha.</p>
+    </div>
+    <div class="vz vz-tx tx1" aria-label="Ilustrasi: proporsi yang curang sama, rupiah yang hilang berbeda">
+      <h4>Proporsinya sama. Rupiahnya enggak.</h4>
+      <p class="tx-sub">Di dua kelompok, sama-sama ±1 dari 4 yang mengelak pajak.</p>
+      <svg viewBox="0 0 520 290">
+        <text x="125" y="30" text-anchor="middle">40 usaha kecil</text><text x="375" y="30" text-anchor="middle">4 korporasi</text>
+        <line x1="260" y1="20" x2="260" y2="190" stroke="var(--line)" stroke-width="2" stroke-dasharray="4 5"/>
+        <circle class="dt" cx="34" cy="62" r="7" fill="#D9CBB8" style="transition-delay:0.00s"/><circle class="dt cheat" cx="60" cy="62" r="7" fill="var(--bad)" style="transition-delay:0.02s"/><circle class="dt" cx="86" cy="62" r="7" fill="#D9CBB8" style="transition-delay:0.04s"/><circle class="dt" cx="112" cy="62" r="7" fill="#D9CBB8" style="transition-delay:0.05s"/><circle class="dt" cx="138" cy="62" r="7" fill="#D9CBB8" style="transition-delay:0.07s"/><circle class="dt cheat" cx="164" cy="62" r="7" fill="var(--bad)" style="transition-delay:0.09s"/><circle class="dt" cx="190" cy="62" r="7" fill="#D9CBB8" style="transition-delay:0.11s"/><circle class="dt" cx="216" cy="62" r="7" fill="#D9CBB8" style="transition-delay:0.13s"/><circle class="dt" cx="34" cy="86" r="7" fill="#D9CBB8" style="transition-delay:0.14s"/><circle class="dt cheat" cx="60" cy="86" r="7" fill="var(--bad)" style="transition-delay:0.16s"/><circle class="dt" cx="86" cy="86" r="7" fill="#D9CBB8" style="transition-delay:0.18s"/><circle class="dt" cx="112" cy="86" r="7" fill="#D9CBB8" style="transition-delay:0.20s"/><circle class="dt" cx="138" cy="86" r="7" fill="#D9CBB8" style="transition-delay:0.22s"/><circle class="dt cheat" cx="164" cy="86" r="7" fill="var(--bad)" style="transition-delay:0.23s"/><circle class="dt" cx="190" cy="86" r="7" fill="#D9CBB8" style="transition-delay:0.25s"/><circle class="dt" cx="216" cy="86" r="7" fill="#D9CBB8" style="transition-delay:0.27s"/><circle class="dt" cx="34" cy="110" r="7" fill="#D9CBB8" style="transition-delay:0.29s"/><circle class="dt cheat" cx="60" cy="110" r="7" fill="var(--bad)" style="transition-delay:0.31s"/><circle class="dt" cx="86" cy="110" r="7" fill="#D9CBB8" style="transition-delay:0.32s"/><circle class="dt" cx="112" cy="110" r="7" fill="#D9CBB8" style="transition-delay:0.34s"/><circle class="dt" cx="138" cy="110" r="7" fill="#D9CBB8" style="transition-delay:0.36s"/><circle class="dt cheat" cx="164" cy="110" r="7" fill="var(--bad)" style="transition-delay:0.38s"/><circle class="dt" cx="190" cy="110" r="7" fill="#D9CBB8" style="transition-delay:0.40s"/><circle class="dt" cx="216" cy="110" r="7" fill="#D9CBB8" style="transition-delay:0.41s"/><circle class="dt" cx="34" cy="134" r="7" fill="#D9CBB8" style="transition-delay:0.43s"/><circle class="dt cheat" cx="60" cy="134" r="7" fill="var(--bad)" style="transition-delay:0.45s"/><circle class="dt" cx="86" cy="134" r="7" fill="#D9CBB8" style="transition-delay:0.47s"/><circle class="dt" cx="112" cy="134" r="7" fill="#D9CBB8" style="transition-delay:0.49s"/><circle class="dt" cx="138" cy="134" r="7" fill="#D9CBB8" style="transition-delay:0.50s"/><circle class="dt cheat" cx="164" cy="134" r="7" fill="var(--bad)" style="transition-delay:0.52s"/><circle class="dt" cx="190" cy="134" r="7" fill="#D9CBB8" style="transition-delay:0.54s"/><circle class="dt" cx="216" cy="134" r="7" fill="#D9CBB8" style="transition-delay:0.56s"/><circle class="dt" cx="34" cy="158" r="7" fill="#D9CBB8" style="transition-delay:0.58s"/><circle class="dt cheat" cx="60" cy="158" r="7" fill="var(--bad)" style="transition-delay:0.59s"/><circle class="dt" cx="86" cy="158" r="7" fill="#D9CBB8" style="transition-delay:0.61s"/><circle class="dt" cx="112" cy="158" r="7" fill="#D9CBB8" style="transition-delay:0.63s"/><circle class="dt" cx="138" cy="158" r="7" fill="#D9CBB8" style="transition-delay:0.65s"/><circle class="dt cheat" cx="164" cy="158" r="7" fill="var(--bad)" style="transition-delay:0.67s"/><circle class="dt" cx="190" cy="158" r="7" fill="#D9CBB8" style="transition-delay:0.68s"/><circle class="dt" cx="216" cy="158" r="7" fill="#D9CBB8" style="transition-delay:0.70s"/><circle class="dt" cx="330" cy="92" r="30" fill="#D9CBB8" style="transition-delay:0.75s"/><circle class="dt cheat" cx="420" cy="92" r="30" fill="var(--bad)" style="transition-delay:0.87s"/><circle class="dt" cx="330" cy="160" r="30" fill="#D9CBB8" style="transition-delay:0.99s"/><circle class="dt" cx="420" cy="160" r="30" fill="#D9CBB8" style="transition-delay:1.11s"/>
+        <text x="125" y="200" text-anchor="middle" class="m">10 curang · nilainya receh per usaha</text><text x="375" y="210" text-anchor="middle" class="m">1 curang · satu aja nilainya raksasa</text>
+        <text x="20" y="242" class="m">RUPIAH YANG HILANG (ILUSTRASI)</text>
+        <rect x="20" y="252" width="480" height="12" rx="6" fill="#F3E9DC"/><rect class="bar" x="20" y="252" width="70" height="12" rx="6" fill="#E59A8F"/>
+        <rect x="20" y="270" width="480" height="12" rx="6" fill="#F3E9DC"/><rect class="bar" x="20" y="270" width="420" height="12" rx="6" fill="var(--bad)"/>
+        <text x="96" y="262" class="m" style="fill:var(--ink)">usaha kecil</text><text x="446" y="280" class="m" style="fill:var(--ink)">korporasi</text>
+      </svg>
+      <p class="tx-cap">Ilustrasi logika, bukan data terukur. Proporsi ±1 dari 4: Bank Dunia (2026). Sampai sekarang belum ada data yang memecah celah pajak per ukuran usaha.</p>
+    </div>
+    <div class="prose">
       <p>Biar fair, gua juga harus bilang: <b>banyak juga yang sengaja main di bawah radar.</b> Usaha dengan omzet di bawah Rp4,8 miliar setahun boleh bayar pajak final 0,5% dari omzet dan gak wajib memungut PPN. Riset nemuin perusahaan yang "numpuk" secara gak wajar di omzet Rp4,4–4,8 miliar, tepat sebelum batas itu (Saputro, 2020, dikutip Bank Dunia, 2025). Omzetnya kayak sengaja direm, atau dilaporin direm, biar gak kena tarif normal. Bank Dunia juga nyebut sektor dagang yang banyak transaksi tunai, eceran dan grosir, sebagai yang paling rawan pengelakan PPN. Itu wilayah distributor dan pedagang, bukan cuma konglomerat.</p>
+    </div>
+    <div class="vz vz-tx tx2" aria-label="Ilustrasi: perusahaan menumpuk tepat di bawah omzet Rp4,8 miliar">
+      <h4>Banyak yang "ngerem" tepat sebelum garis</h4>
+      <p class="tx-sub">Jumlah perusahaan menurut omzet setahun</p>
+      <svg viewBox="0 0 520 250">
+        <line x1="44" y1="200" x2="500" y2="200" stroke="var(--line)" stroke-width="2"/>
+        <rect class="hb" x="56.0" y="50.0" width="26" height="150.0" rx="4" fill="#E6D6C2" style="transition-delay:0.00s"/><rect class="hb" x="87.2" y="65.8" width="26" height="134.2" rx="4" fill="#E6D6C2" style="transition-delay:0.07s"/><rect class="hb" x="118.4" y="79.9" width="26" height="120.1" rx="4" fill="#E6D6C2" style="transition-delay:0.14s"/><rect class="hb" x="149.6" y="92.3" width="26" height="107.7" rx="4" fill="#E6D6C2" style="transition-delay:0.21s"/><rect class="hb" x="180.8" y="103.4" width="26" height="96.6" rx="4" fill="#E6D6C2" style="transition-delay:0.28s"/><rect class="hb" x="212.0" y="113.2" width="26" height="86.8" rx="4" fill="#E6D6C2" style="transition-delay:0.35s"/><rect class="hb" x="243.2" y="121.9" width="26" height="78.1" rx="4" fill="#E6D6C2" style="transition-delay:0.42s"/><rect class="hb" x="274.4" y="129.6" width="26" height="70.4" rx="4" fill="#E6D6C2" style="transition-delay:0.49s"/><rect class="hb" x="305.6" y="136.4" width="26" height="63.6" rx="4" fill="#E6D6C2" style="transition-delay:0.56s"/><rect class="hb spike" x="336.8" y="87.8" width="26" height="112.2" rx="4" fill="var(--accent)" style="transition-delay:0.63s"/><rect class="hb" x="368.0" y="178.1" width="26" height="21.9" rx="4" fill="#CFC3B3" style="transition-delay:0.70s"/><rect class="hb" x="399.2" y="165.9" width="26" height="34.1" rx="4" fill="#CFC3B3" style="transition-delay:0.77s"/><rect class="hb" x="430.4" y="160.3" width="26" height="39.7" rx="4" fill="#CFC3B3" style="transition-delay:0.84s"/><rect class="hb" x="461.6" y="163.7" width="26" height="36.3" rx="4" fill="#CFC3B3" style="transition-delay:0.91s"/>
+        <path class="exp" d="M69.0 50.0 L100.2 65.8 L131.4 79.9 L162.6 92.3 L193.8 103.4 L225.0 113.2 L256.2 121.9 L287.4 129.6 L318.6 136.4 L349.8 142.5 L381.0 147.8 L412.2 152.6 L443.4 156.8 L474.6 160.6" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <line x1="365.4" y1="34" x2="365.4" y2="200" stroke="var(--bad)" stroke-width="2.5" stroke-dasharray="5 4"/>
+        <text x="373.4" y="46" style="fill:var(--bad)">Rp4,8 M</text><text x="373.4" y="61" class="m">di atas ini: wajib PPN</text><text x="373.4" y="74" class="m">+ tarif PPh normal</text>
+        <g class="ann"><text x="215.4" y="76" style="fill:var(--accent)">numpuk di sini</text><text x="215.4" y="91" class="m">omzet Rp4,4–4,8 M</text><path d="M305.4 98 Q329.4 110 343.4 118" fill="none" stroke="var(--accent)" stroke-width="2"/></g>
+        <g class="ann"><line x1="56" y1="228" x2="80" y2="228" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 5"/><text x="88" y="232" class="m">pola wajar kalau gak ada batas</text></g>
+        <text x="56" y="216" class="m">Rp1 M</text><text x="365.4" y="216" text-anchor="middle" class="m">4,8</text><text x="496" y="216" text-anchor="end" class="m">Rp6,4 M</text>
+      </svg>
+      <p class="tx-cap">Bentuk ilustratif dari temuan penumpukan (Saputro, 2020, dikutip Bank Dunia, 2025). Tinggi batang bukan data asli. Batas Rp4,8 M untuk pajak final 0,5% dan wajib PPN itu aturan yang berlaku.</p>
+    </div>
+    <div class="prose">
       <p>Jadi kesimpulan gua: secara kuantitatif, tarif pajak, termasuk PPN yang naik dari 10% ke 11% pada 2022, naik <b>salah satunya karena basisnya sempit</b>. Dan basisnya sempit karena banyak kontributor yang cenderung menghindar sebelum pajaknya sempat "menggigit". Ini bukan satu-satunya alasan, karena kebutuhan belanja negara juga ikut mendorong. Tapi alasan ini paling jarang diomongin.</p>
+    </div>
+        <div class="vz vz-tx tx3" aria-label="Ilustrasi: makin banyak yang menghindar, makin berat beban yang patuh">
+      <h4>Basis sempit, tarif naik</h4>
+      <p class="tx-sub">Yang merah menghindar. Beban penerimaan tetap, jadi ditanggung yang tinggal.</p>
+      <svg viewBox="0 0 520 220">
+        <g class="beam"><rect x="40" y="112" width="378" height="16" rx="6" fill="var(--ink)"/><text x="229" y="102" text-anchor="middle" class="m">TARGET PENERIMAAN NEGARA</text></g>
+        <g class="ok"><circle cx="62" cy="148" r="8" fill="var(--good)"/><rect x="53" y="158" width="18" height="30" rx="7" fill="var(--good)"/></g><g class="ev"><circle cx="100" cy="148" r="8" fill="var(--bad)"/><rect x="91" y="158" width="18" height="30" rx="7" fill="var(--bad)"/></g><g class="ok"><circle cx="138" cy="148" r="8" fill="var(--good)"/><rect x="129" y="158" width="18" height="30" rx="7" fill="var(--good)"/></g><g class="ok"><circle cx="176" cy="148" r="8" fill="var(--good)"/><rect x="167" y="158" width="18" height="30" rx="7" fill="var(--good)"/></g><g class="ev"><circle cx="214" cy="148" r="8" fill="var(--bad)"/><rect x="205" y="158" width="18" height="30" rx="7" fill="var(--bad)"/></g><g class="ok"><circle cx="252" cy="148" r="8" fill="var(--good)"/><rect x="243" y="158" width="18" height="30" rx="7" fill="var(--good)"/></g><g class="ev"><circle cx="290" cy="148" r="8" fill="var(--bad)"/><rect x="281" y="158" width="18" height="30" rx="7" fill="var(--bad)"/></g><g class="ok"><circle cx="328" cy="148" r="8" fill="var(--good)"/><rect x="319" y="158" width="18" height="30" rx="7" fill="var(--good)"/></g><g class="ev"><circle cx="366" cy="148" r="8" fill="var(--bad)"/><rect x="357" y="158" width="18" height="30" rx="7" fill="var(--bad)"/></g><g class="ok"><circle cx="404" cy="148" r="8" fill="var(--good)"/><rect x="395" y="158" width="18" height="30" rx="7" fill="var(--good)"/></g>
+        <line x1="36" y1="190" x2="424" y2="190" stroke="var(--line)" stroke-width="2"/>
+        <rect x="452" y="60" width="40" height="130" rx="10" fill="#F3E9DC"/><rect class="fill" x="452" y="60" width="40" height="130" rx="10" fill="var(--accent)"/>
+        <text x="472" y="46" text-anchor="middle" class="m">TARIF PPN</text>
+        <text class="t10" x="472" y="212" text-anchor="middle" style="font-weight:800">10%</text><text class="t11" x="472" y="212" text-anchor="middle" style="font-weight:800;fill:var(--accent)">11% · 2022</text>
+        <text x="62" y="212" class="m">● patuh</text><text x="140" y="212" class="m" style="fill:var(--bad)">● menghindar</text>
+      </svg>
+      <p class="tx-cap">Ilustrasi. Kenaikan PPN dari 10% ke 11% pada April 2022 (UU HPP) itu fakta; jumlah orang di gambar bukan data. Basis sempit salah satu alasan, bukan satu-satunya.</p>
     </div>
     <blockquote class="pq">Yang patuh akhirnya nanggung tarif buat nutup yang enggak.</blockquote>
     <div class="prose">
