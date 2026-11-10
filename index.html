@@ -724,6 +724,15 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
 .tx3 .t10{animation:txa 7s infinite}.tx3 .t11{animation:txb 7s infinite}
 @keyframes txa{0%,32%,100%{opacity:1}44%,88%{opacity:0}}
 @keyframes txb{0%,32%,100%{opacity:0}44%,88%{opacity:1}}
+
+.mcw .mcb.m{fill:var(--ink)}.mcw .mcb.k{fill:#E8B48C;opacity:.75}
+.mcw .mcd.m{fill:var(--paper);stroke:var(--ink);stroke-width:2.5}.mcw .mcd.k{fill:var(--paper);stroke:var(--accent);stroke-width:2.5}
+.mcw .mcg{stroke:var(--line);stroke-width:1}.mcw .mc45{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:4 4}
+.mcw svg text{font-size:17px}.mcw svg .m{font-size:15px}
+.mcl{display:inline-block;width:18px;height:8px;border-radius:4px;vertical-align:1px}.mcl.m{background:var(--ink)}.mcl.k{background:#E8B48C}
+.mcgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0}
+@media (max-width:700px){.mcgrid{grid-template-columns:1fr}}
+.mct{width:100%;border-collapse:collapse;font-size:14px}.mct th,.mct td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}.mct th{font:600 12px var(--mono);color:var(--muted);letter-spacing:.03em}
 </style>
 
 <div class="wrap">
@@ -1035,6 +1044,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <p>Satu-satunya guncangan yang bisa dipasang di sini cuma tombol <b>"Krisis seperti 2020, tahun 2033"</b>, dan itu pun separuhnya pulih dalam tiga tahun. Padahal dalam 30 tahun terakhir Indonesia sudah kena tiga guncangan besar: 1998, 2008–2009, dan 2020.</p>
       <p><b>Artinya:</b> tahun di layar adalah versi jalan mulus di tiap skenario, bukan perkiraan paling mungkin. Kalau ada krisis, semua tahun mundur. Dan mundurnya kemungkinan gak sama rata: negara dengan institusi lemah cenderung lebih sering krisis dan lebih parah jatuhnya (Acemoglu, Johnson, Robinson &amp; Thaicharoen, 2003, <i>Journal of Monetary Economics</i>). Jadi jarak antara kinerja dan kedekatan di sini kemungkinan malah <b>terlalu kecil</b>, bukan terlalu besar.</p>
     </div>
+    <p class="fine" style="margin-top:10px"><b>Rentang ketidakpastian.</b> Setiap angka tahun di bawah ini satu titik dari model. Dari 10.000 simulasi dengan parameter diacak, "kondisi sekarang" tembus di 2050–2052 kalau jalan mulus, dan 2051–2064 kalau krisis seperti 1998 dan 2020 ikut dihitung sesuai peluang sejarahnya. Lewat kinerja: 2046–2053 dengan krisis. Rinciannya di Ruang mesin bagian 9.</p>
         <div class="presets" role="group" aria-label="Skenario">
       <button type="button" data-p="0"><i style="background:var(--s1)"></i>Netral (tren 2025)</button>
       <button type="button" data-p="1" class="now"><i style="background:var(--accent)"></i>◉ Kondisi sekarang</button>
@@ -1375,7 +1385,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       </ul>
       <p class="em-big">Jadi either way, secara angka: <mark>chaos gak pernah mempercepat.</mark><br>Paling bagus, chaos cuma memperlambat.</p>
       <p>Itu pun belum ngitung skenario paling gelap, perang saudara seperti Suriah, yang gak bisa dimasukin ke simulator mana pun karena garis finisnya bisa gak pernah datang.</p>
-      <p>Tapi jangan salah baca. Ini <mark>bukan pembelaan buat kedekatan</mark>. Kedekatan penuh bikin kita sampai <b>13 tahun lebih telat</b> dibanding kinerja (2059 vs 2046). Itu seorang anak yang masuk SD hari ini, sampai lulus SMA, masih tinggal di negara berkembang. Pesannya bukan "terima aja". Pesannya: <mark>yang bikin cepat cuma satu, ganti cara keran dibagi, dan itu gak butuh membakar mobilnya.</mark></p>
+      <p>Tapi jangan salah baca. Ini <mark>bukan pembelaan buat kedekatan</mark>. Kedekatan penuh bikin kita sampai <b>13 tahun lebih telat</b> dibanding kinerja (2059 vs 2046; rentang 80% dari 10.000 simulasi: 8–20 tahun). Itu seorang anak yang masuk SD hari ini, sampai lulus SMA, masih tinggal di negara berkembang. Pesannya bukan "terima aja". Pesannya: <mark>yang bikin cepat cuma satu, ganti cara keran dibagi, dan itu gak butuh membakar mobilnya.</mark></p>
       <p class="fine">Angka 3,8% dan 2059 dari preset "Kedekatan penuh" di simulator bagian 08; 2046 dari preset "Dieksekusi lewat kinerja". Model tidak bisa menangkap kemungkinan bahwa chaos mengubah sistem jauh lebih baik dari skenario terbaik di atas, dan juga tidak bisa menangkap kehancuran seperti perang saudara.; arahnya didukung data 1998 dan Cerra &amp; Saxena (2008).</p>
     </div>
     <div class="prose">
@@ -1887,6 +1897,47 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     </div>
   </section>
   </details>
+  <details class="rm"><summary><span>9 · Ketidakpastian: 10.000 simulasi<small>rentang tahun tembus, uji klaim 13 tahun dan 78%, metode Monte Carlo</small></span></summary>
+  <section class="sec" id="ketidakpastian">
+    <div class="num">RUANG MESIN · 9</div>
+    <h2>Seberapa yakin angka-angka di halaman ini?</h2>
+    <div class="prose">
+      <p>Simulator di bagian 08 ngasih satu angka per skenario: 2046, 2051, 2059. Satu angka itu kelihatan pasti, padahal di belakangnya ada parameter yang cuma ditaksir: porsi modal dalam ekonomi, kecepatan penyusutan mesin, seberapa besar efek kinerja ke produktivitas, sampai seberapa cepat penduduk tumbuh. Jadi semua parameter itu gua acak dalam rentang yang masuk akal, lalu modelnya dijalankan <b>10.000 kali per skenario</b>.</p>
+      <p>Ada dua versi. <b>Jalan mulus</b>: cuma parameter yang diacak, tanpa krisis. <b>Dengan krisis</b>: ditambah guncangan acak yang peluangnya mengikuti sejarah Indonesia 30 tahun terakhir, yaitu satu krisis berat (1998) dan satu krisis sedang (2020).</p>
+    </div>
+    <div class="vz vz-tx mcw">
+      <h4>Kapan tembus US$14.000: rentang 80% dari 10.000 simulasi</h4>
+      <p class="tx-sub"><span class="mcl m"></span> jalan mulus &nbsp; <span class="mcl k"></span> dengan krisis &nbsp; titik = nilai tengah</p>
+      <svg viewBox="-40 0 680 326" role="img" aria-label="Rentang 80% tahun tembus US$14.000 per skenario, tanpa dan dengan krisis"><line x1="150.0" x2="150.0" y1="28" y2="296" class="mcg"/><text x="150.0" y="316" text-anchor="middle" class="m">2040</text><line x1="266.5" x2="266.5" y1="28" y2="296" class="mcg"/><text x="266.5" y="316" text-anchor="middle" class="m">2050</text><line x1="383.0" x2="383.0" y1="28" y2="296" class="mcg"/><text x="383.0" y="316" text-anchor="middle" class="m">2060</text><line x1="499.5" x2="499.5" y1="28" y2="296" class="mcg"/><text x="499.5" y="316" text-anchor="middle" class="m">2070</text><line x1="616.0" x2="616.0" y1="28" y2="296" class="mcg"/><text x="616.0" y="316" text-anchor="middle" class="m">2080</text><line x1="208.2" x2="208.2" y1="22" y2="296" class="mc45"/><text x="208.2" y="16" text-anchor="middle" class="m" style="fill:var(--accent)">2045</text><text x="140" y="54" text-anchor="end">Lewat kinerja</text><rect class="mcb k" x="217.3" y="52" width="87.6" height="14" rx="7"/><rect class="mcb m" x="208.7" y="40" width="24.3" height="10" rx="5"/><circle cx="220.9" cy="45" r="5" class="mcd m"/><circle cx="248.5" cy="59" r="5" class="mcd k"/><text x="140" y="106" text-anchor="end">Netral</text><rect class="mcb k" x="267.9" y="104" width="132.9" height="14" rx="7"/><rect class="mcb m" x="258.7" y="92" width="16.9" height="10" rx="5"/><circle cx="267.0" cy="97" r="5" class="mcd m"/><circle cx="313.4" cy="111" r="5" class="mcd k"/><text x="140" y="158" text-anchor="end">Kondisi sekarang</text><rect class="mcb k" x="278.1" y="156" width="149.3" height="14" rx="7"/><rect class="mcb m" x="267.7" y="144" width="19.0" height="10" rx="5"/><circle cx="276.9" cy="149" r="5" class="mcd m"/><circle cx="328.3" cy="163" r="5" class="mcd k"/><text x="140" y="210" text-anchor="end">Lewat kroni</text><rect class="mcb k" x="308.9" y="208" width="215.7" height="14" rx="7"/><rect class="mcb m" x="289.5" y="196" width="37.4" height="10" rx="5"/><circle cx="306.2" cy="201" r="5" class="mcd m"/><circle cx="378.4" cy="215" r="5" class="mcd k"/><text x="140" y="262" text-anchor="end">Kedekatan penuh</text><rect class="mcb k" x="367.6" y="260" width="248.4" height="14" rx="7"/><text x="620.0" y="272" class="m">›</text><rect class="mcb m" x="325.9" y="248" width="113.5" height="10" rx="5"/><circle cx="369.1" cy="253" r="5" class="mcd m"/><circle cx="504.6" cy="267" r="5" class="mcd k"/></svg>
+      <p class="tx-cap">Batang = 80% hasil simulasi jatuh di rentang ini (persentil 10–90). Tanda › berarti ujung kanan melewati 2080.</p>
+    </div>
+    <div class="mcgrid">
+      <div><h3 style="font-size:17px">Jalan mulus</h3><table class="mct"><thead><tr><th>Skenario</th><th>Rentang 80%</th><th>Tengah</th><th>Tembus ≤2050</th></tr></thead><tbody><tr><td>Lewat kinerja</td><td>2045–2047</td><td><b>2046</b></td><td>100%</td></tr><tr><td>Netral (tren 2025)</td><td>2049–2051</td><td><b>2050</b></td><td>47%</td></tr><tr><td>Kondisi sekarang</td><td>2050–2052</td><td><b>2051</b></td><td>7%</td></tr><tr><td>Lewat kroni</td><td>2052–2055</td><td><b>2053</b></td><td>0%</td></tr><tr><td>Kedekatan penuh</td><td>2055–2065</td><td><b>2059</b></td><td>0%</td></tr></tbody></table></div>
+      <div><h3 style="font-size:17px">Dengan krisis</h3><table class="mct"><thead><tr><th>Skenario</th><th>Rentang 80%</th><th>Tengah</th><th>Tembus ≤2050</th></tr></thead><tbody><tr><td>Lewat kinerja</td><td>2046–2053</td><td><b>2048</b></td><td>69%</td></tr><tr><td>Netral (tren 2025)</td><td>2050–2062</td><td><b>2054</b></td><td>8%</td></tr><tr><td>Kondisi sekarang</td><td>2051–2064</td><td><b>2055</b></td><td>2%</td></tr><tr><td>Lewat kroni</td><td>2054–2072</td><td><b>2060</b></td><td>0%</td></tr><tr><td>Kedekatan penuh</td><td>2059–setelah 2094</td><td><b>2070</b></td><td>0%</td></tr></tbody></table></div>
+    </div>
+    <h3 style="font-size:19px">Dua klaim utama halaman ini, diuji ulang</h3>
+    <div class="table-wrap"><table class="mct"><thead><tr><th>Klaim</th><th>Angka di halaman</th><th>Jalan mulus (rentang 80%)</th><th>Dengan krisis (rentang 80%)</th></tr></thead><tbody>
+      <tr><td>Selisih kinerja vs kedekatan penuh</td><td>±13 tahun</td><td><b>8–20 tahun</b>, tengah 13</td><td><b>11–44 tahun</b>, tengah 21</td></tr>
+      <tr><td>Selisih kinerja vs kondisi sekarang</td><td>±5 tahun</td><td><b>4–6 tahun</b>, tengah 5</td><td><b>4–12 tahun</b>, tengah 7</td></tr>
+      <tr><td>Porsi selisih yang datang dari produktivitas</td><td>±78%</td><td colspan="2"><b>72–89%</b>, tengah 83% (5.000 simulasi; jalur produktivitas dimatikan untuk melihat sisa selisih dari investasi)</td></tr>
+      <tr><td>Kinerja selalu lebih cepat dari kedekatan?</td><td>ya</td><td colspan="2"><b>Ya, di 100% simulasi</b>, baik jalan mulus maupun dengan krisis</td></tr>
+    </tbody></table></div>
+    <div class="inf"><h4>Inferensi</h4><p>Urutan skenario gak pernah berubah: kinerja selalu paling cepat, kedekatan penuh selalu paling lambat. Klaim "sebagian besar selisih datang dari produktivitas, bukan dari tambahan investasi" juga bertahan di seluruh rentang. Yang berubah adalah <b>jaraknya</b>. Kalau krisis ikut dihitung, jarak kinerja vs kedekatan melebar dari ±13 jadi ±21 tahun, karena ekonomi yang tumbuh lambat butuh lebih lama untuk pulih dari guncangan yang sama. Di skenario kedekatan penuh dengan krisis, 16% simulasi bahkan belum tembus sampai 2094. Bahkan skenario kinerja cuma punya peluang 2% untuk tembus di 2045 kalau krisis dihitung. Target Indonesia Emas 2045 butuh lebih dari sekadar "kinerja" versi simulator ini.</p></div>
+    <h3 style="font-size:19px">Metode</h3>
+    <div class="table-wrap"><table class="mct"><thead><tr><th>Parameter</th><th>Di simulator</th><th>Diacak dalam rentang</th><th>Alasan rentang</th></tr></thead><tbody>
+      <tr><td>Porsi modal dalam output (α)</td><td>0,5</td><td>0,40–0,60</td><td>Estimasi porsi pendapatan pekerja di Indonesia beragam antarstudi</td></tr>
+      <tr><td>Penyusutan modal per tahun</td><td>5%</td><td>4–6%</td><td>Kisaran umum dalam akuntansi pertumbuhan</td></tr>
+      <tr><td>Efek kinerja ke produktivitas, ke investasi, dan efek kualitas belanja</td><td>0,75 · 2 · 0,25 poin</td><td>50–150% dari nilai simulator</td><td>Ini penilaian, bukan estimasi. Rentang lebar sengaja dipakai</td></tr>
+      <tr><td>Jeda efek institusi (separuh terasa setelah…)</td><td>±5,5 tahun</td><td>±3,5–8 tahun</td><td>Reformasi institusi butuh waktu yang gak pasti</td></tr>
+      <tr><td>Pertumbuhan penduduk dan tenaga kerja</td><td>proyeksi BPS</td><td>80–120% dari proyeksi</td><td>Proyeksi demografi bisa meleset</td></tr>
+      <tr><td>Pendapatan per kapita 2025</td><td>US$5.000</td><td>US$4.900–5.100</td><td>Revisi data dan kurs</td></tr>
+      <tr><td>Krisis berat, mirip 1998 (versi dengan krisis)</td><td>tidak ada</td><td>peluang 1/30 per tahun; produktivitas −13%, pulih ±30% dalam 3 tahun</td><td>Satu kejadian dalam 30 tahun terakhir</td></tr>
+      <tr><td>Krisis sedang, mirip 2020 (versi dengan krisis)</td><td>tombol</td><td>peluang 1/30 per tahun; produktivitas −7%, pulih separuh dalam 3 tahun</td><td>Satu kejadian dalam 30 tahun terakhir; sama dengan tombol krisis di simulator</td></tr>
+    </tbody></table></div>
+    <p class="fine">Setiap simulasi memakai parameter dan urutan krisis yang sama untuk kelima skenario, supaya selisih antarskenario murni datang dari pilihan kebijakan. Jumlah simulasi 10.000 per versi, benih acak tetap (2026), sehingga hasilnya bisa diulang persis. Kode lengkapnya terbuka di <a href="https://github.com/binasyahputra14/what-if-indonesia-2050/tree/main/riset" target="_blank" rel="noopener">folder riset di GitHub</a>. Model yang dipakai identik dengan simulator bagian 08 (hasil pusatnya sama: 2046, 2050, 2051, 2054, 2059).</p>
+    <div class="ctx"><h4>Batasan yang harus diakui</h4><p>Pertama, rentang parameter itu sendiri penilaian gua; kalau rentangnya diubah, hasilnya ikut berubah. Kedua, yang diacak cuma parameter, bukan bentuk modelnya: kalau model Solow-nya sendiri kurang tepat untuk Indonesia, simulasi ini gak bisa mendeteksinya. Ketiga, peluang krisis dibuat <b>sama</b> untuk semua skenario. Padahal riset menunjukkan negara dengan institusi lemah lebih sering kena krisis dan lebih parah jatuhnya (Acemoglu, Johnson, Robinson &amp; Thaicharoen, 2003). Jadi jarak kinerja vs kedekatan di sini kemungkinan masih <b>terlalu kecil</b>. Keempat, kurs gak dimodelkan: semua angka dalam dolar riil.</p></div>
+  </section>
+  </details>
   <details class="rm"><summary><span>Ringkasan: menyambungkan semua titik<small>enam poin dari versi lengkap</small></span></summary>
   <section class="verdict">
     <h2>Menyambungkan semua titik</h2>
@@ -1896,7 +1947,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <li><b>Responsnya:</b> tiga kebijakan menyasar kebocoran yang tepat, tapi hasilnya belum terukur. Jumlah kasus korupsi yang ditindak tidak berhubungan dengan pertumbuhan, dan rapornya: makro stabil, institusi melemah.</li>
       <li><b>Tuasnya:</b> kendali negara makin besar. Kasus Bayan memperlihatkan kendali itu bisa bergerak ke arah kedekatan, walaupun hubungan sebab-akibatnya tidak terbukti. Soal kepemilikan asing dan dugaan under-invoicing sektor tetap terbuka, dan transaksi itu tidak menyelesaikan keduanya.</li>
       <li><b>Pasarnya:</b> MSCI membekukan bobot saham Indonesia sejak Januari 2026 karena soal pembentukan harga dan kepemilikan terpusat. Tinjauan November menentukan apakah dana pasif wajib keluar.</li>
-      <li><b>Hasilnya:</b> di simulator berbasis Solow, skenario kinerja menembus US$14.000 sekitar 2046, kedekatan penuh sekitar 2059. Selisihnya sekitar 13 tahun, dan <mark class="tegas">sekitar 10 dari 13 tahun itu (±78%) datang dari produktivitas, bukan dari tambahan investasi.</mark> Tambahan investasi cuma menyumbang sekitar 3 tahun. Jadi <b>yang bikin kita cepat atau telat adalah cara modal dipakai, bukan banyaknya modal.</b><br><small style="color:var(--muted)">Cara hitung: tiap jalur ditukar bergantian antara skenario kinerja dan kedekatan penuh di model simulator, lalu efeknya dirata-rata. Tukar jalur produktivitas saja: 2059 → 2048 (kalau investasinya ikut kedekatan) atau 2055 → 2046 (kalau investasinya ikut kinerja), rata-rata ±10 tahun. Tukar jalur investasi saja: rata-rata ±3 tahun.</small></li>
+      <li><b>Hasilnya:</b> di simulator berbasis Solow, skenario kinerja menembus US$14.000 sekitar 2046, kedekatan penuh sekitar 2059. Selisihnya sekitar 13 tahun (rentang 80% dari 10.000 simulasi: 8–20 tahun), dan <mark class="tegas">sekitar 10 dari 13 tahun itu (±78%; rentang 72–89%) datang dari produktivitas, bukan dari tambahan investasi.</mark> Tambahan investasi cuma menyumbang sekitar 3 tahun. Jadi <b>yang bikin kita cepat atau telat adalah cara modal dipakai, bukan banyaknya modal.</b><br><small style="color:var(--muted)">Cara hitung: tiap jalur ditukar bergantian antara skenario kinerja dan kedekatan penuh di model simulator, lalu efeknya dirata-rata. Tukar jalur produktivitas saja: 2059 → 2048 (kalau investasinya ikut kedekatan) atau 2055 → 2046 (kalau investasinya ikut kinerja), rata-rata ±10 tahun. Tukar jalur investasi saja: rata-rata ±3 tahun.</small></li>
     </ol>
     <p>Gagasannya berani dan sentralistik. Pertanyaan yang menentukan bukan "siapa yang salah", tapi <b>ke mana rente dari semua kendali itu mengalir</b>. Jawabannya akan terlihat dalam setahun ke depan: hasil tinjauan MSCI November 2026, hasil DSI, cara kuota 2027 dibagi, nasib perkara pejabat yang kini tersangka, apakah pengembalian uang korupsi naik dari angka 4,78%, dan apakah porsi pekerja informal turun di bawah 59% pada data BPS Mei 2027.</p>
   </section>
