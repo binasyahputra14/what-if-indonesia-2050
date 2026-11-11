@@ -696,7 +696,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
 .vz-tx{padding:16px 16px 12px}
 .vz-tx h4{margin:0 0 2px;font:700 15.5px var(--body);color:var(--ink)}
 .vz-tx .tx-sub{margin:0 0 6px;font:500 13px var(--body);color:var(--muted)}
-.vz-tx svg{width:100%;height:auto;display:block}
+.vz-tx svg{width:100%;max-width:640px;margin:0 auto;height:auto;display:block}
 .vz-tx text{font:600 12px var(--body);fill:var(--ink)}
 .vz-tx .m{font:500 10.5px var(--mono);fill:var(--muted);letter-spacing:.03em}
 .vz-tx .tx-cap{margin:6px 0 0;font:500 11.5px var(--body);color:var(--muted);line-height:1.45}
@@ -781,6 +781,14 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
 .tst h4{margin:0;font-size:16px}.tst p{margin:0;font-size:13.8px;line-height:1.55}
 .tst .tr{margin-top:auto;font:700 12.5px var(--body);padding:6px 10px;border-radius:10px}
 .tr.ok{background:#E2F3EA;color:#1E6B45}.tr.mid{background:#FFF1CC;color:#8A5E00}.tr.no{background:#FBE3DE;color:#9B2C1E}
+
+#catatan .k-tag{display:inline-block;font:700 10.5px var(--mono);letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(194,86,15,.22);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+#catatan .k-num{font:700 .92em var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:1px 5px;white-space:nowrap}
+#catatan .k-hl{background:linear-gradient(transparent 55%,rgba(240,169,60,.38) 55%);padding:0 2px;border-radius:2px}
+#catatan .k-cav{text-decoration:underline dotted var(--muted);text-underline-offset:4px;color:var(--muted);font-style:italic}
+#catatan .k-bad{color:var(--bad);font-weight:700}
+#catatan .k-good{color:var(--good);font-weight:700}
+#catatan .prose b{font-weight:800}
 </style>
 
 <div class="wrap">
@@ -1578,9 +1586,9 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     </div>
     <blockquote class="pq">Apa iya 100%?</blockquote>
     <div class="prose">
-      <p>Coba balik ke angka di halaman ini sendiri. Dari celah pajak sekitar Rp548 T yang bisa ditagih, porsi terbesarnya, sekitar Rp387 T, datang dari PPN, terutama ekonomi yang gak tercatat. Itu bukan cuma urusan meja menteri. Itu juga toko, distributor, dan usaha yang omzetnya jalan tapi pajaknya enggak, padahal tarifnya belum "membunuh".</p>
-      <p>Dari semua yang gua pelajari dari bawah, gua nangkep satu hal: concern terbesar pemerintahan sekarang adalah <b>gimana caranya nutup celah pajak yang bocor</b>, dengan berbagai cara. Makanya beberapa keputusannya terkesan otoriter: mendadak, dipaksakan, minim diskusi. Gua gak membenarkan caranya. Tapi gua ngerti kenapa sasarannya ke situ.</p>
-      <p>Kalau dihitung dalam rupiah, porsi terbesar yang hilang <b>kemungkinan</b> ada di perusahaan menengah dan besar. Logikanya begini. Bank Dunia menemukan sedikitnya 1 dari 4 perusahaan Indonesia mengelak pajak, dan besar-kecilnya perusahaan gak bikin beda (Bank Dunia, 2026). Kalau proporsi yang curang sama, rupiah yang hilang paling banyak ada di tempat omzet dan labanya paling besar. Seribu warung yang gak lapor tetap kalah nilainya dari satu grup usaha yang mindahin labanya. Tapi ini logika, bukan hasil ukur: sampai sekarang belum ada data yang memecah celah pajak per ukuran usaha.</p>
+      <p><span class="k-tag">BALIK KE ANGKA</span>Coba balik ke angka di halaman ini sendiri. Dari celah pajak sekitar <span class="k-num">Rp548 T</span> yang bisa ditagih, porsi terbesarnya, sekitar <span class="k-num">Rp387 T</span>, datang dari PPN, terutama <span class="k-hl">ekonomi yang gak tercatat</span>. Itu bukan cuma urusan meja menteri. Itu juga <b>toko, distributor, dan usaha yang omzetnya jalan tapi pajaknya enggak</b>, padahal tarifnya belum "membunuh".</p>
+      <p><span class="k-tag">YANG GUA TANGKEP</span>Dari semua yang gua pelajari dari bawah, gua nangkep satu hal: concern terbesar pemerintahan sekarang adalah <span class="k-hl"><b>gimana caranya nutup celah pajak yang bocor</b></span>, dengan berbagai cara. Makanya beberapa keputusannya <span class="k-bad">terkesan otoriter</span>: mendadak, dipaksakan, minim diskusi. <b>Gua gak membenarkan caranya.</b> Tapi gua ngerti kenapa sasarannya ke situ.</p>
+      <p><span class="k-tag">LOGIKA RUPIAH</span>Kalau dihitung dalam rupiah, porsi terbesar yang hilang <span class="k-cav">kemungkinan</span> ada di <span class="k-hl"><b>perusahaan menengah dan besar</b></span>. Logikanya begini. Bank Dunia menemukan sedikitnya <span class="k-num">1 dari 4</span> perusahaan Indonesia mengelak pajak, dan besar-kecilnya perusahaan gak bikin beda (Bank Dunia, 2026). Kalau proporsi yang curang sama, rupiah yang hilang paling banyak ada di tempat omzet dan labanya paling besar. <b>Seribu warung yang gak lapor tetap kalah nilainya dari satu grup usaha yang mindahin labanya.</b> <span class="k-cav">Tapi ini logika, bukan hasil ukur</span>: sampai sekarang belum ada data yang memecah celah pajak per ukuran usaha.</p>
     </div>
     <div class="vz vz-tx tx1" aria-label="Ilustrasi: proporsi yang curang sama, rupiah yang hilang berbeda">
       <h4>Proporsinya sama. Rupiahnya enggak.</h4>
@@ -1598,7 +1606,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <p class="tx-cap">Ilustrasi logika, bukan data terukur. Proporsi ±1 dari 4: Bank Dunia (2026). Sampai sekarang belum ada data yang memecah celah pajak per ukuran usaha.</p>
     </div>
     <div class="prose">
-      <p>Biar fair, gua juga harus bilang: <b>banyak juga yang sengaja main di bawah radar.</b> Usaha dengan omzet di bawah Rp4,8 miliar setahun boleh bayar pajak final 0,5% dari omzet dan gak wajib memungut PPN. Riset nemuin perusahaan yang "numpuk" secara gak wajar di omzet Rp4,4–4,8 miliar, tepat sebelum batas itu (Saputro, 2020, dikutip Bank Dunia, 2025). Omzetnya kayak sengaja direm, atau dilaporin direm, biar gak kena tarif normal. Bank Dunia juga nyebut sektor dagang yang banyak transaksi tunai, eceran dan grosir, sebagai yang paling rawan pengelakan PPN. Itu wilayah distributor dan pedagang, bukan cuma konglomerat.</p>
+      <p><span class="k-tag">BIAR FAIR</span>Gua juga harus bilang: <span class="k-hl"><b>banyak juga yang sengaja main di bawah radar.</b></span> Usaha dengan omzet di bawah <span class="k-num">Rp4,8 miliar</span> setahun boleh bayar pajak final <span class="k-num">0,5%</span> dari omzet dan gak wajib memungut PPN. Riset nemuin perusahaan yang "numpuk" secara gak wajar di omzet <span class="k-num">Rp4,4–4,8 miliar</span>, tepat sebelum batas itu (Saputro, 2020, dikutip Bank Dunia, 2025). <span class="k-bad">Omzetnya kayak sengaja direm</span>, atau dilaporin direm, biar gak kena tarif normal. Bank Dunia juga nyebut sektor dagang yang banyak transaksi tunai, eceran dan grosir, sebagai yang paling rawan pengelakan PPN. <b>Itu wilayah distributor dan pedagang, bukan cuma konglomerat.</b></p>
     </div>
     <div class="vz vz-tx tx2" aria-label="Ilustrasi: perusahaan menumpuk tepat di bawah omzet Rp4,8 miliar">
       <h4>Banyak yang "ngerem" tepat sebelum garis</h4>
@@ -1616,7 +1624,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       <p class="tx-cap">Bentuk ilustratif dari temuan penumpukan (Saputro, 2020, dikutip Bank Dunia, 2025). Tinggi batang bukan data asli. Batas Rp4,8 M untuk pajak final 0,5% dan wajib PPN itu aturan yang berlaku.</p>
     </div>
     <div class="prose">
-      <p>Jadi kesimpulan gua: secara kuantitatif, tarif pajak, termasuk PPN yang naik dari 10% ke 11% pada 2022, naik <b>salah satunya karena basisnya sempit</b>. Dan basisnya sempit karena banyak kontributor yang cenderung menghindar sebelum pajaknya sempat "menggigit". Ini bukan satu-satunya alasan, karena kebutuhan belanja negara juga ikut mendorong. Tapi alasan ini paling jarang diomongin.</p>
+      <p><span class="k-tag">KESIMPULAN GUA</span>Secara kuantitatif, tarif pajak, termasuk PPN yang naik dari <span class="k-num">10%</span> ke <span class="k-num">11%</span> pada 2022, naik <span class="k-hl"><b>salah satunya karena basisnya sempit</b></span>. Dan basisnya sempit karena <b>banyak kontributor yang cenderung menghindar sebelum pajaknya sempat "menggigit"</b>. <span class="k-cav">Ini bukan satu-satunya alasan</span>, karena kebutuhan belanja negara juga ikut mendorong. Tapi alasan ini paling jarang diomongin.</p>
     </div>
         <div class="vz vz-tx tx3" aria-label="Ilustrasi: makin banyak yang menghindar, makin berat beban yang patuh">
       <h4>Basis sempit, tarif naik</h4>
@@ -1634,9 +1642,9 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     </div>
     <blockquote class="pq">Yang patuh akhirnya nanggung tarif buat nutup yang enggak.</blockquote>
     <div class="prose">
-      <p>MSCI juga gitu. Yang dipersoalkan MSCI adalah transparansi saham yang beredar dan indikasi perdagangan yang diatur. Itu urusan bursa, regulator, dan para pemilik perusahaan. Turun kelas pun gak otomatis kiamat: riset nunjukin penurunan harga akibat turun kelas sebagian besar pulih dalam sekitar setahun (Burnham dkk., 2017). Yang tahan lama itu premi risikonya, dan premi itu dibentuk banyak tangan.</p>
-      <p>Ada juga kebijakan yang justru dibikin buat nekan bocoran itu: harga ekspor wajib dicatat, devisa ekspor ditahan, sawit ilegal diambil alih. Hasilnya belum kebukti, dan bisa aja gagal. Tapi menilai sebelum datanya ada itu sama aja nebak.</p>
-      <p>Biar adil ke diri gua sendiri: presiden bukan gak bersalah. Halaman ini nunjukin makin banyak keran dipegang negara, dan yang megang keran paling atas ya presiden. Indeks Persepsi Korupsi turun dari 37 ke 34 di periode ini. Itu tanggung jawab yang gak bisa dilempar ke rakyat. Tapi "bertanggung jawab atas sebagian" beda jauh sama "salah 100%".</p>
+      <p><span class="k-tag">MSCI JUGA GITU</span>Yang dipersoalkan MSCI adalah transparansi saham yang beredar dan indikasi perdagangan yang diatur. <b>Itu urusan bursa, regulator, dan para pemilik perusahaan.</b> Turun kelas pun <span class="k-good">gak otomatis kiamat</span>: riset nunjukin penurunan harga akibat turun kelas sebagian besar pulih dalam sekitar setahun (Burnham dkk., 2017). <span class="k-hl">Yang tahan lama itu premi risikonya, dan premi itu dibentuk banyak tangan.</span></p>
+      <p>Ada juga kebijakan yang justru dibikin buat nekan bocoran itu: harga ekspor wajib dicatat, devisa ekspor ditahan, sawit ilegal diambil alih. <span class="k-cav">Hasilnya belum kebukti</span>, dan bisa aja gagal. <b>Tapi menilai sebelum datanya ada itu sama aja nebak.</b></p>
+      <p><span class="k-tag">BIAR ADIL KE DIRI SENDIRI</span><span class="k-bad">Presiden bukan gak bersalah.</span> Halaman ini nunjukin makin banyak keran dipegang negara, dan yang megang keran paling atas ya presiden. Indeks Persepsi Korupsi turun dari <span class="k-num">37</span> ke <span class="k-num">34</span> di periode ini. <b>Itu tanggung jawab yang gak bisa dilempar ke rakyat.</b> Tapi <span class="k-hl">"bertanggung jawab atas sebagian" beda jauh sama "salah 100%"</span>.</p>
       <p>Kenapa gua bilang sebagian? Karena kalau semua angka di halaman ini dipilah, gak semuanya ada di tangan satu orang:</p>
     </div>
     <div class="resp">
@@ -1654,9 +1662,9 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
       </ul></div>
     </div>
     <div class="prose">
-      <p>Jadi tagihannya jelas alamatnya. Presiden ditagih penuh atas kolom kiri: <mark>arah, keran, orang yang ia angkat, dan apa yang memburuk di masa jabatannya</mark>. Kolom kanan juga harus ditagih, tapi ke alamat yang benar. Kalau semuanya dilempar ke satu orang, pelaku di kolom kanan malah bebas, karena gak ada yang nagih mereka.</p>
-      <p>Soal orang yang susah makan: ada yang susah karena sistemnya memang gak adil. Kerja informal tanpa jaminan, akses kredit nol, sekolah yang gak ngajarin apa-apa. Itu nyata, dan gua gak mau nyepelein. Tapi gua juga gak bisa pura-pura bahwa semua pilihan hidup ada di tangan istana. Dua-duanya bisa bener sekaligus.</p>
-      <p>Yang paling bikin gua gelisah sebenarnya bukan presidennya, tapi cara kita ngobrolin dia. Polarisasi bikin semua jadi soal kubu: lu di pihak mana? Padahal pertanyaan yang lebih berguna: angkanya berapa? Bocornya di mana? Siapa yang bisa nutup? Ngomel itu murah dan cepet viral. Ngukur itu lambat, ngebosenin, dan sering ngebantah keyakinan kita sendiri. Halaman ini buktinya: berkali-kali data ngebantah gua.</p>
+      <p>Jadi tagihannya jelas alamatnya. Presiden ditagih penuh atas kolom kiri: <mark>arah, keran, orang yang ia angkat, dan apa yang memburuk di masa jabatannya</mark>. Kolom kanan juga harus ditagih, tapi ke alamat yang benar. Kalau semuanya dilempar ke satu orang, <span class="k-bad">pelaku di kolom kanan malah bebas</span>, karena gak ada yang nagih mereka.</p>
+      <p><span class="k-tag">SOAL YANG SUSAH MAKAN</span>Ada yang susah karena <span class="k-bad">sistemnya memang gak adil</span>. Kerja informal tanpa jaminan, akses kredit nol, sekolah yang gak ngajarin apa-apa. Itu nyata, dan gua gak mau nyepelein. Tapi gua juga gak bisa pura-pura bahwa semua pilihan hidup ada di tangan istana. <b>Dua-duanya bisa bener sekaligus.</b></p>
+      <p><span class="k-tag">YANG BIKIN GELISAH</span>Sebenarnya bukan presidennya, tapi <span class="k-hl"><b>cara kita ngobrolin dia</b></span>. Polarisasi bikin semua jadi soal kubu: lu di pihak mana? Padahal pertanyaan yang lebih berguna: <span class="k-hl">angkanya berapa? Bocornya di mana? Siapa yang bisa nutup?</span> Ngomel itu murah dan cepet viral. Ngukur itu lambat, ngebosenin, dan sering ngebantah keyakinan kita sendiri. <b>Halaman ini buktinya: berkali-kali data ngebantah gua.</b></p>
     </div>
     <blockquote class="pq">Ngomel itu murah. Ngukur itu mahal.<br>Tapi cuma yang kedua yang bisa ngubah sesuatu.</blockquote>
     <div class="prose">
@@ -1664,7 +1672,7 @@ body{font-feature-settings:"ss01" 0;letter-spacing:.002em}
     </div>
     <p class="ask">Indonesia ini perlu ganti presiden, atau ganti rakyat?</p>
     <div class="prose">
-      <p>Menurut gua, pertanyaan itu sendiri jebakan. Ganti presiden tanpa ganti cara keran dibagi, kita cuma ganti siapa yang megang kerannya. Ganti rakyat? Mustahil, dan gak perlu. Yang perlu diganti adalah kebiasaan: dari nunjuk ke ngukur, dari "siapa yang salah" ke "bocornya di mana dan berapa". Presiden ditagih pakai angka. Rakyat juga ditagih pakai kepatuhannya sendiri. Dua-duanya, pakai data yang sama.</p>
+      <p>Menurut gua, <span class="k-bad">pertanyaan itu sendiri jebakan</span>. Ganti presiden tanpa ganti cara keran dibagi, kita cuma ganti siapa yang megang kerannya. Ganti rakyat? Mustahil, dan gak perlu. Yang perlu diganti adalah kebiasaan: <span class="k-hl"><b>dari nunjuk ke ngukur</b></span>, dari "siapa yang salah" ke "bocornya di mana dan berapa". <b>Presiden ditagih pakai angka. Rakyat juga ditagih pakai kepatuhannya sendiri.</b> <span class="k-good">Dua-duanya, pakai data yang sama.</span></p>
     </div>
     <div class="punch big">Bukan ganti presiden.<br>Bukan ganti rakyat.<br>Ganti cara kita menilai keduanya.</div>
   </section>
