@@ -4,7 +4,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 /* Layout: satu rantai sebab-akibat dari atas ke bawah. Tiap bagian ditutup jembatan ke bagian berikutnya; tiap angka diperkenalkan sebelum dipakai lagi. */
 :root{
@@ -13,9 +13,9 @@
   --good:#4BE3A0; --good-soft:rgba(75,227,160,.13); --bad:#FF5C7A; --bad-soft:rgba(255,92,122,.13); --neutral:#8A9BBB; --warn:#FFC857;
   --s1:#8A9BBB; --s2:#4BE3A0; --s3:#FFC857; --s4:#FF5C7A; --s5:#E8F1FF;
   --ice:#8FD8FF; --violet:#A98BFF; --mag:#FF6FB5; --base:#030817;
-  --display:'Unbounded','Bricolage Grotesque',system-ui,sans-serif;
-  --body:'Bricolage Grotesque',ui-sans-serif,'Segoe UI',system-ui,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --display:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif;
+  --body:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
   color-scheme:dark;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -953,6 +953,33 @@ html[data-m="P"] .aur-bg .a1{opacity:.7}
 .aur-bg i{transition:opacity 1.2s,filter 1.2s}
 .lx-seg button[aria-pressed="true"]{color:#03121A!important}
 @media (max-width:600px){.lx-seg{flex-wrap:wrap;border-radius:18px}}
+
+/* ===== tipografi: IBM Plex, tenang dan rapi ===== */
+body{font-family:var(--body);font-size:16.5px;line-height:1.7;letter-spacing:0!important;font-feature-settings:"kern" 1,"liga" 1;font-variation-settings:normal}
+h1,h2,h3,.sec>h2,.punch,.pq,.ch-q,.ask,.em-big,.concl h3,.final p:first-of-type,.two-q b,.vs span,.ch h3,.hc h3,.closer b{font-family:var(--display)!important;font-variation-settings:normal!important;word-spacing:0!important}
+h1{font-weight:600!important;letter-spacing:-.02em!important;line-height:1.08!important}
+.sec>h2,h2{font-weight:600!important;letter-spacing:-.012em!important;line-height:1.22!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#F2F7FF!important}
+h3{font-weight:600!important;letter-spacing:-.005em!important}
+.punch,.pq,.ch-q,.ask{font-weight:600!important;letter-spacing:-.01em!important;line-height:1.3!important;text-shadow:none!important}
+.prose,.lead{font-size:17px}
+.prose p,.lead,p{line-height:1.72}
+b,strong{font-weight:600}
+.eng b,.kc b,.lk-big,.rapor b,.levers b,.o b,.lx-hud b,.lb .v,.trio .eng b,.op,.lx-st b{font-family:var(--display)!important;font-weight:600!important;letter-spacing:-.01em!important;font-variant-numeric:tabular-nums lining-nums}
+.kicker,.num,.lx-title,.lx-dial label,.lx-card .ey,.lx-hud span,.lx .nd text.v,.lx .hz text,.tg span,.ch-tag,.lgrp{letter-spacing:.06em!important;text-shadow:none!important}
+.num{font-weight:600!important}
+.kicker{font-weight:600}
+.ctl label output,.lx-title,.lx-hud b,.eng b,.o b,.kc b{text-shadow:none!important}
+.o b,#oY{filter:none!important}
+h1 em{filter:none!important}
+.mini,.calc,.pol{font-family:var(--mono)}
+.mini th,.mini td{font-size:13px}
+.story .lead::first-letter{font-family:var(--display)!important;font-weight:600}
+/* tenangkan animasi huruf */
+.boing,.zeet{animation:none!important}
+h1 .w,h1 .w:hover{transform:none!important;transition:none!important}
+.lx-legend{font-family:var(--body)!important;font-size:12.5px!important;font-weight:500!important;letter-spacing:0!important;line-height:1.55}
+.lx-legend span[style]{font-weight:500}
+.vz-road{padding-bottom:16px}
 </style>
 
 <div class="aur-bg" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i><b class="stars"></b><b class="stars s2"></b><b class="grid"></b></div>
