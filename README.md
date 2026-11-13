@@ -10,7 +10,7 @@ Esai interaktif berbasis data: alur premis → set-up → punchline, peta sebab-
 ## Isi singkat
 
 1. **Premis** – pertumbuhan datar di ±5% selama satu dekade.
-2. **Mobil boros** – investasi 28,77% PDB, tapi ICOR 6,8 menurut pemerintah (Nov 2026), atau 5,6 dihitung paling ringan dari BPS: bensinnya ada, mobilnya boros.
+2. **Mobil boros** – investasi 28,77% PDB, tapi ICOR 5,6 (28,77 ÷ 5,11, versi paling ringan; angka pemerintah Nov 2026 malah 6,8): bensinnya ada, mobilnya boros.
 3. **Tangki bocor** – celah pajak ±Rp944 T per tahun, proyek, dan izin.
 4. **Kasus Bayan** – satu contoh nyata keran kuota (fakta publik dan bantahan; bukan tuduhan).
 5. **Punchline** – masalahnya bukan uang, tapi siapa yang dapat: kinerja vs kedekatan.
