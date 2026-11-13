@@ -355,7 +355,7 @@ header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:1
       <div class="g3">
         <div class="card" data-s="2"><div class="big"><span class="cnt" data-to="28.77" data-dec="2"></span> liter</div><p>dari tiap 100 liter penghasilan ekonomi 2025 dituang ke tangki investasi (PMTB 28,77% PDB, BPS).</p></div>
         <div class="card" data-s="3"><div class="big"><span class="cnt" data-to="5.11" data-dec="2"></span> km</div><p>tambahan jarak mobilnya. Ini pertumbuhan ekonomi 2025 (BPS).</p></div>
-        <div class="card" data-s="4"><div class="big red"><span class="cnt" data-to="5.6" data-dec="1"></span> l/km</div><p>28,77 ÷ 5,11. Ekonom nyebutnya ICOR. Makin besar, makin boros.</p></div>
+        <div class="card" data-s="4"><div class="big red"><span class="cnt" data-to="6.8" data-dec="1"></span> l/km</div><p>angka pemerintah terbaru (Nov 2026). Ekonom nyebutnya ICOR. Makin besar, makin boros. Dihitung paling ringan, 28,77 ÷ 5,11, pun masih 5,6.</p></div>
       </div>
       <div class="card bars" data-s="5" id="icor"></div>
       <div class="card slide" data-s="6">
@@ -364,11 +364,11 @@ header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:1
         <label for="icorR" class="fine">Konsumsi bensin (ICOR): geser ke kiri = makin irit</label>
         <input type="range" id="icorR" min="3.5" max="7" step="0.1" value="5.6">
         <div class="out"><span>ICOR <b id="icorV">5,6</b></span><span>Pertumbuhan <b id="growV">5,1%</b></span></div>
-        <p class="fine" id="icorN">Pertumbuhan ≈ porsi investasi ÷ ICOR (Harrod–Domar, disederhanakan). Target pemerintah: ICOR 4,5.</p>
+        <p class="fine" id="icorN">Pertumbuhan ≈ porsi investasi ÷ ICOR (Harrod–Domar, disederhanakan). Mulai dari 5,6, versi paling ringan yang cocok dengan pertumbuhan riil 5,1%. Target pemerintah: ICOR 4,5.</p>
       </div>
-      <div class="card" data-s="7"><h3>Mau 8% pakai mobil seboros ini?</h3><p>Bensinnya harus <b style="color:var(--bad)">45 dari tiap 100 liter</b>, naik 16 liter dari sekarang. Gak realistis.</p></div>
+      <div class="card" data-s="7"><h3>Mau 8% pakai mobil seboros ini?</h3><p>Bensinnya harus <b style="color:var(--bad)">54 dari tiap 100 liter</b>, naik 26 liter dari sekarang. Pakai angka paling ringan pun masih 45. Gak realistis.</p></div>
       <div class="punch" data-s="8">Bensinnya ada. <mark>Mobilnya yang boros.</mark><br>Pertanyaannya: bocornya di mana?</div>
-      <p class="src">ICOR negara lain: data pemerintah dikutip Koran Jakarta (Sep 2026); Luhut/DEN (Des 2024); Sarasehan 100 Ekonom dikutip Kontan (Des 2024). Angka antarsumber beda; arahnya konsisten.</p>
+      <p class="src">ICOR negara lain: data pemerintah dikutip Koran Jakarta (Sep 2026) dan CNBC Indonesia (Nov 2026); Luhut/DEN (Des 2024); Sarasehan 100 Ekonom dikutip Kontan (Des 2024). Angka antarsumber beda; arahnya konsisten.</p>
     </section>
 
     <!-- 3 -->
@@ -670,7 +670,7 @@ const N=[
   "Biar maju, mobil butuh bensin. Bensin ekonomi namanya investasi: pabrik, jalan, mesin, gedung.",
   "Tahun lalu, dari tiap seratus liter penghasilan ekonomi kita, dua puluh delapan koma tujuh tujuh liter dituang ke tangki.",
   "Hasilnya? Mobilnya maju lima koma sebelas kilometer.",
-  ["Bagi aja. Dua puluh delapan koma tujuh tujuh, dibagi lima koma sebelas. Lima koma enam liter per kilometer. Ekonom nyebutnya ICOR. Makin gede, makin boros.",{fx:"burst"}],
+  ["Bagi aja. Dua puluh delapan koma tujuh tujuh, dibagi lima koma sebelas. Lima koma enam liter per kilometer. Itu versi paling ringan. Angka pemerintah terbaru malah enam koma delapan. Ekonom nyebutnya ICOR. Makin gede, makin boros.",{fx:"burst"}],
   "Sekarang lihat mobil tetangga. Vietnam, Thailand, Filipina, Malaysia. Semuanya lebih irit dari kita.",
   ["Coba geser sendiri. Kalau mobil kita seirit target pemerintah, empat koma lima, dengan bensin yang sama kita maju enam koma empat kilometer.",{fx:"icor45"}],
   ["Mau tumbuh delapan persen pakai mobil seboros ini? Bensinnya harus empat puluh lima liter dari tiap seratus. Gak realistis.",{fx:"icor56"}],
@@ -831,7 +831,7 @@ function person(o){o=o||{};const sk=o.sk||SK[0],c=o.c||'#7A8FB5',x=[];
 const YR=[[2014,5.01],[2015,4.88],[2016,5.03],[2017,5.07],[2018,5.17],[2019,5.02],[2020,-2.07],[2021,3.70],[2022,5.31],[2023,5.05],[2024,5.03],[2025,5.11]];
 document.getElementById('years').innerHTML=YR.map(([y,g])=>'<div class="'+(g<0?'neg':'')+'"><b>'+String(g.toFixed(2)).replace('.',',')+'</b><i style="--h:'+(Math.abs(g)/5.4*78).toFixed(0)+'%"></i>\''+String(y).slice(2)+'</div>').join('');
 // bab 2: ICOR dengan bendera
-const IC=[['ID','Indonesia','86%','5,6–7',1],['VN','Vietnam','64%','4,6–5,7'],['TH','Thailand','55%','4,4'],['PH','Filipina','49%','3,4–4,4'],['MY','Malaysia','43%','2,7–4,9']];
+const IC=[['ID','Indonesia','86%','5,6–7',1],['VN','Vietnam','64%','3,8–5,7'],['TH','Thailand','55%','4,4'],['PH','Filipina','49%','3,4–4,4'],['MY','Malaysia','43%','2,7–4,9']];
 document.getElementById('icor').innerHTML='<h3>Konsumsi bensin mobil tetangga (ICOR)</h3>'+IC.map(r=>'<div class="bar'+(r[4]?' id':'')+'">'+flag(r[0])+'<span>'+r[1]+'</span><div class="t"><i style="--w:'+r[2]+'"></i></div><b>'+r[3]+'</b></div>').join('')+'<p class="fine">irit ← → boros</p>';
 const icorR=document.getElementById('icorR'),icorV=document.getElementById('icorV'),growV=document.getElementById('growV'),icorN=document.getElementById('icorN'),car2=document.getElementById('car2');
 function upIcor(){const v=+icorR.value,g=28.77/v;icorV.textContent=v.toFixed(1).replace('.',',');growV.textContent=g.toFixed(1).replace('.',',')+'%';growV.style.color=g>=6?'var(--good)':g<5?'var(--bad)':'var(--accent)';car2.style.animationDuration=(9*5.11/g).toFixed(1)+'s';}
