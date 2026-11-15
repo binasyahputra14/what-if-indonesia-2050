@@ -24,16 +24,24 @@ def shocks(rng,mult=1.0):
 def crisis_mult(k):return math.exp(-0.5*k/100)   # kinerja 80 -> 0,67x ; kedekatan -100 -> 1,65x
 def q(a,pr):a=sorted(a);return a[min(len(a)-1,int(pr*len(a)))]
 def hit(sc,p,s):r=run(*sc,p=p,shocks=s);return r['hit'] if r['hit'] else 2095
+# Posisi "Kondisi sekarang" diukur dari indeks lembaga (lihat indeks.py), jadi ikut punya galat ukur:
+# saklar ~ Normal(-12, 6), kualitas belanja ~ Normal(50, 8), celah pajak tertutup ~ Uniform(0, 5).
+# Galat ini diambil dari generator terpisah supaya urutan acak parameter lain tidak berubah.
+MEAS=dict(k=(-12,6),q=(50,8),rec=(0,5))
+def now_draw(r):
+  k=max(-100,min(100,r.gauss(*MEAS['k'])));qq=max(0,min(100,r.gauss(*MEAS['q'])));rec=r.uniform(*MEAS['rec'])
+  return (k,rec,50,qq)
 def mc(mode,N=10000,seed=2026):
-  rng=random.Random(seed);H={n:[] for n in NAMES};G=[];G2=[]
+  rng=random.Random(seed);rm=random.Random(seed+1);H={n:[] for n in NAMES};G=[];G2=[]
   for _ in range(N):
-    p=params({k:rng.random() for k in RANGES})
+    p=params({k:rng.random() for k in RANGES});nowsc=now_draw(rm)
+    SCN=[(sc[0],nowsc if sc[0]=='Kondisi sekarang' else sc[1:]) for sc in P]
     if mode=='rezim':
       st=rng.getstate();hs={}
-      for sc in P:
-        rng.setstate(st);s=shocks(rng,crisis_mult(sc[1]));hs[sc[0]]=hit(sc[1:],p,s)
+      for nm,par in SCN:
+        rng.setstate(st);s=shocks(rng,crisis_mult(par[0]));hs[nm]=hit(par,p,s)
     else:
-      s=shocks(rng) if mode=='krisis' else None;hs={sc[0]:hit(sc[1:],p,s) for sc in P}
+      s=shocks(rng) if mode=='krisis' else None;hs={nm:hit(par,p,s) for nm,par in SCN}
     for n in NAMES:H[n].append(hs[n])
     G.append(hs[NAMES[4]]-hs[NAMES[2]]);G2.append(hs[NAMES[1]]-hs[NAMES[2]])
   out={n:dict(p10=q(H[n],.1),p50=q(H[n],.5),p90=q(H[n],.9),pr45=sum(x<=2045 for x in H[n])/N,pr50=sum(x<=2050 for x in H[n])/N,never=sum(x>=2095 for x in H[n])/N) for n in NAMES}

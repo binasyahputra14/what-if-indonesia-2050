@@ -1,0 +1,138 @@
+{
+ "tingkat": [
+  {
+   "nama": "Pengendalian korupsi",
+   "lembaga": "Bank Dunia, WGI",
+   "tahun": 2025,
+   "peringkat": 134,
+   "n": 207,
+   "tuas": "saklar",
+   "persentil": 35.4
+  },
+  {
+   "nama": "Supremasi hukum",
+   "lembaga": "Bank Dunia, WGI",
+   "tahun": 2025,
+   "peringkat": 114,
+   "n": 207,
+   "tuas": "saklar",
+   "persentil": 45.1
+  },
+  {
+   "nama": "Kualitas regulasi",
+   "lembaga": "Bank Dunia, WGI",
+   "tahun": 2025,
+   "peringkat": 85,
+   "n": 205,
+   "tuas": "saklar",
+   "persentil": 58.8
+  },
+  {
+   "nama": "Indeks Persepsi Korupsi",
+   "lembaga": "Transparency International",
+   "tahun": 2025,
+   "peringkat": 109,
+   "n": 180,
+   "tuas": "saklar",
+   "persentil": 39.7
+  },
+  {
+   "nama": "Indeks Negara Hukum",
+   "lembaga": "World Justice Project",
+   "tahun": 2026,
+   "peringkat": 75,
+   "n": 143,
+   "tuas": "saklar",
+   "persentil": 47.9
+  },
+  {
+   "nama": "Efektivitas pemerintah",
+   "lembaga": "Bank Dunia, WGI",
+   "tahun": 2025,
+   "peringkat": 82,
+   "n": 205,
+   "tuas": "belanja",
+   "persentil": 60.3
+  },
+  {
+   "nama": "Pengawasan anggaran",
+   "lembaga": "International Budget Partnership, OBS",
+   "tahun": 2023,
+   "peringkat": 46,
+   "n": 125,
+   "tuas": "belanja",
+   "persentil": 63.7
+  },
+  {
+   "nama": "Keterbukaan anggaran",
+   "lembaga": "International Budget Partnership, OBS",
+   "tahun": 2023,
+   "peringkat": 20,
+   "n": 125,
+   "tuas": "konteks",
+   "persentil": 84.7
+  }
+ ],
+ "tingkat_saklar": 45.4,
+ "tingkat_belanja": 62.0,
+ "perubahan": [
+  {
+   "nama": "Indeks Persepsi Korupsi",
+   "lembaga": "Transparency International",
+   "dari": [
+    2024,
+    99,
+    180,
+    45.3
+   ],
+   "ke": [
+    2025,
+    109,
+    180,
+    39.7
+   ],
+   "delta": -5.6
+  },
+  {
+   "nama": "Indeks Negara Hukum",
+   "lembaga": "World Justice Project",
+   "dari": [
+    2025,
+    69,
+    142,
+    51.8
+   ],
+   "ke": [
+    2026,
+    75,
+    143,
+    47.9
+   ],
+   "delta": -3.9
+  }
+ ],
+ "perubahan_rata": -4.75,
+ "saklar": -12,
+ "saklar_rentang_sd": 6,
+ "kualitas_belanja": 50,
+ "kualitas_belanja_sd": 8,
+ "celah_pajak_tertutup": 0,
+ "celah_pajak_rentang": [
+  0,
+  5
+ ],
+ "pemeriksa_arah_supremasi_hukum": {
+  "2023": 56.9,
+  "2024": 55.1,
+  "2025": 54.4
+ },
+ "rasio_pajak": {
+  "2024": 10.08,
+  "2025": 9.31
+ },
+ "catatan": [
+  "Saklar: rata-rata perubahan persentil dua indeks yang sebanding (TI dan WJP), diskalakan 40 poin = saklar penuh. Arahnya dikonfirmasi skor supremasi hukum Bank Dunia yang turun 2023-2025.",
+  "Kualitas belanja: belum ada pengukuran perubahan yang sebanding sejak 2025, jadi posisi tengah (50). IMF (2026) menyebut celah efisiensi investasi publik melebar dalam beberapa tahun terakhir, tanpa angka; arah itu ditampung lewat rentang.",
+  "Celah pajak: rasio perpajakan turun dari 10,08% (2024) ke 9,31% (2025), jadi belum ada bukti celah kepatuhan mulai tertutup. Nilai 0; rentang 0-5% untuk kemungkinan penurunan rasio itu disebabkan harga komoditas, bukan kepatuhan."
+ ]
+}
