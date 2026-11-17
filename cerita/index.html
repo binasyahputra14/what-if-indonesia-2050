@@ -106,7 +106,7 @@ header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:1
 .slide .out b{font:700 34px var(--disp);color:var(--accent)}
 .gauge{display:flex;align-items:center;gap:10px;font:600 13px var(--body);color:var(--muted)}
 .gauge .tank{flex:1;height:16px;border-radius:999px;background:#F1E6D8;overflow:hidden;position:relative}
-.gauge .tank i{position:absolute;inset:0 auto 0 0;width:var(--f,28.77%);background:linear-gradient(90deg,#F2B04A,var(--accent));border-radius:999px;transition:width .5s}
+.gauge .tank i{position:absolute;inset:0 auto 0 0;width:var(--f,32.55%);background:linear-gradient(90deg,#F2B04A,var(--accent));border-radius:999px;transition:width .5s}
 /* bab 3 */
 .leak{position:relative;height:120px;display:flex;align-items:flex-end;justify-content:center}
 .leak svg{height:120px}
@@ -353,20 +353,20 @@ header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:1
       <h2 data-s="0">Mobil yang boros bensin</h2>
       <div class="road" data-s="1"><div class="car" id="car2"><svg viewBox="0 0 86 44" width="86" height="44" aria-hidden="true"><rect x="6" y="16" width="74" height="18" rx="8" fill="#C2560F"/><path d="M22 16 L32 5 H56 L66 16 Z" fill="#E07A3A"/><rect x="35" y="8" width="9" height="7" rx="2" fill="#FFF4E2"/><rect x="47" y="8" width="11" height="7" rx="2" fill="#FFF4E2"/><circle cx="24" cy="35" r="7" fill="#2A1E17"/><circle cx="62" cy="35" r="7" fill="#2A1E17"/><circle cx="24" cy="35" r="3" fill="#EADCC8"/><circle cx="62" cy="35" r="3" fill="#EADCC8"/></svg><span class="puff" style="left:-6px"></span><span class="puff" style="left:-6px;animation-delay:.5s"></span></div></div>
       <div class="g3">
-        <div class="card" data-s="2"><div class="big"><span class="cnt" data-to="28.77" data-dec="2"></span> liter</div><p>dari tiap 100 liter penghasilan ekonomi 2025 dituang ke tangki investasi (PMTB 28,77% PDB, BPS).</p></div>
-        <div class="card" data-s="3"><div class="big"><span class="cnt" data-to="5.11" data-dec="2"></span> km</div><p>tambahan jarak mobilnya. Ini pertumbuhan ekonomi 2025 (BPS).</p></div>
-        <div class="card" data-s="4"><div class="big red"><span class="cnt" data-to="5.6" data-dec="1"></span> l/km</div><p>28,77 ÷ 5,11. Ekonom nyebutnya ICOR. Makin besar, makin boros. Ini versi paling ringan; angka pemerintah terbaru malah 6,8 (Nov 2026).</p></div>
+        <div class="card" data-s="2"><div class="big">Rp<span class="cnt" data-to="4205" data-dec="0"></span> T</div><p>bensin yang dituang ke tangki 2025: investasi (PMTB) dalam harga konstan, BPS. Dalam harga berlaku setara 28,77% PDB.</p></div>
+        <div class="card" data-s="3"><div class="big">Rp<span class="cnt" data-to="660" data-dec="0"></span> T</div><p>tambahan jarak mobilnya: PDB riil naik dari Rp12.920,5 T ke Rp13.580,5 T. Ini pertumbuhan 5,11% (BPS, 2025).</p></div>
+        <div class="card" data-s="4"><div class="big red"><span class="cnt" data-to="6.4" data-dec="1"></span> l/km</div><p>4.205 ÷ 660 = 6,37. Ekonom nyebutnya ICOR. Makin besar, makin boros. Sejalan dengan angka resmi BPS 2023 (6,33). Versi awal halaman ini menulis 5,6 karena membagi porsi harga berlaku (28,77%) dengan pertumbuhan harga konstan (5,11%): satuannya dicampur.</p></div>
       </div>
       <div class="card bars" data-s="5" id="icor"></div>
       <div class="card slide" data-s="6">
         <h3>Coba sendiri: benerin mesinnya</h3>
-        <div class="gauge">Bensin <div class="tank"><i></i></div> 28,77 liter (tetap)</div>
+        <div class="gauge">Bensin <div class="tank"><i></i></div> 32,6 liter riil (tetap)</div>
         <label for="icorR" class="fine">Konsumsi bensin (ICOR): geser ke kiri = makin irit</label>
-        <input type="range" id="icorR" min="3.5" max="7" step="0.1" value="5.6">
-        <div class="out"><span>ICOR <b id="icorV">5,6</b></span><span>Pertumbuhan <b id="growV">5,1%</b></span></div>
-        <p class="fine" id="icorN">Pertumbuhan ≈ porsi investasi ÷ ICOR (Harrod–Domar, disederhanakan). Mulai dari 5,6, versi paling ringan yang cocok dengan pertumbuhan riil 5,1%. Target pemerintah: ICOR 4,5.</p>
+        <input type="range" id="icorR" min="3.5" max="7" step="0.1" value="6.4">
+        <div class="out"><span>ICOR <b id="icorV">6,4</b></span><span>Pertumbuhan <b id="growV">5,1%</b></span></div>
+        <p class="fine" id="icorN">Pertumbuhan ≈ porsi investasi ÷ ICOR (Harrod–Domar, disederhanakan). Porsi investasi dihitung dalam harga konstan (32,55% dari output tahun lalu) supaya sebanding dengan ICOR. Mulai dari 6,4, ICOR 2025 yang cocok dengan pertumbuhan riil 5,1%. Target pemerintah: ICOR 4,5.</p>
       </div>
-      <div class="card" data-s="7"><h3>Mau 8% pakai mobil seboros ini?</h3><p>Bensinnya harus <b style="color:var(--bad)">45 dari tiap 100 liter</b>, naik 16 liter dari sekarang. Pakai angka pemerintah (6,8) malah 54. Gak realistis.</p></div>
+      <div class="card" data-s="7"><h3>Mau 8% pakai mobil seboros ini?</h3><p>Bensinnya harus <b style="color:var(--bad)">51 dari tiap 100 liter</b>, naik 18 liter dari 32,6 sekarang. Pakai angka 6,8 malah 54. Gak realistis. Tapi kalau mesinnya turun ke sekitar 4, bensin yang ada sekarang sudah cukup.</p></div>
       <div class="punch" data-s="8">Bensinnya ada. <mark>Mobilnya yang boros.</mark><br>Pertanyaannya: bocornya di mana?</div>
       <p class="src">ICOR negara lain: data pemerintah dikutip Koran Jakarta (Sep 2026) dan CNBC Indonesia (Nov 2026); Luhut/DEN (Des 2024); Sarasehan 100 Ekonom dikutip Kontan (Des 2024). Angka antarsumber beda; arahnya konsisten.</p>
     </section>
@@ -533,8 +533,8 @@ header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:1
       <div class="kick">Bab 09 · Kesimpulan</div>
       <h2 data-s="0">Gua pisahin jadi tiga</h2>
       <div class="tiers">
-        <div class="tier t1" data-s="1"><h3>Yang udah kebukti</h3><ul><li>Gak kekurangan bensin (investasi 28,77% PDB), tapi mobilnya paling boros.</li><li>Bocornya nyata: ±Rp944 T pajak gak ketagih, yang balik ±Rp3 dari Rp100.</li><li>Keran negara bisa diperjualbelikan: ada pejabat tersangka di kasus kuota dan izin.</li><li>Makro stabil, institusi melemah (IPK 37→34).</li><li>Pasar udah ngasih harga: MSCI, IHSG −7,35%, rupiah ±4%.</li></ul></div>
-        <div class="tier t2" data-s="2"><h3>Yang kemungkinan besar bener</h3><ul><li>Benerin mesin (ICOR ke 4,5) ±+1,3 poin per tahun; nambal seluruh bocor pajak cuma +0,3 s/d +0,7.</li><li>Borosnya paling parah di titik negara bagi keran.</li><li>8% tanpa rombak struktur gak didukung hitungan.</li></ul></div>
+        <div class="tier t1" data-s="1"><h3>Yang udah kebukti</h3><ul><li>Gak kekurangan bensin (investasi 28,77% PDB), tapi butuh Rp6,4 buat nambah Rp1 hasil: mobilnya paling boros.</li><li>Bocornya nyata: ±Rp944 T pajak gak ketagih, yang balik ±Rp3 dari Rp100.</li><li>Keran negara bisa diperjualbelikan: ada pejabat tersangka di kasus kuota dan izin.</li><li>Makro stabil, institusi melemah (IPK 37→34).</li><li>Pasar udah ngasih harga: MSCI, IHSG −7,35%, rupiah ±4%.</li></ul></div>
+        <div class="tier t2" data-s="2"><h3>Yang kemungkinan besar bener</h3><ul><li>Benerin mesin (ICOR dari 6,4 ke 4,5) ±+2,1 poin per tahun; nambal seluruh bocor pajak cuma +0,3 s/d +0,7.</li><li>Borosnya paling parah di titik negara bagi keran.</li><li>8% tanpa mesin yang jauh lebih irit gak didukung hitungan.</li></ul></div>
         <div class="tier t3" data-s="3"><h3>Yang belum kebukti</h3><ul><li>Seberapa besar efek institusi ke pertumbuhan Indonesia.</li><li>SDM dulu atau institusi dulu.</li><li>Kuota Bayan berkaitan dengan penjualan sahamnya atau enggak.</li><li>Produktivitas kita hari ini: estimasi lama hampir nol, kalibrasi simulator ±2,1%.</li></ul></div>
       </div>
       <div class="punch" data-s="4">Indonesia mentok di 5% bukan karena miskin modal, <mark>tapi karena modalnya dipakai boros.</mark> Itu inferensi, bukan vonis.</div>
@@ -831,10 +831,10 @@ function person(o){o=o||{};const sk=o.sk||SK[0],c=o.c||'#7A8FB5',x=[];
 const YR=[[2014,5.01],[2015,4.88],[2016,5.03],[2017,5.07],[2018,5.17],[2019,5.02],[2020,-2.07],[2021,3.70],[2022,5.31],[2023,5.05],[2024,5.03],[2025,5.11]];
 document.getElementById('years').innerHTML=YR.map(([y,g])=>'<div class="'+(g<0?'neg':'')+'"><b>'+String(g.toFixed(2)).replace('.',',')+'</b><i style="--h:'+(Math.abs(g)/5.4*78).toFixed(0)+'%"></i>\''+String(y).slice(2)+'</div>').join('');
 // bab 2: ICOR dengan bendera
-const IC=[['ID','Indonesia','86%','5,6–7',1],['VN','Vietnam','64%','3,8–5,7'],['TH','Thailand','55%','4,4'],['PH','Filipina','49%','3,4–4,4'],['MY','Malaysia','43%','2,7–4,9']];
+const IC=[['ID','Indonesia','86%','6,3–7',1],['VN','Vietnam','64%','3,8–5,7'],['TH','Thailand','55%','4,4'],['PH','Filipina','49%','3,4–4,4'],['MY','Malaysia','43%','2,7–4,9']];
 document.getElementById('icor').innerHTML='<h3>Konsumsi bensin mobil tetangga (ICOR)</h3>'+IC.map(r=>'<div class="bar'+(r[4]?' id':'')+'">'+flag(r[0])+'<span>'+r[1]+'</span><div class="t"><i style="--w:'+r[2]+'"></i></div><b>'+r[3]+'</b></div>').join('')+'<p class="fine">irit ← → boros</p>';
 const icorR=document.getElementById('icorR'),icorV=document.getElementById('icorV'),growV=document.getElementById('growV'),icorN=document.getElementById('icorN'),car2=document.getElementById('car2');
-function upIcor(){const v=+icorR.value,g=28.77/v;icorV.textContent=v.toFixed(1).replace('.',',');growV.textContent=g.toFixed(1).replace('.',',')+'%';growV.style.color=g>=6?'var(--good)':g<5?'var(--bad)':'var(--accent)';car2.style.animationDuration=(9*5.11/g).toFixed(1)+'s';}
+function upIcor(){const v=+icorR.value,g=32.55/v;icorV.textContent=v.toFixed(1).replace('.',',');growV.textContent=g.toFixed(1).replace('.',',')+'%';growV.style.color=g>=6?'var(--good)':g<5?'var(--bad)':'var(--accent)';car2.style.animationDuration=(9*5.11/g).toFixed(1)+'s';}
 icorR.addEventListener('input',upIcor);upIcor();
 // bab 3: 100 titik
 const dz=document.getElementById('dots');for(let i=0;i<100;i++){const x=document.createElement('i');if(i<3)x.className='g';dz.appendChild(x);}
